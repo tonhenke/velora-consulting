@@ -12,7 +12,6 @@ const columns = [
             'Alta rotatividade, pouca continuidade estratégica.',
             'Olhar fragmentado: mídia, outbound ou social — raramente o sistema completo.',
             'Ênfase em geração de leads, não em geração de receita.',
-            'Relatórios detalhados, mas sem construção real de pipeline previsível.',
         ],
         style: {
             wrapper: 'bg-brand-dark border border-brand-light/5',
@@ -46,7 +45,6 @@ const columns = [
         subtitle: 'Estratégia real, execução sênior',
         icon: 'check',
         items: [
-            'Diagnóstico profundo antes da prescrição.',
             'Estratégia desenhada para resistir à realidade do mercado.',
             'Implementação liderada por senioridade real.',
             'Integração entre marketing, vendas e revenue operations.',

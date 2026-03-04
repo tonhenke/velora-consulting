@@ -5,50 +5,50 @@ const columns = [
     {
         id: 1,
         label: 'Backlog',
-        color: '#a855f7',
+        color: '#1E1E1E',
         icon: Lightbulb,
         cards: [
-            { title: 'Teste de benefício', tag: 'Retenção', tagColor: '#a855f7' },
-            { title: 'Teste de Título', tag: 'Aquisição', tagColor: '#3b82f6' },
-            { title: 'Teste botão CTA', tag: 'Ativação', tagColor: '#22c55e' },
+            { title: 'Teste de benefício', tag: 'Retenção', tagColor: '#1E1E1E' },
+            { title: 'Teste de Título', tag: 'Aquisição', tagColor: '#1E1E1E' },
+            { title: 'Teste botão CTA', tag: 'Ativação', tagColor: '#1E1E1E' },
         ],
     },
     {
         id: 2,
         label: 'Brainstorm',
-        color: '#f59e0b',
+        color: '#1E1E1E',
         icon: FlaskConical,
         cards: [
-            { title: 'Teste de formulário', tag: 'Ativação', tagColor: '#22c55e' },
-            { title: 'Otimizar o CPA', tag: 'Aquisição', tagColor: '#3b82f6' },
+            { title: 'Teste de formulário', tag: 'Ativação', tagColor: '#1E1E1E' },
+            { title: 'Otimizar o CPA', tag: 'Aquisição', tagColor: '#1E1E1E' },
         ],
     },
     {
         id: 3,
         label: 'Experimento',
-        color: '#3b82f6',
+        color: '#1E1E1E',
         icon: Zap,
         cards: [
-            { title: 'Reduzir o CPL', tag: 'Aquisição', tagColor: '#3b82f6' },
+            { title: 'Reduzir o CPL', tag: 'Aquisição', tagColor: '#1E1E1E' },
         ],
     },
     {
         id: 4,
         label: 'Implementar',
-        color: '#ef4444',
+        color: '#1E1E1E',
         icon: Rocket,
         cards: [
-            { title: 'Teste de fluxo de cadastro', tag: 'Ativação', tagColor: '#22c55e' },
-            { title: 'Otimizar taxa de conversão', tag: 'Ativação', tagColor: '#22c55e' },
+            { title: 'Teste de fluxo de cadastro', tag: 'Ativação', tagColor: '#1E1E1E' },
+            { title: 'Otimizar taxa de conversão', tag: 'Ativação', tagColor: '#1E1E1E' },
         ],
     },
     {
         id: 5,
         label: 'Analisar',
-        color: '#22c55e',
+        color: '#1E1E1E',
         icon: BarChart2,
         cards: [
-            { title: 'Teste de avatar', tag: 'Aquisição', tagColor: '#3b82f6' },
+            { title: 'Teste de avatar', tag: 'Aquisição', tagColor: '#1E1E1E' },
         ],
     },
 ];
@@ -128,33 +128,29 @@ const GrowthLab = () => {
                                 {/* Column Header */}
                                 <div className="flex items-center gap-2 mb-1">
                                     <div
-                                        className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                                        style={{ backgroundColor: col.color }}
+                                        className="w-2.5 h-2.5 rounded-full flex-shrink-0 bg-brand-dark"
                                     />
-                                    <span className="text-sm font-semibold text-brand-dark/70 tracking-wide uppercase">
+                                    <span className="text-sm font-bold tracking-wide uppercase text-brand-dark/90">
                                         {col.id}. {col.label}
                                     </span>
                                 </div>
 
                                 {/* Divider line */}
-                                <div
-                                    className="h-0.5 w-full rounded-full mb-2 opacity-60"
-                                    style={{ backgroundColor: col.color }}
-                                />
+                                <div className="h-0.5 w-full rounded-full mb-2 bg-brand-dark opacity-20" />
 
                                 {/* Cards */}
                                 {col.cards.map((card, idx) => (
                                     <div
                                         key={idx}
-                                        className="bg-zinc-100/5 border border-brand-dark/10 rounded-xl p-4 backdrop-blur-sm hover:bg-zinc-100/8 hover:border-white/20 transition-all duration-200 group"
+                                        className="bg-white border border-gray-200 rounded-xl p-4 transition-all duration-200 group shadow-sm hover:border-brand-dark/30 hover:shadow-md"
                                     >
-                                        <p className="text-brand-dark text-sm font-medium leading-snug mb-3 group-hover:text-brand-dark/90">
+                                        <p className="text-brand-dark text-sm font-bold leading-snug mb-3 group-hover:text-black">
                                             {card.title}
                                         </p>
                                         <div className="flex items-center gap-1.5">
-                                            <Icon size={11} style={{ color: card.tagColor }} className="flex-shrink-0" />
+                                            <Icon size={12} style={{ color: card.tagColor }} className="flex-shrink-0" />
                                             <span
-                                                className="text-xs font-semibold"
+                                                className="text-xs font-bold uppercase tracking-wider"
                                                 style={{ color: card.tagColor }}
                                             >
                                                 {card.tag}
