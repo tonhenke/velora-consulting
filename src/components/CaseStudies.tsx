@@ -40,12 +40,12 @@ const cases = [
         id: 4,
         client: "SABEMI",
         results: [
-            { label: "Leads Qualificados", value: "+150%" },
-            { label: "Custo por Lead", value: "-40%" },
-            { label: "Taxa de Resposta", value: "+35%" },
-            { label: "ROI", value: "5x" },
+            { label: "crescimento da receita no período do projeto", value: "+9X" },
+            { label: "aumento na taxa de conversão", value: "+4%" },
+            { label: "retorno sobre o investimento", value: "ROI +7,2" },
+            { label: "no custo de aquisição de clientes (CAC)", value: "-64%" },
         ],
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+        description: "O time da Velora apoiou o desenvolvimento de um novo super app para a Sabemi, com o objetivo de ampliar as vendas no canal digital. Em 9 meses de projeto, os resultados atingiram níveis exponenciais:"
     }
 ];
 
@@ -64,15 +64,15 @@ const CaseStudies = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-4 h-[600px] lg:h-[500px]">
+                <div className="flex flex-col lg:flex-row gap-4 h-auto lg:h-[500px]">
                     {cases.map((item) => (
                         <motion.div
                             key={item.id}
                             layout
                             onClick={() => setActiveId(item.id)}
                             className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out border border-gray-300 ${activeId === item.id
-                                ? 'flex-[3] bg-[#f5f5f5]'
-                                : 'flex-[0.5] hover:flex-[0.7] bg-[#d4d4d4]'
+                                ? 'flex-none lg:flex-[3] bg-[#f5f5f5] min-h-[500px] lg:min-h-0'
+                                : 'flex-none lg:flex-[0.5] hover:lg:flex-[0.7] bg-[#d4d4d4] h-[80px] lg:h-auto'
                                 }`}
                         >
                             {/* Content for Active State */}
@@ -95,11 +95,11 @@ const CaseStudies = () => {
                                         </p>
                                     </div>
 
-                                    <div className="grid grid-cols-2 gap-4 mt-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                                         {item.results.map((res, idx) => (
-                                            <div key={idx} className="bg-zinc-100 p-4 rounded-xl shadow-sm border border-gray-100">
+                                            <div key={idx} className="bg-zinc-100 p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-center">
                                                 <div className="text-3xl font-bold mb-1">{res.value}</div>
-                                                <div className="text-sm text-gray-500 font-medium">{res.label}</div>
+                                                <div className="text-sm text-gray-500 font-medium leading-tight">{res.label}</div>
                                             </div>
                                         ))}
                                     </div>
@@ -108,8 +108,8 @@ const CaseStudies = () => {
                                 /* Content for Inactive State */
                                 <div className="h-full w-full flex items-center justify-center p-4">
                                     <h3
-                                        className="text-4xl font-black uppercase tracking-tighter text-gray-500 whitespace-nowrap"
-                                        style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                                        className="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-gray-500 whitespace-nowrap lg:vertical-rl lg:rotate-180"
+                                        style={{ writingMode: window.innerWidth >= 1024 ? 'vertical-rl' : 'horizontal-tb', transform: window.innerWidth >= 1024 ? 'rotate(180deg)' : 'none' }}
                                     >
                                         {item.client}
                                     </h3>

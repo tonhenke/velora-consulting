@@ -6,13 +6,13 @@ const benefits = [
         icon: Crown,
         title: "Especialistas Escolhidos a Dedo",
         desc: "Experts best-in-class para cada canal, não juniores generalistas.",
-        color: "text-amber-400"
+        color: "text-brand-neon"
     },
     {
         icon: DollarSign,
         title: "Sem Custo de Overhead",
         desc: "Pague por resultados, não pelo aluguel do escritório da agência.",
-        color: "text-green-400"
+        color: "text-brand-neon"
     },
     {
         icon: Award,
@@ -24,7 +24,7 @@ const benefits = [
         icon: Bot,
         title: "IA como Suporte",
         desc: "Utilizamos Inteligência Artificial para apoiar na condução de desdobramento estratégico.",
-        color: "text-purple-400"
+        color: "text-brand-neon"
     }
 ];
 

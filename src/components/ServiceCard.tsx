@@ -20,7 +20,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Ico
         >
             <div>
                 <div className="mb-6 flex justify-between items-start">
-                    <div className="p-3 bg-brand-light/5 rounded-lg text-brand-light group-hover:text-brand-neon group-hover:bg-brand-neon text-brand-dark/10 transition-colors">
+                    <div className="p-3 bg-brand-neon/10 rounded-lg text-brand-neon group-hover:bg-brand-neon group-hover:text-brand-dark transition-colors">
                         <Icon size={28} strokeWidth={1.5} />
                     </div>
                     <span className="text-xs font-mono text-gray-600">0{index + 1}</span>
