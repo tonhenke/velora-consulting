@@ -23,19 +23,19 @@ const WhoWeAre = () => {
     ];
 
     return (
-        <section className="py-32 bg-black text-white border-t border-white/5 relative overflow-hidden">
+        <section className="py-32 bg-brand-dark text-brand-light border-t border-brand-light/5 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px]" />
+                {/* Centered Neon Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-neon text-brand-light/5 rounded-full blur-[150px] opacity-20" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
-                        Quem faz <span className="text-brand-accent">acontecer</span>
+                    <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-brand-light">
+                        Quem faz <span className="text-brand-neon">acontecer</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+                    <p className="text-brand-light/70 max-w-2xl mx-auto text-lg font-light leading-relaxed">
                         Nascemos da insatisfação com o mercado tradicional. <br className="hidden md:block" />
                         Unimos experiência e visão para transformar negócios.
                     </p>
@@ -51,10 +51,10 @@ const WhoWeAre = () => {
                             transition={{ delay: index * 0.1, duration: 0.6 }}
                             className="group relative"
                         >
-                            <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0a] border border-white/10 hover:border-brand-accent/30 transition-all duration-500 h-full flex flex-col items-center text-center pt-8">
-                                <div className="relative w-[250px] h-[250px] overflow-hidden rounded-2xl shadow-2xl shadow-brand-accent/10 group-hover:shadow-brand-accent/20 transition-all duration-500">
+                            <div className="relative overflow-hidden rounded-2xl bg-[#0a0a0a] border border-brand-light/10 hover:border-brand-neon/30 transition-all duration-500 h-full flex flex-col items-center text-center pt-8">
+                                <div className="relative w-[250px] h-[250px] overflow-hidden rounded-2xl shadow-2xl shadow-brand-neon/5 group-hover:shadow-brand-neon/10 transition-all duration-500">
                                     {/* Image with fallback */}
-                                    <div className="w-full h-full bg-neutral-900">
+                                    <div className="w-full h-full bg-neutral-900 border border-brand-light/5">
                                         <img
                                             src={member.image}
                                             alt={member.name}
@@ -63,7 +63,7 @@ const WhoWeAre = () => {
                                                 e.currentTarget.style.display = 'none';
                                                 e.currentTarget.parentElement?.classList.add('flex', 'items-center', 'justify-center');
                                                 if (e.currentTarget.parentElement) {
-                                                    e.currentTarget.parentElement.innerHTML = `<span class="text-white/20 text-4xl font-bold">${member.name.charAt(0)}</span>`;
+                                                    e.currentTarget.parentElement.innerHTML = `<span class="text-brand-light/20 text-4xl font-bold">${member.name.charAt(0)}</span>`;
                                                 }
                                             }}
                                         />
@@ -72,14 +72,14 @@ const WhoWeAre = () => {
 
                                 <div className="p-8 flex-1 flex flex-col w-full">
                                     <div className="mb-4">
-                                        <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-brand-accent transition-colors duration-300">
+                                        <h3 className="text-2xl font-bold text-brand-light mb-1 group-hover:text-brand-neon transition-colors duration-300">
                                             {member.name}
                                         </h3>
-                                        <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                        <span className="text-sm font-medium text-brand-light/50 uppercase tracking-wider">
                                             {member.role}
                                         </span>
                                     </div>
-                                    <p className="text-gray-400 text-sm leading-relaxed flex-1 text-center">
+                                    <p className="text-brand-light/70 text-sm leading-relaxed flex-1 text-center">
                                         {member.bio}
                                     </p>
                                 </div>

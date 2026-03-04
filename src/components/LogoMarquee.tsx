@@ -32,7 +32,7 @@ const logos = [
 
 const LogoMarquee = () => {
     return (
-        <section className="py-24 bg-[#0a0a0a] border-b border-white/5 overflow-hidden">
+        <section className="py-24 bg-black border-b border-brand-dark/5 overflow-hidden">
             <div className="container mx-auto px-6 mb-12 text-center">
                 <p className="text-gray-500 font-mono text-sm uppercase tracking-widest">
                     Marcas que alavancamos
@@ -41,8 +41,8 @@ const LogoMarquee = () => {
 
             <div className="relative flex overflow-hidden group">
                 {/* Gradient Masks */}
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
                 {/* Marquee Content */}
                 <div className="flex animate-marquee whitespace-nowrap items-center">

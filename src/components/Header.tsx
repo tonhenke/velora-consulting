@@ -36,7 +36,7 @@ const Header = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                            className="text-sm font-medium text-brand-light/80 hover:text-brand-light transition-colors"
                         >
                             {link.name}
                         </a>
@@ -45,7 +45,7 @@ const Header = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white z-50"
+                    className="md:hidden text-brand-light z-50"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -57,13 +57,13 @@ const Header = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center space-y-8 md:hidden"
+                        className="absolute top-0 left-0 w-full h-screen bg-brand-dark flex flex-col items-center justify-center space-y-8 md:hidden"
                     >
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-2xl font-semibold text-white"
+                                className="text-2xl font-semibold text-brand-light"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {link.name}

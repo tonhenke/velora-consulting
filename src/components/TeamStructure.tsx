@@ -18,7 +18,7 @@ const benefits = [
         icon: Award,
         title: "Liderança Sênior",
         desc: "Nossas soluções são lideradas por perfis sênios com larga experiência de mercado.",
-        color: "text-blue-400"
+        color: "text-brand-neon"
     },
     {
         icon: Bot,
@@ -30,19 +30,19 @@ const benefits = [
 
 const TeamStructure = () => {
     return (
-        <section className="py-32 bg-black relative overflow-hidden">
+        <section className="py-32 bg-brand-dark relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
             <div className="container mx-auto px-6">
                 <div className="mb-20 text-center md:text-left">
-                    <p className="text-brand-accent font-mono text-sm mb-4 uppercase tracking-widest">
+                    <p className="text-brand-neon font-mono text-sm mb-4 uppercase tracking-widest">
                         ESTRUTURA
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 max-w-4xl tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold text-brand-light mb-8 max-w-4xl tracking-tight">
                         Os perfis mais estratégicos do mercado. <br />
                         <span className="text-gray-600">Nada de terceirização júnior.</span>
                     </h2>
-                    <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
+                    <p className="text-brand-light/60 text-lg max-w-2xl leading-relaxed">
                         A maioria das agências vende expertise sênior no pitch, e depois passa sua conta para juniores aprenderem com o seu dinheiro. Nós fazemos o oposto.
                     </p>
                 </div>
@@ -56,12 +56,12 @@ const TeamStructure = () => {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
                             whileHover={{ y: -5 }}
-                            className="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-white/20 transition-all group"
+                            className="bg-brand-dark p-8 rounded-2xl border border-brand-light/5 hover:border-white/20 transition-all group"
                         >
-                            <div className={`p-4 rounded-xl bg-white/5 w-fit mb-6 ${item.color} group-hover:bg-white/10 transition-colors`}>
+                            <div className={`p-4 rounded-xl bg-brand-light/5 w-fit mb-6 ${item.color} group-hover:bg-brand-light/10 transition-colors`}>
                                 <item.icon size={26} />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                            <h3 className="text-xl font-bold text-brand-light mb-3">{item.title}</h3>
                             <p className="text-gray-500 text-sm leading-relaxed">
                                 {item.desc}
                             </p>
@@ -70,7 +70,7 @@ const TeamStructure = () => {
                 </div>
 
                 <div className="text-center">
-                    <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-200 transition-colors duration-300">
+                    <button className="bg-brand-light text-brand-dark text-brand-dark px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-200 transition-colors duration-300">
                         Quero gerar mais resultado
                     </button>
                 </div>

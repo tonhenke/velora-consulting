@@ -37,13 +37,13 @@ const servicesData = [
 
 const Services = () => {
     return (
-        <section id="services" className="py-32 bg-black relative">
+        <section id="services" className="py-32 bg-brand-dark relative">
             <div className="container mx-auto px-6">
                 <div className="mb-20">
-                    <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tighter max-w-4xl">
+                    <h2 className="text-5xl md:text-6xl font-bold text-brand-light mb-6 tracking-tighter max-w-4xl">
                         Como podemos <span className="text-gray-600 user-select-none">trabalhar juntos</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl">
+                    <p className="text-xl text-brand-light/60 max-w-2xl">
                         Não somos uma agência tradicional. Somos parceiros de crescimento que implementam sistemas, não apenas slides.
                     </p>
                 </div>

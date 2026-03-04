@@ -30,10 +30,10 @@ const resources = [
 
 const FreeResources = () => {
     return (
-        <section className="py-32 bg-[#050505]">
+        <section className="py-32 bg-brand-light">
             <div className="container mx-auto px-6">
                 <div className="mb-20 text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">
                         Ferramentas gratuitas para elevar seu GTM
                     </h2>
                 </div>
@@ -47,14 +47,14 @@ const FreeResources = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-black border border-white/10 p-8 rounded-2xl hover:border-brand-accent transition-colors group flex flex-col items-start h-full"
+                            className="bg-brand-light border border-brand-dark/10 p-8 rounded-2xl hover:border-brand-neon transition-colors group flex flex-col items-start h-full"
                         >
-                            <res.icon className="text-gray-400 mb-6 group-hover:text-brand-accent transition-colors" size={32} />
-                            <h3 className="text-xl font-bold text-white mb-3">{res.title}</h3>
+                            <res.icon className="text-brand-dark/60 mb-6 group-hover:text-brand-neon transition-colors" size={32} />
+                            <h3 className="text-xl font-bold text-brand-dark mb-3">{res.title}</h3>
                             <p className="text-gray-500 text-sm mb-8 flex-grow">
                                 {res.desc}
                             </p>
-                            <div className="flex items-center gap-2 text-sm font-semibold text-white group-hover:text-brand-accent transition-colors">
+                            <div className="flex items-center gap-2 text-sm font-semibold text-brand-dark group-hover:text-brand-neon transition-colors">
                                 Acessar agora
                                 <ArrowRight size={16} />
                             </div>

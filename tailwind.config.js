@@ -11,10 +11,12 @@ export default {
       },
       colors: {
         brand: {
-          black: '#000000',
-          gray: '#1a1a1a',
+          neon: '#C6F000', // Lima Velora
+          dark: '#1E1E1E', // Preto Grafite
+          light: '#DCDCDC', // Cinza Claro
+          accent: '#C6F000', // Using neon as the primary accent
           white: '#ffffff',
-          accent: '#2563EB', // Elegant blue for accents
+          black: '#000000',
         }
       },
       animation: {

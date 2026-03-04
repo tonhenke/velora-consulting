@@ -15,10 +15,10 @@ const columns = [
             'Relatórios detalhados, mas sem construção real de pipeline previsível.',
         ],
         style: {
-            wrapper: 'bg-[#0a0a0a] border border-white/5',
-            title: 'text-white',
+            wrapper: 'bg-brand-dark border border-brand-light/5',
+            title: 'text-brand-light',
             subtitle: 'text-red-400',
-            text: 'text-gray-400',
+            text: 'text-brand-light/60',
             icon: 'text-red-500',
         },
     },
@@ -34,10 +34,10 @@ const columns = [
             'Longos ciclos de análise, pouca ativação prática.',
         ],
         style: {
-            wrapper: 'bg-[#0a0a0a] border border-white/5',
-            title: 'text-white',
+            wrapper: 'bg-brand-dark border border-brand-light/5',
+            title: 'text-brand-light',
             subtitle: 'text-red-400',
-            text: 'text-gray-400',
+            text: 'text-brand-light/60',
             icon: 'text-red-500',
         },
     },
@@ -55,10 +55,10 @@ const columns = [
         ],
         style: {
             wrapper: 'bg-gray-900/50 border border-blue-900/30 relative overflow-hidden',
-            title: 'text-white',
-            subtitle: 'text-blue-400',
+            title: 'text-brand-light',
+            subtitle: 'text-brand-neon',
             text: 'text-gray-200 font-medium',
-            icon: 'text-blue-500',
+            icon: 'text-brand-neon',
         },
         glow: true,
     },
@@ -66,7 +66,7 @@ const columns = [
 
 const ProblemSection = () => {
     return (
-        <section className="py-32 bg-black text-white">
+        <section className="py-32 bg-brand-dark text-brand-light">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
                     <motion.div
@@ -92,13 +92,13 @@ const ProblemSection = () => {
                             className={`rounded-3xl p-10 flex flex-col ${col.style.wrapper}`}
                         >
                             {col.glow && (
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px] pointer-events-none" />
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-neon/10 rounded-full blur-[80px] pointer-events-none" />
                             )}
 
                             <div className="mb-8">
                                 <h3 className={`text-2xl font-bold mb-2 flex items-center gap-3 ${col.style.title}`}>
                                     {col.label === 'Velora' && (
-                                        <span className="w-1.5 h-6 bg-blue-500 rounded-full" />
+                                        <span className="w-1.5 h-6 bg-brand-neon rounded-full" />
                                     )}
                                     {col.label}
                                 </h3>

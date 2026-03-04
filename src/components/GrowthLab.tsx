@@ -67,9 +67,9 @@ const columnVariants = {
 
 const GrowthLab = () => {
     return (
-        <section id="growthlab" className="py-32 bg-black relative overflow-hidden">
+        <section id="growthlab" className="py-32 bg-brand-light relative overflow-hidden">
             {/* Background glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-neon/10 rounded-full blur-[150px] pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}
@@ -80,9 +80,9 @@ const GrowthLab = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-400 font-medium"
+                        className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-brand-dark/10 bg-zinc-100/5 text-sm text-brand-dark/60 font-medium"
                     >
-                        <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                        <span className="w-2 h-2 rounded-full bg-brand-neon animate-pulse" />
                         Plataforma Proprietária
                     </motion.div>
 
@@ -91,7 +91,7 @@ const GrowthLab = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tighter leading-tight"
+                        className="text-5xl md:text-6xl font-bold text-brand-dark mb-6 tracking-tighter leading-tight"
                     >
                         Ferramenta proprietária para uma{' '}
                         <span className="text-gray-500">gestão profissional</span>{' '}
@@ -103,7 +103,7 @@ const GrowthLab = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-xl text-gray-400 max-w-2xl"
+                        className="text-xl text-brand-dark/60 max-w-2xl"
                     >
                         Gerencie experimentos de growth com um fluxo visual completo — do problema à análise de resultados. Tudo em um só lugar.
                     </motion.p>
@@ -131,7 +131,7 @@ const GrowthLab = () => {
                                         className="w-2.5 h-2.5 rounded-full flex-shrink-0"
                                         style={{ backgroundColor: col.color }}
                                     />
-                                    <span className="text-sm font-semibold text-white/70 tracking-wide uppercase">
+                                    <span className="text-sm font-semibold text-brand-dark/70 tracking-wide uppercase">
                                         {col.id}. {col.label}
                                     </span>
                                 </div>
@@ -146,9 +146,9 @@ const GrowthLab = () => {
                                 {col.cards.map((card, idx) => (
                                     <div
                                         key={idx}
-                                        className="bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm hover:bg-white/8 hover:border-white/20 transition-all duration-200 group"
+                                        className="bg-zinc-100/5 border border-brand-dark/10 rounded-xl p-4 backdrop-blur-sm hover:bg-zinc-100/8 hover:border-white/20 transition-all duration-200 group"
                                     >
-                                        <p className="text-white text-sm font-medium leading-snug mb-3 group-hover:text-white/90">
+                                        <p className="text-brand-dark text-sm font-medium leading-snug mb-3 group-hover:text-brand-dark/90">
                                             {card.title}
                                         </p>
                                         <div className="flex items-center gap-1.5">
@@ -164,7 +164,7 @@ const GrowthLab = () => {
                                 ))}
 
                                 {/* Empty slot placeholder */}
-                                <div className="border border-dashed border-white/10 rounded-xl p-4 h-16 opacity-30" />
+                                <div className="border border-dashed border-brand-dark/10 rounded-xl p-4 h-16 opacity-30" />
                             </motion.div>
                         );
                     })}

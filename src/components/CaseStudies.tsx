@@ -53,7 +53,7 @@ const CaseStudies = () => {
     const [activeId, setActiveId] = useState(1);
 
     return (
-        <section className="py-32 bg-[#e5e5e5] text-black">
+        <section className="py-32 bg-brand-light text-black">
             <div className="container mx-auto px-6">
                 <div className="mb-16 text-center">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">
@@ -86,7 +86,7 @@ const CaseStudies = () => {
                                     <div>
                                         <div className="flex justify-between items-start mb-6">
                                             <h3 className="text-4xl font-black uppercase tracking-tighter">{item.client}</h3>
-                                            <div className="bg-black text-white p-2 rounded-full">
+                                            <div className="bg-brand-light text-brand-dark p-2 rounded-full">
                                                 <ArrowUpRight size={24} />
                                             </div>
                                         </div>
@@ -97,7 +97,7 @@ const CaseStudies = () => {
 
                                     <div className="grid grid-cols-2 gap-4 mt-8">
                                         {item.results.map((res, idx) => (
-                                            <div key={idx} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                                            <div key={idx} className="bg-zinc-100 p-4 rounded-xl shadow-sm border border-gray-100">
                                                 <div className="text-3xl font-bold mb-1">{res.value}</div>
                                                 <div className="text-sm text-gray-500 font-medium">{res.label}</div>
                                             </div>

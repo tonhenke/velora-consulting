@@ -23,13 +23,13 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section className="py-32 bg-black text-white border-t border-white/5">
+        <section className="py-32 bg-brand-dark text-brand-light border-t border-brand-light/5">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
                         E os clientes falam por nós
                     </h2>
-                    <p className="text-gray-400 text-lg">
+                    <p className="text-brand-light/60 text-lg">
                         Confira alguns feedbacks que chancelam a nossa entrega.
                     </p>
                 </div>
@@ -45,7 +45,7 @@ const Testimonials = () => {
                             className="flex flex-col items-center text-center"
                         >
                             {/* Profile Image */}
-                            <div className="w-32 h-32 rounded-full bg-white/5 border border-white/10 overflow-hidden mb-6 flex items-center justify-center">
+                            <div className="w-32 h-32 rounded-full bg-brand-light/5 border border-brand-light/10 overflow-hidden mb-6 flex items-center justify-center">
                                 {testimonial.image ? (
                                     <img
                                         src={testimonial.image}
@@ -53,21 +53,21 @@ const Testimonials = () => {
                                         className="w-full h-full object-cover"
                                     />
                                 ) : (
-                                    <div className="w-full h-full bg-white/5" />
+                                    <div className="w-full h-full bg-brand-light/10" />
                                 )}
                             </div>
 
                             {/* Testimonial Text */}
-                            <p className="text-gray-400 text-sm leading-relaxed mb-6 italic">
+                            <p className="text-brand-light/80 text-sm leading-relaxed mb-6 italic">
                                 "{testimonial.text}"
                             </p>
 
                             {/* Name and Role */}
-                            <p className="font-bold text-white text-base">
+                            <p className="font-bold text-brand-light text-base">
                                 {testimonial.name}
                             </p>
                             {testimonial.role && (
-                                <p className="text-gray-500 text-sm mt-1">
+                                <p className="text-brand-light/60 text-sm mt-1">
                                     {testimonial.role}
                                 </p>
                             )}
