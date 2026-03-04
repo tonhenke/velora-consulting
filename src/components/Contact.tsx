@@ -4,16 +4,37 @@ import { useEffect } from 'react';
 
 declare global {
     interface Window {
-        ml: (action: string, ...args: unknown[]) => void;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ml: any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        MLInitMobileForm: any;
     }
 }
 
 const Contact = () => {
     useEffect(() => {
-        // Re-trigger MailerLite to detect the embedded form in SPA context
-        if (typeof window.ml === 'function') {
-            window.ml('show', '7XaT9b', true);
-        }
+        // Remove any existing MailerLite script to avoid duplicates
+        const existingScript = document.getElementById('mailerlite-universal');
+        if (existingScript) existingScript.remove();
+
+        // Dynamically inject MailerLite universal script after component mounts
+        const script = document.createElement('script');
+        script.id = 'mailerlite-universal';
+        script.async = true;
+        script.innerHTML = `
+            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            ml('account', '2162261');
+        `;
+        document.head.appendChild(script);
+
+        return () => {
+            // Cleanup on unmount
+            const s = document.getElementById('mailerlite-universal');
+            if (s) s.remove();
+        };
     }, []);
 
     return (
