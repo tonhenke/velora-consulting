@@ -11,7 +11,7 @@ const WhoWeAre = () => {
         {
             name: "Everton Henke",
             role: "Growth Hacking",
-            bio: "Everton Henke, Referência em Growth Hacking no Brasil, atuando frente a grandes empresas dos mais diversos setores. Professor de MBA da ESPM há mais 4 anos.",
+            bio: "Everton Henke é profissional com mais de 10 anos de experiência em negócios digitais, referência em Growth Hacking no Brasil, liderando projetos à frente de grandes empresas de diversos setores. É professor da ESPM e do MBA em Inovação e Marketing da UniSenac.",
             image: "/everton-henke.png"
         },
         {
