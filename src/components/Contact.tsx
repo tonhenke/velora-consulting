@@ -1,8 +1,21 @@
 
 import { motion } from 'framer-motion';
-import { Mail, ArrowRight } from 'lucide-react';
+import { useEffect } from 'react';
+
+declare global {
+    interface Window {
+        ml: (action: string, ...args: unknown[]) => void;
+    }
+}
 
 const Contact = () => {
+    useEffect(() => {
+        // Re-trigger MailerLite to detect the embedded form in SPA context
+        if (typeof window.ml === 'function') {
+            window.ml('show', '7XaT9b', true);
+        }
+    }, []);
+
     return (
         <section id="contact" className="py-32 bg-brand-gray/20 border-t border-brand-dark/5">
             <div className="container mx-auto px-6 text-center">
@@ -18,14 +31,8 @@ const Contact = () => {
                         Seja para um diagnóstico completo, um squad dedicado ou liderança estratégica, estamos aqui para ajudar você a escalar.
                     </p>
 
-                    <a
-                        href="mailto:hello@velora.com"
-                        className="inline-flex items-center gap-3 bg-zinc-100 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-neon text-brand-dark hover:text-brand-dark transition-all duration-300"
-                    >
-                        <Mail size={20} />
-                        hello@velora.com
-                        <ArrowRight size={20} />
-                    </a>
+                    {/* MailerLite Embedded Form */}
+                    <div className="ml-embedded" data-form="7XaT9b"></div>
                 </motion.div>
             </div>
         </section>
