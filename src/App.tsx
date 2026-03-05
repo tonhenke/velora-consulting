@@ -9,7 +9,6 @@ import Methodology from './components/Methodology';
 import Services from './components/Services';
 import GrowthLab from './components/GrowthLab';
 import CaseStudies from './components/CaseStudies';
-import Testimonials from './components/Testimonials';
 import WhoWeAre from './components/WhoWeAre';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -28,7 +27,6 @@ function App() {
         <Services /> {/* Section 7 */}
         <GrowthLab /> {/* Section: Plataforma GrowthLab */}
         <CaseStudies /> {/* Section 8: Results/Cases */}
-        <Testimonials /> {/* Section 9: Client Testimonials */}
         <WhoWeAre /> {/* Section 3: Quem faz acontecer */}
         <Contact /> {/* Section 11 */}
       </main>
