@@ -108,8 +108,7 @@ const CaseStudies = () => {
                                 /* Content for Inactive State */
                                 <div className="h-full w-full flex items-center justify-center p-4">
                                     <h3
-                                        className="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-gray-500 whitespace-nowrap lg:vertical-rl lg:rotate-180"
-                                        style={{ writingMode: window.innerWidth >= 1024 ? 'vertical-rl' : 'horizontal-tb', transform: window.innerWidth >= 1024 ? 'rotate(180deg)' : 'none' }}
+                                        className="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-gray-500 whitespace-nowrap lg:[writing-mode:vertical-rl] lg:rotate-180"
                                     >
                                         {item.client}
                                     </h3>
