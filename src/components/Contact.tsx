@@ -6,35 +6,40 @@ declare global {
     interface Window {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ml: any;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        MLInitMobileForm: any;
     }
 }
 
 const Contact = () => {
     useEffect(() => {
-        // Remove any existing MailerLite script to avoid duplicates
-        const existingScript = document.getElementById('mailerlite-universal');
-        if (existingScript) existingScript.remove();
+        const scriptId = 'mailerlite-universal-script';
 
-        // Dynamically inject MailerLite universal script after component mounts
-        const script = document.createElement('script');
-        script.id = 'mailerlite-universal';
-        script.async = true;
-        script.innerHTML = `
-            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-            ml('account', '2162261');
-        `;
-        document.head.appendChild(script);
-
-        return () => {
-            // Cleanup on unmount
-            const s = document.getElementById('mailerlite-universal');
-            if (s) s.remove();
+        const initMailerLite = () => {
+            if (window.ml) {
+                // If already loaded, just re-trigger to ensure it finds the new div
+                window.ml('account', '2162261');
+                // Some MailerLite universal scripts use 'show' or just auto-detect.
+                // Re-calling account often triggers a fresh scan of the DOM.
+            }
         };
+
+        if (!document.getElementById(scriptId)) {
+            const script = document.createElement('script');
+            script.id = scriptId;
+            script.async = true;
+            script.innerHTML = `
+                (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+                .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+                n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+                (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            `;
+            script.onload = initMailerLite;
+            document.head.appendChild(script);
+        }
+
+        initMailerLite();
+
+        // Note: No cleanup that removes the script, as we want it to stay global.
+        // We only want the div to be populated when this component mounts.
     }, []);
 
     return (
