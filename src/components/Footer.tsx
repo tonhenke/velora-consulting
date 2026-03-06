@@ -11,9 +11,8 @@ const Footer = () => {
                 </div>
 
                 <div className="flex space-x-6">
-                    <a href="#" className="text-brand-light/60 hover:text-brand-light transition-colors">LinkedIn</a>
-                    <a href="#" className="text-brand-light/60 hover:text-brand-light transition-colors">Instagram</a>
-                    <a href="#" className="text-brand-light/60 hover:text-brand-light transition-colors">Twitter</a>
+                    <a href="https://www.linkedin.com/company/growth-with-velora/" target="_blank" rel="noopener noreferrer" className="text-brand-light/60 hover:text-brand-light transition-colors">LinkedIn</a>
+                    <a href="https://www.instagram.com/growth.with.velora/" target="_blank" rel="noopener noreferrer" className="text-brand-light/60 hover:text-brand-light transition-colors">Instagram</a>
                 </div>
             </div>
         </footer>
