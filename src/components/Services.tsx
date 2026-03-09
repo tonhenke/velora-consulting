@@ -43,18 +43,12 @@ const Services = () => {
                     <h2 className="text-5xl md:text-6xl font-bold text-brand-light mb-6 tracking-tighter max-w-4xl">
                         Como podemos <span className="text-gray-600 user-select-none">trabalhar juntos</span>
                     </h2>
-                    <p className="text-xl text-brand-light/60 max-w-2xl mb-8">
+                    <p className="text-xl text-brand-light/60 max-w-2xl">
                         Não somos uma agência tradicional. Somos parceiros de crescimento que implementam sistemas, não apenas slides.
                     </p>
-                    <a
-                        href="#contact"
-                        className="inline-flex items-center gap-2 bg-brand-light text-brand-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-                    >
-                        Quero gerar mais resultados
-                    </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                     {servicesData.map((service, index) => (
                         <ServiceCard
                             key={index}
@@ -62,6 +56,15 @@ const Services = () => {
                             {...service}
                         />
                     ))}
+                </div>
+
+                <div className="flex justify-center">
+                    <a
+                        href="#contact"
+                        className="inline-flex items-center gap-2 bg-brand-light text-brand-dark px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                    >
+                        Quero gerar mais resultados
+                    </a>
                 </div>
             </div>
         </section>
