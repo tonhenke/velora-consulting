@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import LogoMarquee from './components/LogoMarquee';
 import PhilosophySection from './components/PhilosophySection';
 import ProblemSection from './components/ProblemSection';
+import LeadCaptureSection from './components/LeadCaptureSection';
 import TeamStructure from './components/TeamStructure';
 import Methodology from './components/Methodology';
 import Services from './components/Services';
@@ -21,6 +22,7 @@ const HomePage = () => (
     <LogoMarquee />
     <PhilosophySection />
     <ProblemSection />
+    <LeadCaptureSection />
     <TeamStructure />
     <Methodology />
     <Services />
