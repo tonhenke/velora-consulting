@@ -21,8 +21,8 @@ const Contact = () => {
                     <div className="flex justify-center w-full overflow-hidden rounded-xl bg-white p-4 border border-white/10">
                         <iframe
                             width="540"
-                            height="1200"
-                            src="https://88bfd1c8.sibforms.com/serve/MUIFAKXPzr3Oinuo78iic8A0FuDYg7wfqEnrD4KLy-RSNw9IanHflp1CVqmgmsv-CG1ECv2S6hbaC-T-kK9Y2Cr_nl0ZAimJ72D7RpfEQBb9uC9_htCq-zxb2Nd057wx458HPDvv9Wsj0Tn0NQ1wUP5hQKIVV3vScSeugAvsE2_EYfrRzxjqtiN3mWZtOxKGU5yt4PoOVi-9OjLVcg=="
+                            height="850"
+                            src="https://88bfd1c8.sibforms.com/serve/MUIFAKXPzr3Oinuo78iic8A0FuDYg7wfqEnrD4KLy-RSNw9IanHflp1CVqmgmsv-CG1ECv2S6hbaC-T-kK9Y2Cr_nl0ZAimJ72D7RpfEQBb9uC9_htCq-zxb2Nd057wx458HPDvv9Wsj0Tn0NQ1wUP5hQKIVV3vScSeugAvsE2_EYfrRzxjqtiN3mWZtOxGU5yt4PoOVi-9OjLVcg=="
                             frameBorder="0"
                             scrolling="no"
                             allowFullScreen
