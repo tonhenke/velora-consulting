@@ -1,4 +1,5 @@
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import LogoMarquee from './components/LogoMarquee';
@@ -12,26 +13,38 @@ import CaseStudies from './components/CaseStudies';
 import WhoWeAre from './components/WhoWeAre';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import SuccessPage from './components/SuccessPage';
+
+const HomePage = () => (
+  <>
+    <Hero />
+    <LogoMarquee />
+    <PhilosophySection />
+    <ProblemSection />
+    <TeamStructure />
+    <Methodology />
+    <Services />
+    <GrowthLab />
+    <CaseStudies />
+    <WhoWeAre />
+    <Contact />
+  </>
+);
 
 function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      <main>
-        <Hero />
-        <LogoMarquee /> {/* Section 2: Logo Scroll */}
-        <PhilosophySection />
-        <ProblemSection /> {/* Section 4: Problem/Solution */}
-        <TeamStructure /> {/* Original Section 5 - keeping as is for now or slightly adapting */}
-        <Methodology /> {/* Section 6 */}
-        <Services /> {/* Section 7 */}
-        <GrowthLab /> {/* Section: Plataforma GrowthLab */}
-        <CaseStudies /> {/* Section 8: Results/Cases */}
-        <WhoWeAre /> {/* Section 3: Quem faz acontecer */}
-        <Contact /> {/* Section 11 */}
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-black text-white">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/contato-sucesso" element={<SuccessPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
