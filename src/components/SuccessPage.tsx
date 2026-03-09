@@ -38,10 +38,10 @@ const SuccessPage = () => {
                     <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-black font-semibold rounded-full hover:bg-brand-primary/90 transition-all shadow-[0_0_20px_rgba(151,255,102,0.3)]"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 font-semibold rounded-full hover:bg-white/20 transition-all backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.1)]"
                     >
                         <ArrowLeft className="w-5 h-5" />
-                        Voltar para a Home
+                        Voltar ao site
                     </motion.button>
                 </Link>
             </motion.div>
