@@ -45,24 +45,26 @@ const LogoMarquee = () => {
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
                 {/* Marquee Content */}
-                <div className="flex animate-marquee whitespace-nowrap items-center">
+                <div className="flex animate-marquee whitespace-nowrap items-center" style={{ willChange: 'transform' }}>
                     {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
                         <div key={`marquee1-${index}`} className="mx-12 flex items-center justify-center min-w-[120px]">
                             <img
                                 src={logo.src}
                                 alt={logo.name}
+                                loading="eager"
                                 className="h-12 w-auto object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-all duration-300"
                             />
                         </div>
                     ))}
                 </div>
 
-                <div className="flex absolute top-0 animate-marquee2 whitespace-nowrap items-center">
+                <div className="flex absolute top-0 animate-marquee2 whitespace-nowrap items-center" style={{ willChange: 'transform' }}>
                     {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
                         <div key={`marquee2-${index}`} className="mx-12 flex items-center justify-center min-w-[120px]">
                             <img
                                 src={logo.src}
                                 alt={logo.name}
+                                loading="eager"
                                 className="h-12 w-auto object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-all duration-300"
                             />
                         </div>

@@ -70,9 +70,12 @@ const TeamStructure = () => {
                 </div>
 
                 <div className="text-center">
-                    <button className="bg-brand-light text-brand-dark text-brand-dark px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-200 transition-colors duration-300">
+                    <a
+                        href="#contact"
+                        className="inline-block bg-brand-light text-brand-dark px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-200 transition-colors duration-300"
+                    >
                         Quero gerar mais resultado
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>

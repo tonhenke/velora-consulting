@@ -10,7 +10,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="max-w-4xl mx-auto bg-gradient-to-br from-brand-gray to-black border border-brand-dark/10 p-12 rounded-[2.5rem]"
+                    className="max-w-4xl mx-auto bg-gradient-to-br from-brand-gray to-black border border-brand-dark/10 p-6 md:p-12 rounded-[2.5rem]"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Pronto para acelerar seu crescimento?</h2>
                     <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
