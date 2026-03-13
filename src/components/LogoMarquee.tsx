@@ -34,7 +34,7 @@ const LogoMarquee = () => {
     return (
         <section className="py-24 bg-black border-b border-brand-dark/5 overflow-hidden">
             <div className="container mx-auto px-6 mb-12 text-center">
-                <p className="text-gray-500 font-mono text-sm uppercase tracking-widest">
+                <p className="text-gray-400 font-mono text-sm uppercase tracking-widest">
                     Marcas que alavancamos
                 </p>
             </div>

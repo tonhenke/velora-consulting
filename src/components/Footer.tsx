@@ -6,8 +6,8 @@ const Footer = () => {
             <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-4 md:mb-0">
                     <Logo />
-                    <p className="text-gray-500 text-sm mt-4">© {new Date().getFullYear()} Velora Growth. Todos os direitos reservados.</p>
-                    <a href="mailto:contato@veloraconsulting.com.br" className="text-gray-500 text-sm mt-1 hover:text-brand-light transition-colors">contato@veloraconsulting.com.br</a>
+                    <p className="text-gray-400 text-sm mt-4">© {new Date().getFullYear()} Velora Growth. Todos os direitos reservados.</p>
+                    <a href="mailto:contato@veloraconsulting.com.br" className="text-gray-400 text-sm mt-1 hover:text-brand-light transition-colors">contato@veloraconsulting.com.br</a>
                 </div>
 
                 <div className="flex space-x-6">

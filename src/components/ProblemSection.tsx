@@ -74,7 +74,7 @@ const ProblemSection = () => {
                     >
                         <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
                             Geramos resultados reais e <br className="hidden md:block" />
-                            <span className="text-gray-500">conhecemos os problemas</span>
+                            <span className="text-gray-400">conhecemos os problemas</span>
                         </h2>
                     </motion.div>
                 </div>

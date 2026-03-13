@@ -62,7 +62,7 @@ const TeamStructure = () => {
                                 <item.icon size={26} />
                             </div>
                             <h3 className="text-xl font-bold text-brand-light mb-3">{item.title}</h3>
-                            <p className="text-gray-500 text-sm leading-relaxed">
+                            <p className="text-gray-400 text-sm leading-relaxed">
                                 {item.desc}
                             </p>
                         </motion.div>

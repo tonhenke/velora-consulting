@@ -6,19 +6,19 @@ const WhoWeAre = () => {
             name: "Bernardo Costa",
             role: "Liderança & Estratégia",
             bio: "Bernardo Costa, 20 anos de carreira, 10 como líder, professor de MBA Conquer por mais 7 anos. Graduado pela PUCRS e MBA de Projetos Digitais na ESPM.",
-            image: "/bernardo-costa.png"
+            image: "/bernardo-costa.webp"
         },
         {
             name: "Everton Henke",
             role: "Growth Hacking",
             bio: "Everton Henke é profissional com mais de 10 anos de experiência em negócios digitais, referência em Growth Hacking no Brasil, liderando projetos à frente de grandes empresas de diversos setores. É professor da ESPM e do MBA em Inovação e Marketing da UniSenac.",
-            image: "/everton-henke.png"
+            image: "/everton-henke.webp"
         },
         {
             name: "Leonardo Martha",
             role: "Vendas e Receita",
             bio: "Executivo de Vendas com 20+ anos em crescimento B2B. Especialista em estruturar processos, escalar receitas recorrentes e desenvolver equipes de alta performance com metodologias como SPIN, Challenger e Winning by Design. Growth disciplinado, previsível e sustentável.",
-            image: "/leonardo-martha.png"
+            image: "/leonardo-martha.webp"
         }
     ];
 

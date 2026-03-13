@@ -62,7 +62,7 @@ const AiAgents = () => {
                                 <agent.icon size={24} />
                             </div>
                             <h4 className="text-lg font-bold text-brand-light mb-3">{agent.title}</h4>
-                            <p className="text-gray-500 text-sm leading-relaxed">
+                            <p className="text-gray-400 text-sm leading-relaxed">
                                 {agent.desc}
                             </p>
                         </motion.div>
