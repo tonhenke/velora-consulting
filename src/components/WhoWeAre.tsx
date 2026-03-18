@@ -17,7 +17,7 @@ const WhoWeAre = () => {
         {
             name: "Leonardo Martha",
             role: "Advisor",
-            bio: "Executivo de vendas com 20+ anos impulsionando crescimento, o Leo entra para somar como advisor apoiando a área comercial, escalabilidade de receitas recorrentes e desenvolvimento de equipes de alta performance. Combina visão estratégica e execução prática com metodologias como SPIN, Challenger e Winning by Design para construir crescimento disciplinado, previsível e sustentável.",
+            bio: "Executivo de vendas com 20+ anos impulsionando crescimento, o Leo entra para somar como advisor apoiando a área comercial, escalabilidade de receitas recorrentes e desenvolvimento de equipes de alta performance.",
             image: "/leonardo-martha.webp"
         }
     ];
