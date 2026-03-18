@@ -16,8 +16,8 @@ const WhoWeAre = () => {
         },
         {
             name: "Leonardo Martha",
-            role: "Vendas e Receita",
-            bio: "Executivo de Vendas com 20+ anos em crescimento B2B. Especialista em estruturar processos, escalar receitas recorrentes e desenvolver equipes de alta performance com metodologias como SPIN, Challenger e Winning by Design. Growth disciplinado, previsível e sustentável.",
+            role: "Advisor",
+            bio: "Executivo de vendas com 20+ anos impulsionando crescimento, o Leo entra para somar como advisor apoiando a área comercial, escalabilidade de receitas recorrentes e desenvolvimento de equipes de alta performance. Combina visão estratégica e execução prática com metodologias como SPIN, Challenger e Winning by Design para construir crescimento disciplinado, previsível e sustentável.",
             image: "/leonardo-martha.webp"
         }
     ];
