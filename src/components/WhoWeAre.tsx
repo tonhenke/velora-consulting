@@ -15,10 +15,10 @@ const WhoWeAre = () => {
             image: "/everton-henke.webp"
         },
         {
-            name: "Leonardo Martha",
+            name: "Leonardo Wartha",
             role: "Advisor",
             bio: "Executivo de vendas com 20+ anos impulsionando crescimento, o Leo entra para somar como advisor apoiando a área comercial, escalabilidade de receitas recorrentes e desenvolvimento de equipes de alta performance.",
-            image: "/leonardo-martha.webp"
+            image: "/leonardo-wartha.webp"
         }
     ];
 
