@@ -18,7 +18,7 @@ const WhoWeAre = () => {
             name: "Leonardo Wartha",
             role: "Advisor",
             bio: "Executivo de vendas com 20+ anos impulsionando crescimento, o Leo entra para somar como advisor apoiando a área comercial, escalabilidade de receitas recorrentes e desenvolvimento de equipes de alta performance.",
-            image: "/leonardo-wartha.webp"
+            image: "/leonardo-martha.webp"
         }
     ];
 
