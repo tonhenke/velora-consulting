@@ -1,8 +1,12 @@
-
+import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const Hero = () => {
+interface HeroProps {
+    title?: ReactNode;
+}
+
+const Hero = ({ title }: HeroProps) => {
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-dark selection:bg-brand-neon text-brand-dark selection:text-brand-light">
             {/* Abstract Background Elements */}
@@ -25,7 +29,11 @@ const Hero = () => {
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-brand-light mb-8 leading-[0.9]">
-                        Chegou o momento de destravar o <span className="text-brand-neon">crescimento</span> da sua operação.
+                        {title || (
+                            <>
+                                Chegou o momento de destravar o <span className="text-brand-neon">crescimento</span> da sua operação.
+                            </>
+                        )}
                     </h1>
 
                     <p className="max-w-xl text-xl text-brand-light/60 mb-10 leading-relaxed font-light">

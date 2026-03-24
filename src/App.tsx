@@ -38,6 +38,33 @@ const HomePage = () => (
   </>
 );
 
+const IALedGrowthPage = () => (
+  <>
+    <Hero 
+      title={
+        <>
+          Consultoria<br />
+          IA-Led Growth<br />
+          Destrave. <span className="text-brand-neon">Cresça.</span>
+        </>
+      }
+    />
+    <Suspense fallback={<div className="min-h-screen bg-black" />}>
+      <LogoMarquee />
+      <PhilosophySection />
+      <ProblemSection />
+      <LeadCaptureSection />
+      <TeamStructure />
+      <Methodology />
+      <Services />
+      <GrowthLab />
+      <CaseStudies />
+      <WhoWeAre />
+      <Contact />
+    </Suspense>
+  </>
+);
+
 function App() {
   return (
     <Router>
@@ -47,6 +74,7 @@ function App() {
           <Suspense fallback={<div className="h-64 bg-black" />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/ia-led-growth" element={<IALedGrowthPage />} />
               <Route path="/contato-sucesso" element={<SuccessPage />} />
             </Routes>
           </Suspense>
