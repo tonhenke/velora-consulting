@@ -76,6 +76,9 @@ const ProblemSection = () => {
                             Geramos resultados reais e <br className="hidden md:block" />
                             <span className="text-gray-400">conhecemos os problemas</span>
                         </h2>
+                        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                            Veja como a Velora se destaca das agências e consultorias tradicionais
+                        </p>
                     </motion.div>
                 </div>
 
