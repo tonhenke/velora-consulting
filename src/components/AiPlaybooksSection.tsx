@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, LineChart, Database, Zap } from 'lucide-react';
-import logoGemini from '../assets/brands/logo-gemini.png';
-import logoChatgpt from '../assets/brands/logo-chatgpt.png';
-import logoFigma from '../assets/brands/logo-figma.png';
-import logoDemoway from '../assets/brands/logo-demoway.png';
-import logoN8n from '../assets/brands/logo-n8n.png';
+import { Workflow, Figma, Sparkles, MessageSquare, LineChart, Code2, Database, Zap } from 'lucide-react';
 
 const playbooksData = {
     STRATEGY: {
@@ -42,8 +37,8 @@ const playbooksData = {
             }
         ],
         logos: [
-            { name: "Gemini", img: logoGemini },
-            { name: "ChatGPT", img: logoChatgpt },
+            { name: "Gemini", icon: Sparkles },
+            { name: "ChatGPT", icon: MessageSquare },
             { name: "Zapier", icon: Zap },
         ]
     },
@@ -85,9 +80,9 @@ const playbooksData = {
             }
         ],
         logos: [
-            { name: "Figma", img: logoFigma },
+            { name: "Figma", icon: Figma },
             { name: "Claude", icon: Sparkles },
-            { name: "Demoway", img: logoDemoway },
+            { name: "Demoway", icon: Code2 },
         ]
     },
     ANALYSIS: {
@@ -126,8 +121,8 @@ const playbooksData = {
             }
         ],
         logos: [
-            { name: "Gemini", img: logoGemini },
-            { name: "n8n", img: logoN8n },
+            { name: "Gemini", icon: Sparkles },
+            { name: "n8n", icon: Workflow },
             { name: "Optimizely", icon: LineChart },
         ]
     },
@@ -170,7 +165,7 @@ const playbooksData = {
             }
         ],
         logos: [
-            { name: "ChatGPT", img: logoChatgpt },
+            { name: "ChatGPT", icon: MessageSquare },
             { name: "NotebookLM", icon: Database },
         ]
     }
@@ -273,17 +268,12 @@ const AiPlaybooksSection = () => {
                                 
                                 {/* Logos (Bottom Right) */}
                                 <div className="mt-12 flex flex-wrap justify-end gap-6 items-center border-t border-brand-light/5 pt-8">
-                                    {playbooksData[activeTab].logos.map((logo: any, idx) => {
+                                    {playbooksData[activeTab].logos.map((logo, idx) => {
+                                        const IconComponent = logo.icon;
                                         return (
                                             <div key={idx} className="flex items-center text-brand-light/60 hover:text-brand-neon transition-colors">
-                                                {logo.img ? (
-                                                    <img src={logo.img} alt={logo.name} className="h-8 md:h-10 object-contain invert opacity-70 hover:opacity-100 transition-opacity" />
-                                                ) : (
-                                                    <>
-                                                        <logo.icon size={24} className="mr-2" />
-                                                        <span className="font-bold text-lg">{logo.name}</span>
-                                                    </>
-                                                )}
+                                                <IconComponent size={24} className="mr-2" />
+                                                <span className="font-bold text-lg">{logo.name}</span>
                                             </div>
                                         );
                                     })}
