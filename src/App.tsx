@@ -10,6 +10,7 @@ const PhilosophySection = lazy(() => import('./components/PhilosophySection'));
 const ProblemSection = lazy(() => import('./components/ProblemSection'));
 const LeadCaptureSection = lazy(() => import('./components/LeadCaptureSection'));
 const TeamStructure = lazy(() => import('./components/TeamStructure'));
+const AiPlaybooksSection = lazy(() => import('./components/AiPlaybooksSection'));
 const Methodology = lazy(() => import('./components/Methodology'));
 const Services = lazy(() => import('./components/Services'));
 const GrowthLab = lazy(() => import('./components/GrowthLab'));
@@ -55,6 +56,7 @@ const IALedGrowthPage = () => (
       <ProblemSection />
       <LeadCaptureSection />
       <TeamStructure />
+      <AiPlaybooksSection />
       <Methodology />
       <Services />
       <GrowthLab />
