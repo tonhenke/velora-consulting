@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // Lazy load below-the-fold components to improve performance
 const LogoMarquee = lazy(() => import('./components/LogoMarquee'));
@@ -84,6 +85,7 @@ function App() {
         <Suspense fallback={null}>
           <Footer />
         </Suspense>
+        <WhatsAppButton />
       </div>
     </Router>
   );
