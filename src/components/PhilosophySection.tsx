@@ -15,11 +15,20 @@ const PhilosophySection = () => {
                     className="max-w-5xl mx-auto text-center"
                 >
                     <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight tracking-tight text-brand-light mb-6">
-                        Os trimestres passam. Os resultados seguem travados e os problemas se repetem. Ideias não faltam — falta aplicação, experiência e parceria estratégica. Você não está sozinho: essa é a realidade de muitos líderes que buscam crescer.
+                        Os trimestres passam. Os resultados seguem travados e os problemas se repetem. Ideias não faltam, falta um sistema que transforme essas ideias em receita.
                     </p>
-                    <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-tight tracking-tight text-brand-light mb-8">
-                        É nesse contexto que a <span className="text-brand-neon">Velora</span> atua, conectando <span className="text-brand-neon">tecnologia</span>, <span className="text-brand-neon">dados</span> e <span className="text-brand-neon">criatividade</span> para transformar estratégia em crescimento real.
+                    <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-tight tracking-tight text-brand-light mb-10">
+                        É nesse contexto que a <span className="text-brand-neon">Velora</span> atua. Conectamos <span className="text-brand-neon">tecnologia</span>, <span className="text-brand-neon">dados</span> e <span className="text-brand-neon">experimentação</span> para encontrar as alavancas de crescimento que já existem no seu negócio, e monetizá-las antes dos 90 dias.
                     </p>
+                    <div className="mb-12">
+                        <a
+                            href="#contact"
+                            className="group inline-flex items-center gap-2 text-lg md:text-xl font-bold text-brand-neon hover:text-white transition-colors duration-300 border-b-2 border-brand-neon/30 hover:border-white pb-1"
+                        >
+                            Quero entender como isso funciona para o meu negócio
+                            <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                        </a>
+                    </div>
                     <div className="w-24 h-1 bg-white/20 mx-auto rounded-full" />
                 </motion.div>
             </div>
