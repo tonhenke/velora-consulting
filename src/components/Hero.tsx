@@ -22,16 +22,12 @@ const Hero = ({ title }: HeroProps) => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="max-w-4xl"
                 >
-                    <div className="inline-block mb-6 px-4 py-1.5 border border-white/20 rounded-full bg-brand-light/5 backdrop-blur-sm">
-                        <span className="text-sm font-medium branding-text text-brand-light/80">
-                            Estagnado no crescimento? Hora de escalar.
-                        </span>
-                    </div>
+
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-brand-light mb-8 leading-[0.9]">
                         {title || (
                             <>
-                                Chegou o momento de destravar o <span className="text-brand-neon">crescimento</span> da sua operação.
+                                Crescimento com <span className="text-brand-neon">ROI positivo</span> em até 90 dias — ou menos
                             </>
                         )}
                     </h1>
