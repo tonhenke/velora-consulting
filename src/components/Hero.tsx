@@ -32,7 +32,7 @@ const Hero = ({ title }: HeroProps) => {
                         )}
                     </h1>
                     <p className="max-w-xl text-xl text-brand-light/60 mb-10 leading-relaxed font-light">
-                        Com a Velora, você desenvolve um sistema de marketing, aquisição e vendas assertivo, escalável e memorável.
+                        Sem aumentar verba. Sem achismo. Com método comprovado.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-start gap-6">
