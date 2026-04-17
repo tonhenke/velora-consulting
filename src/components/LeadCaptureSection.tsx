@@ -22,7 +22,7 @@ const LeadCaptureSection = () => {
                                 Seja para um diagnóstico completo, um squad dedicado ou liderança estratégica, estamos aqui para ajudar você a escalar.
                             </p>
                             <p className="text-lg text-white/60 leading-relaxed">
-                                Preencha as informações e nossa equipe entrará em contato em breve.
+                                Preencha as informações para um diagnóstico personalizado e sem compromisso · 30 min · Diagnóstico de crescimento.
                             </p>
                         </div>
 
