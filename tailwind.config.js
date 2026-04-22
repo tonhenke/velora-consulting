@@ -20,8 +20,8 @@ export default {
         }
       },
       animation: {
-        marquee: 'marquee 30s linear infinite',
-        marquee2: 'marquee2 30s linear infinite',
+        marquee: 'marquee 50s linear infinite',
+        marquee2: 'marquee2 50s linear infinite',
       },
       keyframes: {
         marquee: {
