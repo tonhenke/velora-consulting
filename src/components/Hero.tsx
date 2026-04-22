@@ -40,7 +40,7 @@ const Hero = ({ title }: HeroProps) => {
                             href="#contact"
                             className="group flex items-center gap-3 bg-brand-light text-brand-dark text-brand-dark px-8 py-5 rounded-lg font-bold text-lg hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
                         >
-                            Agendar Reunião
+                            Solicitar diagnóstico gratuito
                             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                         </a>
                         <a
