@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { X, Check } from 'lucide-react';
+import { X, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const columns = [
     {
@@ -63,10 +64,20 @@ const columns = [
 ];
 
 const ProblemSection = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const nextSlide = () => {
+        setActiveIndex((prev) => (prev + 1) % columns.length);
+    };
+
+    const prevSlide = () => {
+        setActiveIndex((prev) => (prev - 1 + columns.length) % columns.length);
+    };
+
     return (
         <section className="py-32 bg-brand-dark text-brand-light">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12 lg:mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -82,6 +93,26 @@ const ProblemSection = () => {
                     </motion.div>
                 </div>
 
+                {/* Mobile Carousel Controls */}
+                <div className="flex justify-center items-center gap-6 mb-8 lg:hidden">
+                    <button onClick={prevSlide} className="p-2 border border-brand-light/20 rounded-full hover:bg-brand-light/10 text-brand-light transition-colors">
+                        <ChevronLeft size={24} />
+                    </button>
+                    <div className="flex gap-3">
+                        {columns.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setActiveIndex(i)}
+                                className={`w-2.5 h-2.5 rounded-full transition-colors ${i === activeIndex ? 'bg-brand-neon' : 'bg-brand-light/20'}`}
+                                aria-label={`Ir para o slide ${i + 1}`}
+                            />
+                        ))}
+                    </div>
+                    <button onClick={nextSlide} className="p-2 border border-brand-light/20 rounded-full hover:bg-brand-light/10 text-brand-light transition-colors">
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
+
                 <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {columns.map((col, i) => (
                         <motion.div
@@ -90,7 +121,7 @@ const ProblemSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className={`rounded-3xl p-10 flex flex-col ${col.style.wrapper}`}
+                            className={`rounded-3xl p-10 flex-col ${col.style.wrapper} ${i === activeIndex ? 'flex' : 'hidden'} lg:flex`}
                         >
                             {col.glow && (
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-neon/10 rounded-full blur-[80px] pointer-events-none" />
