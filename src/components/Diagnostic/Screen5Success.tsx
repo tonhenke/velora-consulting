@@ -35,8 +35,8 @@ const Screen5Success = () => {
           </div>
           <div>
             <span className="block text-sm text-white/40 mb-1 tracking-wider uppercase font-bold">WhatsApp</span>
-            <a href="https://wa.me/555198083883" target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-brand-neon transition-colors">
-              (51) 9808-3883
+            <a href="https://wa.me/5554996854825" target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-brand-neon transition-colors">
+              (54) 99685-4825
             </a>
           </div>
         </div>
