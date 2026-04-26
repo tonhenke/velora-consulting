@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { DiagnosticState } from './Diagnostic';
+import type { DiagnosticState } from './Diagnostic';
 
 interface Screen4Props {
   state: DiagnosticState;

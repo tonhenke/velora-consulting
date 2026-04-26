@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
-import { DiagnosticState } from './Diagnostic';
+import type { Dispatch, SetStateAction } from 'react';
+import type { DiagnosticState } from './Diagnostic';
 import { motion } from 'framer-motion';
 
 interface Screen1Props {
