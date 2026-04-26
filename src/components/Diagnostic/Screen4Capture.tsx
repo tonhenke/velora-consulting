@@ -111,6 +111,35 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
               </div>
 
               <div>
+                <label className="block text-sm font-bold text-white/80 mb-2" htmlFor="SITE">
+                  Qual o site da empresa?
+                </label>
+                <input 
+                  type="text" 
+                  id="SITE" 
+                  name="SITE" 
+                  required 
+                  className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-brand-neon focus:ring-1 focus:ring-brand-neon transition-colors"
+                  placeholder="www.suaempresa.com.br"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-white/80 mb-2" htmlFor="DESCRICAO_PROBLEMA">
+                  Qual é o maior desafio de crescimento que você enfrenta hoje?
+                </label>
+                <textarea 
+                  id="DESCRICAO_PROBLEMA" 
+                  name="DESCRICAO_PROBLEMA" 
+                  required 
+                  rows={2}
+                  maxLength={500}
+                  className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-brand-neon focus:ring-1 focus:ring-brand-neon transition-colors resize-none"
+                  placeholder="Em uma linha, descreva o seu contexto..."
+                />
+              </div>
+
+              <div>
                 <label className="block text-sm font-bold text-white/80 mb-2" htmlFor="SMS">
                   Qual o seu WhatsApp?
                 </label>
