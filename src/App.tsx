@@ -20,6 +20,7 @@ const WhoWeAre = lazy(() => import('./components/WhoWeAre'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
 const SuccessPage = lazy(() => import('./components/SuccessPage'));
+const Diagnostic = lazy(() => import('./components/Diagnostic/Diagnostic'));
 
 const HomePage = () => (
   <>
@@ -79,6 +80,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/ia-led-growth" element={<IALedGrowthPage />} />
               <Route path="/contato-sucesso" element={<SuccessPage />} />
+              <Route path="/diagnostico" element={<Diagnostic />} />
             </Routes>
           </Suspense>
         </main>
