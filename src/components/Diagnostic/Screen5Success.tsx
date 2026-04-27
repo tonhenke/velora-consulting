@@ -5,7 +5,7 @@ const Screen5Success = () => {
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden text-center"
+      className="max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-[2.5rem] p-6 md:p-16 relative overflow-hidden text-center"
     >
       <div className="absolute inset-0 bg-brand-neon/5 blur-[80px] rounded-full pointer-events-none" />
       
@@ -29,7 +29,7 @@ const Screen5Success = () => {
         <div className="space-y-4 pt-2">
           <div>
             <span className="block text-sm text-white/40 mb-1 tracking-wider uppercase font-bold">Email</span>
-            <a href="mailto:contato@veloraconsulting.com.br" className="text-xl text-white hover:text-brand-neon transition-colors">
+            <a href="mailto:contato@veloraconsulting.com.br" className="text-lg md:text-xl text-white hover:text-brand-neon transition-colors break-all">
               contato@veloraconsulting.com.br
             </a>
           </div>

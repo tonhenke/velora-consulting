@@ -55,7 +55,7 @@ const Screen3Result = ({ bottleneck, onNext }: Screen3Props) => {
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-14 overflow-hidden relative"
+      className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-[2.5rem] p-6 md:p-14 overflow-hidden relative"
     >
       <div className="absolute top-0 right-0 w-80 h-80 bg-brand-neon/10 blur-[100px] rounded-full" />
       
@@ -64,7 +64,7 @@ const Screen3Result = ({ bottleneck, onNext }: Screen3Props) => {
           <p className="text-lg text-white/70 font-medium mb-4 uppercase tracking-widest">
             Seu maior gargalo de crescimento está em:
           </p>
-          <h2 className="text-5xl md:text-7xl font-black text-brand-neon tracking-tight">
+          <h2 className="text-4xl md:text-7xl font-black text-brand-neon tracking-tight break-words">
             {bottleneck}
           </h2>
         </div>
@@ -91,7 +91,7 @@ const Screen3Result = ({ bottleneck, onNext }: Screen3Props) => {
             </ul>
           </div>
 
-          <div className="md:col-span-3 space-y-6 bg-black/40 rounded-3xl p-8 border border-white/5">
+          <div className="md:col-span-3 space-y-6 bg-black/40 rounded-3xl p-6 md:p-8 border border-white/5">
             <h3 className="text-xl font-bold flex items-center gap-3 text-brand-neon">
               <span className="w-8 h-8 rounded-full bg-brand-neon/20 flex items-center justify-center flex-shrink-0">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

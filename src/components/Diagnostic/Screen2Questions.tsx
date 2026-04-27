@@ -60,8 +60,10 @@ const Screen2Questions = ({ onUpdateScore, onFinish }: Screen2Props) => {
     onUpdateScore(currentBlock.categoryKey, totalBlockScore);
 
     if (isLastBlock) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       onFinish();
     } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       setAnswers({});
       setCurrentBlockIndex((prev) => prev + 1);
     }
@@ -81,8 +83,8 @@ const Screen2Questions = ({ onUpdateScore, onFinish }: Screen2Props) => {
         </h2>
       </div>
 
-      <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
-        <div className="inline-block px-4 py-1.5 rounded-full bg-brand-neon/20 border border-brand-neon/50 text-brand-neon font-bold text-sm tracking-wider mb-8">
+      <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-12">
+        <div className="inline-block px-4 py-1.5 rounded-full bg-brand-neon/20 border border-brand-neon/50 text-brand-neon font-bold text-sm tracking-wider mb-6 md:mb-8">
           {currentBlock.tag}
         </div>
 

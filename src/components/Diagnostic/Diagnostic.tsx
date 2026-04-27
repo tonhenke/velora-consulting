@@ -54,6 +54,7 @@ const Diagnostic = () => {
   }, []);
 
   const handleNextScreen = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setCurrentScreen((prev) => prev + 1);
   };
 

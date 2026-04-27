@@ -76,7 +76,7 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
         </div>
 
         {/* Right column - Form */}
-        <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-10 relative overflow-hidden">
+        <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-6 md:p-10 relative overflow-hidden">
           <div className="absolute inset-0 bg-brand-neon/5 blur-[80px] rounded-full ptr-events-none" />
           
           <div className="relative z-10">
