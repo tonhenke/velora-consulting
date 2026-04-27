@@ -1,4 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
 import type { DiagnosticState } from './Diagnostic';
 import { motion } from 'framer-motion';
 
@@ -24,6 +25,10 @@ const stageOptions = [
 
 const Screen1Context = ({ state, setState, onNext }: Screen1Props) => {
   const isComplete = state.teamSize !== '' && state.companyStage !== '';
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <motion.div
@@ -103,7 +108,7 @@ const Screen1Context = ({ state, setState, onNext }: Screen1Props) => {
         <button
           onClick={onNext}
           disabled={!isComplete}
-          className={`flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
+          className={`w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
             isComplete
               ? 'bg-brand-neon text-black hover:shadow-[0_0_30px_rgba(42,255,166,0.3)] hover:scale-105 cursor-pointer'
               : 'bg-white/10 text-white/40 cursor-not-allowed'

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface Screen2Props {
@@ -54,16 +54,18 @@ const Screen2Questions = ({ onUpdateScore, onFinish }: Screen2Props) => {
 
   const currentBlock = blocks[currentBlockIndex];
 
+  // Scroll to top whenever the block changes or on first mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentBlockIndex]);
+
   const handleNext = () => {
-    // Send scores for this block to the parent
     const totalBlockScore = (answers.q1 || 0) + (answers.q2 || 0);
     onUpdateScore(currentBlock.categoryKey, totalBlockScore);
 
     if (isLastBlock) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
       onFinish();
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
       setAnswers({});
       setCurrentBlockIndex((prev) => prev + 1);
     }
@@ -131,8 +133,8 @@ const Screen2Questions = ({ onUpdateScore, onFinish }: Screen2Props) => {
         </div>
       </div>
 
-      <div className="pt-4 flex justify-between items-center">
-        <div className="flex space-x-2">
+      <div className="pt-6 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center gap-4">
+        <div className="flex space-x-2 justify-center sm:justify-start">
           {blocks.map((_, i) => (
             <div 
               key={i} 
@@ -146,7 +148,7 @@ const Screen2Questions = ({ onUpdateScore, onFinish }: Screen2Props) => {
         <button
           onClick={handleNext}
           disabled={!isCurrentBlockComplete}
-          className={`flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
+          className={`w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
             isCurrentBlockComplete
               ? 'bg-brand-neon text-black hover:shadow-[0_0_30px_rgba(42,255,166,0.3)] hover:scale-105 cursor-pointer'
               : 'bg-white/10 text-white/40 cursor-not-allowed'

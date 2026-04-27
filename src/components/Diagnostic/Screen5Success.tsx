@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Screen5Success = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
