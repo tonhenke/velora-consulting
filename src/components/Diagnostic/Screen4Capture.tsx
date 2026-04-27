@@ -10,12 +10,27 @@ interface Screen4Props {
 const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsSubmitting(true);
-    // Simulate slight delay to ensure iframe captured it
-    setTimeout(() => {
+    
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      
+      // Submit asynchronously without waiting for CORS response since Brevo is an external domain
+      await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      });
+      
       onSuccess();
-    }, 1000);
+    } catch (error) {
+      console.error('Error submitting to CRM:', error);
+      // Still proceed to success screen so user is not blocked
+      onSuccess();
+    }
   };
 
   return (
@@ -67,17 +82,10 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
           <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-6">Preencha seus dados</h3>
             
-            <iframe 
-              name="hidden_iframe" 
-              id="hidden_iframe" 
-              style={{ display: 'none' }} 
-            />
-
             <form 
               // Real Brevo URL from original embed
               action="https://88bfd1c8.sibforms.com/serve/MUIFAPQu-c1iqxiRcF4hpQldwRnFU543sp9Ibjylta3_TmFtsRfBX_7lF7PkdRKdGIsPFKmwb9TAYaF0jB8DZlcUZd6qj7oLR7-ADqi7qSsjXhU22QSeow4vUdZQ8XR6osvXEQPycEdFsxyr_ZpjMfqvexGQcKzYwKshmc1JoScujOVnEh3xFI6nse8eygAmvkVofTuiiyiLX7CMZw==" 
               method="POST" 
-              target="hidden_iframe"
               onSubmit={handleSubmit}
               className="space-y-5"
             >
