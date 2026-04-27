@@ -14,6 +14,8 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6FgUD-Rxzsf4GozzQO4IgPCYwcBEg97xBgyV0wEPHZReYQGbkWynBpZNyaO8nVsJ_MA/exec';
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -21,18 +23,40 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
     try {
       const form = e.currentTarget;
       const formData = new FormData(form);
-      
-      // Submit asynchronously without waiting for CORS response since Brevo is an external domain
-      await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors',
-      });
+
+      // Extract field values to also send to Google Sheets
+      const payload = {
+        nome: formData.get('NOME'),
+        email: formData.get('EMAIL'),
+        whatsapp: formData.get('SMS'),
+        site: formData.get('SITE'),
+        descricao_problema: formData.get('DESCRICAO_PROBLEMA'),
+        tamanho_time: state.teamSize,
+        estagio_negocio: state.companyStage,
+        gargalo_identificado: state.bottleneck,
+      };
+
+      // Dispatch both submissions in parallel
+      await Promise.all([
+        // 1. Brevo CRM (form fields)
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors',
+        }),
+        // 2. Google Sheets (all fields including diagnostic data)
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          mode: 'no-cors',
+        }),
+      ]);
       
       onSuccess();
     } catch (error) {
-      console.error('Error submitting to CRM:', error);
-      // Still proceed to success screen so user is not blocked
+      console.error('Error submitting form:', error);
+      // Still proceed to success so user is not blocked
       onSuccess();
     }
   };
