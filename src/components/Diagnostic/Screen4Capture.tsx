@@ -175,9 +175,9 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
               <input type="hidden" name="locale" value="pt" />
 
               {/* Custom hidden fields required in the instructions */}
-              <input type="hidden" name="tamanho_time" value={state.teamSize} />
-              <input type="hidden" name="estagio_negocio" value={state.companyStage} />
-              <input type="hidden" name="gargalo_identificado" value={state.bottleneck} />
+              <input type="hidden" name="TAMANHO_TIME" value={state.teamSize} />
+              <input type="hidden" name="ESTAGIO_NEGOCIO" value={state.companyStage} />
+              <input type="hidden" name="GARGALO_IDENTIFICADO" value={state.bottleneck} />
 
               <button 
                 type="submit" 
