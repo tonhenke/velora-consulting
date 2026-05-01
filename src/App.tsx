@@ -14,7 +14,7 @@ const TeamStructure = lazy(() => import('./components/TeamStructure'));
 const AiPlaybooksSection = lazy(() => import('./components/AiPlaybooksSection'));
 const Methodology = lazy(() => import('./components/Methodology'));
 const Services = lazy(() => import('./components/Services'));
-const GrowthLab = lazy(() => import('./components/GrowthLab'));
+const DiagnosticCTA = lazy(() => import('./components/DiagnosticCTA'));
 const CaseStudies = lazy(() => import('./components/CaseStudies'));
 const WhoWeAre = lazy(() => import('./components/WhoWeAre'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -33,7 +33,7 @@ const HomePage = () => (
       <TeamStructure />
       <Methodology />
       <Services />
-      <GrowthLab />
+      <DiagnosticCTA />
       <CaseStudies />
       <WhoWeAre />
       <Contact />
@@ -61,7 +61,7 @@ const IALedGrowthPage = () => (
       <AiPlaybooksSection />
       <Methodology />
       <Services />
-      <GrowthLab />
+      <DiagnosticCTA />
       <CaseStudies />
       <WhoWeAre />
       <Contact />
