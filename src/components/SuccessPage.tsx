@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowLeft, Mail, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,15 +7,36 @@ import { Link } from 'react-router-dom';
 const CALENDLY_URL = 'https://calendly.com/contato-veloraconsulting/30min';
 
 const SuccessPage = () => {
+    const calendlyRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
-        // Inject Calendly widget script
+        const initCalendly = () => {
+            if ((window as any).Calendly && calendlyRef.current) {
+                (window as any).Calendly.initInlineWidget({
+                    url: `${CALENDLY_URL}?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=84cc16`,
+                    parentElement: calendlyRef.current,
+                    prefill: {},
+                    utm: {},
+                });
+            }
+        };
+
+        // If script already loaded (e.g. navigating back to this page)
+        if ((window as any).Calendly) {
+            initCalendly();
+            return;
+        }
+
         const script = document.createElement('script');
         script.src = 'https://assets.calendly.com/assets/external/widget.js';
         script.async = true;
+        script.onload = initCalendly;
         document.head.appendChild(script);
 
         return () => {
-            document.head.removeChild(script);
+            if (document.head.contains(script)) {
+                document.head.removeChild(script);
+            }
         };
     }, []);
 
@@ -61,8 +82,7 @@ const SuccessPage = () => {
                     className="rounded-[2rem] overflow-hidden border border-white/10 bg-white"
                 >
                     <div
-                        className="calendly-inline-widget"
-                        data-url={`${CALENDLY_URL}?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff&text_color=1a1a1a&primary_color=84cc16`}
+                        ref={calendlyRef}
                         style={{ minWidth: '320px', height: '700px' }}
                     />
                 </motion.div>
