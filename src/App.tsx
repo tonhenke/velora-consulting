@@ -80,7 +80,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/ia-led-growth" element={<IALedGrowthPage />} />
               <Route path="/contato-sucesso" element={<SuccessPage />} />
-              <Route path="/diagnostico" element={<Diagnostic />} />
+              <Route path="/diagnostico/*" element={<Diagnostic />} />
             </Routes>
           </Suspense>
         </main>

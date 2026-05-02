@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
-interface Screen2Props {
-  onUpdateScore: (category: 'aquisicao' | 'ativacao' | 'retencao' | 'receita' | 'indicacao', score: number) => void;
-  onFinish: () => void;
-}
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useDiagnosticContext } from './DiagnosticContext';
 
 const blocks = [
   {
@@ -12,30 +9,35 @@ const blocks = [
     categoryKey: 'aquisicao' as const,
     q1: 'Você sabe com clareza qual canal traz os leads de maior qualidade, não só maior volume?',
     q2: 'Você testa variações de mensagem, segmentação ou canal de forma sistemática e documentada?',
+    nextRoute: '/diagnostico/ativacao',
   },
   {
     tag: 'ATIVAÇÃO',
     categoryKey: 'ativacao' as const,
     q1: 'Você tem definido qual ação específica indica que um novo usuário ou cliente foi ativado?',
     q2: 'Você monitora onde as pessoas abandonam antes de chegar nesse momento de valor?',
+    nextRoute: '/diagnostico/retencao',
   },
   {
     tag: 'RETENÇÃO',
     categoryKey: 'retencao' as const,
     q1: 'Você consegue identificar sinais de que um cliente está prestes a cancelar ou sumir, antes que isso aconteça?',
     q2: 'Você tem comunicação estruturada baseada no comportamento do cliente, não só em datas ou campanhas genéricas?',
+    nextRoute: '/diagnostico/receita',
   },
   {
     tag: 'RECEITA',
     categoryKey: 'receita' as const,
     q1: 'Você testa ativamente variações de oferta, preço ou upsell com sua base de clientes atual?',
     q2: 'Você sabe qual perfil de cliente tem maior valor de longo prazo e direciona esforços estratégicos para ele?',
+    nextRoute: '/diagnostico/indicacao',
   },
   {
     tag: 'INDICAÇÃO',
     categoryKey: 'indicacao' as const,
     q1: 'Você tem um mecanismo estruturado para gerar indicações, ou elas acontecem por acaso quando acontecem?',
     q2: 'Você monitora ativamente o nível de satisfação dos seus clientes de forma sistemática?',
+    nextRoute: '/diagnostico/resultado',
   },
 ];
 
@@ -45,35 +47,42 @@ const answerPoints = {
   'Fazemos bem': 2,
 };
 
-const Screen2Questions = ({ onUpdateScore, onFinish }: Screen2Props) => {
-  const [currentBlockIndex, setCurrentBlockIndex] = useState(0);
+const Screen2Questions = () => {
+  const { handleUpdateScore, calculateBottleneck } = useDiagnosticContext();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const currentPathSegment = location.pathname.split('/').pop() || '';
+  const currentBlockIndex = blocks.findIndex(b => b.categoryKey === currentPathSegment);
+  const currentBlock = blocks[currentBlockIndex] || blocks[0];
+
   const [answers, setAnswers] = useState<{ q1?: number; q2?: number }>({});
 
   const isCurrentBlockComplete = answers.q1 !== undefined && answers.q2 !== undefined;
   const isLastBlock = currentBlockIndex === blocks.length - 1;
 
-  const currentBlock = blocks[currentBlockIndex];
-
   // Scroll to top whenever the block changes or on first mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentBlockIndex]);
+    // Reset answers when route changes
+    setAnswers({});
+  }, [currentBlock.categoryKey]);
 
   const handleNext = () => {
     const totalBlockScore = (answers.q1 || 0) + (answers.q2 || 0);
-    onUpdateScore(currentBlock.categoryKey, totalBlockScore);
+    handleUpdateScore(currentBlock.categoryKey, totalBlockScore);
 
     if (isLastBlock) {
-      onFinish();
+      calculateBottleneck();
+      navigate(currentBlock.nextRoute);
     } else {
-      setAnswers({});
-      setCurrentBlockIndex((prev) => prev + 1);
+      navigate(currentBlock.nextRoute);
     }
   };
 
   return (
     <motion.div
-      key={currentBlockIndex}
+      key={currentBlock.categoryKey}
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}

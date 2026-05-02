@@ -1,13 +1,8 @@
-import type { Dispatch, SetStateAction } from 'react';
 import { useEffect } from 'react';
-import type { DiagnosticState } from './Diagnostic';
 import { motion } from 'framer-motion';
-
-interface Screen1Props {
-  state: DiagnosticState;
-  setState: Dispatch<SetStateAction<DiagnosticState>>;
-  onNext: () => void;
-}
+import { useNavigate } from 'react-router-dom';
+import { useDiagnosticContext } from './DiagnosticContext';
+import type { CompanyStage } from './DiagnosticContext';
 
 const teamSizeOptions = [
   'Só eu',
@@ -16,19 +11,28 @@ const teamSizeOptions = [
   'Mais de 15 pessoas',
 ];
 
-const stageOptions = [
+const stageOptions: CompanyStage[] = [
   'Validando produto e mercado',
   'Crescendo — já tenho clientes e quero escalar',
   'Escalando — operação rodando, buscando eficiência',
   'Empresa estabelecida buscando reaceleração',
 ];
 
-const Screen1Context = ({ state, setState, onNext }: Screen1Props) => {
+const Screen1Context = () => {
+  const { state, setState } = useDiagnosticContext();
+  const navigate = useNavigate();
+
   const isComplete = state.teamSize !== '' && state.companyStage !== '';
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  const handleNext = () => {
+    if (isComplete) {
+      navigate('/diagnostico/aquisicao');
+    }
+  };
 
   return (
     <motion.div
@@ -81,7 +85,7 @@ const Screen1Context = ({ state, setState, onNext }: Screen1Props) => {
             {stageOptions.map((option) => (
               <button
                 key={option}
-                onClick={() => setState((prev) => ({ ...prev, companyStage: option as any }))}
+                onClick={() => setState((prev) => ({ ...prev, companyStage: option }))}
                 className={`p-6 rounded-2xl border text-left transition-all duration-200 ${
                   state.companyStage === option
                     ? 'border-brand-neon bg-brand-neon/10 shadow-[0_0_20px_rgba(42,255,166,0.15)]'
@@ -106,7 +110,7 @@ const Screen1Context = ({ state, setState, onNext }: Screen1Props) => {
 
       <div className="pt-8 flex justify-end">
         <button
-          onClick={onNext}
+          onClick={handleNext}
           disabled={!isComplete}
           className={`w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
             isComplete
@@ -122,3 +126,4 @@ const Screen1Context = ({ state, setState, onNext }: Screen1Props) => {
 };
 
 export default Screen1Context;
+

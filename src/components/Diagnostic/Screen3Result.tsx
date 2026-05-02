@@ -1,10 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-
-interface Screen3Props {
-  bottleneck: string; // "AQUISIÇÃO" | "ATIVAÇÃO" | "RETENÇÃO" | "RECEITA" | "INDICAÇÃO"
-  onNext: () => void;
-}
+import { useNavigate } from 'react-router-dom';
+import { useDiagnosticContext } from './DiagnosticContext';
 
 const resultData: Record<string, { symptoms: string[], context: string }> = {
   'AQUISIÇÃO': {
@@ -49,12 +46,20 @@ const resultData: Record<string, { symptoms: string[], context: string }> = {
   },
 };
 
-const Screen3Result = ({ bottleneck, onNext }: Screen3Props) => {
+const Screen3Result = () => {
+  const { state } = useDiagnosticContext();
+  const navigate = useNavigate();
+  
+  const bottleneck = state.bottleneck || 'RETENÇÃO';
   const data = resultData[bottleneck] || resultData['RETENÇÃO'];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  const handleNext = () => {
+    navigate('/diagnostico/formulario');
+  };
 
   return (
     <motion.div
@@ -113,7 +118,7 @@ const Screen3Result = ({ bottleneck, onNext }: Screen3Props) => {
 
         <div className="mt-12 flex justify-center">
           <button
-            onClick={onNext}
+            onClick={handleNext}
             className="w-full sm:w-auto group flex items-center justify-center px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 bg-brand-neon text-black hover:shadow-[0_0_40px_rgba(42,255,166,0.4)] hover:-translate-y-1"
           >
             Quero resolver esse gargalo 

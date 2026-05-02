@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import type { DiagnosticState } from './Diagnostic';
+import { useNavigate } from 'react-router-dom';
+import { useDiagnosticContext } from './DiagnosticContext';
 
-interface Screen4Props {
-  state: DiagnosticState;
-  onSuccess: () => void;
-}
-
-const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
+const Screen4Capture = () => {
+  const { state } = useDiagnosticContext();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -53,11 +51,11 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
         }),
       ]);
       
-      onSuccess();
+      navigate('/diagnostico/formulario-sucesso');
     } catch (error) {
       console.error('Error submitting form:', error);
       // Still proceed to success so user is not blocked
-      onSuccess();
+      navigate('/diagnostico/formulario-sucesso');
     }
   };
 
@@ -79,7 +77,7 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
           </h2>
           
           <p className="text-xl text-white/80 leading-relaxed">
-            Tenho vagas limitadas para uma sessão de 30 minutos onde analisamos juntos as causas reais do seu gargalo de <strong className="text-white">{state.bottleneck}</strong> e o que faz sentido atacar primeiro.
+            Tenho vagas limitadas para uma sessão de 30 minutos onde analisamos juntos as causas reais do seu gargalo de <strong className="text-white">{state.bottleneck || 'CRESCIMENTO'}</strong> e o que faz sentido atacar primeiro.
           </p>
 
           <div className="space-y-6 pt-4">
@@ -105,7 +103,7 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
 
         {/* Right column - Form */}
         <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-6 md:p-10 relative overflow-hidden">
-          <div className="absolute inset-0 bg-brand-neon/5 blur-[80px] rounded-full ptr-events-none" />
+          <div className="absolute inset-0 bg-brand-neon/5 blur-[80px] rounded-full pointer-events-none" />
           
           <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-6">Preencha seus dados</h3>
@@ -199,7 +197,7 @@ const Screen4Capture = ({ state, onSuccess }: Screen4Props) => {
               </div>
 
               {/* Bot detection and metadata for Brevo */}
-              <input type="text" name="email_address_check" value="" className="hidden" />
+              <input type="text" name="email_address_check" value="" className="hidden" readOnly />
               <input type="hidden" name="locale" value="pt" />
 
               {/* Custom hidden fields required in the instructions */}
