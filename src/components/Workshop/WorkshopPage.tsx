@@ -20,8 +20,8 @@ const WorkshopPage = () => (
     <WorkshopSolution />
     <WorkshopForWho />
     <WorkshopCurriculum />
-    <WorkshopInstructor />
     <WorkshopAI />
+    <WorkshopInstructor />
     <WorkshopDeliverables />
     <WorkshopOffer />
     <WorkshopGuarantee />
