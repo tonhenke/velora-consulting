@@ -5,6 +5,7 @@ import WorkshopSolution from './WorkshopSolution';
 import WorkshopForWho from './WorkshopForWho';
 import WorkshopCurriculum from './WorkshopCurriculum';
 import WorkshopInstructor from './WorkshopInstructor';
+import WorkshopLocation from './WorkshopLocation';
 import WorkshopAI from './WorkshopAI';
 import WorkshopDeliverables from './WorkshopDeliverables';
 import WorkshopOffer from './WorkshopOffer';
@@ -22,6 +23,7 @@ const WorkshopPage = () => (
     <WorkshopCurriculum />
     <WorkshopAI />
     <WorkshopInstructor />
+    <WorkshopLocation />
     <WorkshopDeliverables />
     <WorkshopOffer />
     <WorkshopGuarantee />
