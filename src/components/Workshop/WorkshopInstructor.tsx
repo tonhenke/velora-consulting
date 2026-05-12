@@ -36,7 +36,7 @@ const WorkshopInstructor = () => (
           Quem vai ensinar
         </div>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#1E1E1E] to-[#5c5c5c]">
-          Conheça seu <span className="text-brand-neon drop-shadow-sm">instrutor</span>
+          Conheça seu instrutor
         </h2>
       </motion.div>
 
@@ -85,9 +85,7 @@ const WorkshopInstructor = () => (
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <span className="px-4 py-2 bg-brand-neon/10 border border-brand-neon/20 rounded-full text-sm font-semibold text-brand-dark">
-              +218 negócios impactados
-            </span>
+
             <span className="px-4 py-2 bg-white border border-brand-dark/10 rounded-full text-sm font-semibold text-brand-dark/70 shadow-sm">
               Professor ESPM & UniSenac
             </span>
