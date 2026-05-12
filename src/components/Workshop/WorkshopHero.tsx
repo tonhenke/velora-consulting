@@ -14,7 +14,7 @@ const WorkshopHero = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl"
+        className="max-w-4xl mx-auto text-center flex flex-col items-center"
       >
         {/* Badge */}
         <motion.div
@@ -29,8 +29,7 @@ const WorkshopHero = () => (
 
         {/* Title */}
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter text-brand-light mb-4 leading-[0.9]">
-          Growth<br />
-          <span className="text-brand-neon">Engine</span>
+          Growth <span className="text-brand-neon">Engine</span>
         </h1>
 
         {/* Headline */}
@@ -44,10 +43,10 @@ const WorkshopHero = () => (
         </p>
 
         {/* CTA + proof */}
-        <div className="flex flex-col sm:flex-row items-start gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <a
             href="#oferta"
-            className="group flex items-center gap-3 bg-brand-neon text-brand-dark px-8 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:brightness-110 hover:scale-105 shadow-[0_0_30px_rgba(198,240,0,0.3)] hover:shadow-[0_0_50px_rgba(198,240,0,0.5)]"
+            className="group flex items-center justify-center gap-3 bg-brand-neon text-brand-dark px-8 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:brightness-110 hover:scale-105 shadow-[0_0_30px_rgba(198,240,0,0.3)] hover:shadow-[0_0_50px_rgba(198,240,0,0.5)]"
           >
             Reservar meu lugar
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
