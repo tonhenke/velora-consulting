@@ -1,6 +1,6 @@
 
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -21,6 +21,10 @@ const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
 const SuccessPage = lazy(() => import('./components/SuccessPage'));
 const Diagnostic = lazy(() => import('./components/Diagnostic/Diagnostic'));
+const WorkshopPage = lazy(() => import('./components/Workshop/WorkshopPage'));
+
+// Standalone pages that render without Header/Footer/WhatsApp
+const STANDALONE_PAGES = ['/workshop'];
 
 const HomePage = () => (
   <>
@@ -69,26 +73,38 @@ const IALedGrowthPage = () => (
   </>
 );
 
-function App() {
+function AppLayout() {
+  const location = useLocation();
+  const isStandalone = STANDALONE_PAGES.includes(location.pathname);
+
   return (
-    <Router>
-      <div className="min-h-screen bg-black text-white">
-        <Header />
-        <main>
-          <Suspense fallback={<div className="h-64 bg-black" />}>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/ia-led-growth" element={<IALedGrowthPage />} />
-              <Route path="/contato-sucesso" element={<SuccessPage />} />
-              <Route path="/diagnostico/*" element={<Diagnostic />} />
-            </Routes>
-          </Suspense>
-        </main>
+    <div className="min-h-screen bg-black text-white">
+      {!isStandalone && <Header />}
+      <main>
+        <Suspense fallback={<div className="h-64 bg-black" />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/ia-led-growth" element={<IALedGrowthPage />} />
+            <Route path="/contato-sucesso" element={<SuccessPage />} />
+            <Route path="/diagnostico/*" element={<Diagnostic />} />
+            <Route path="/workshop" element={<WorkshopPage />} />
+          </Routes>
+        </Suspense>
+      </main>
+      {!isStandalone && (
         <Suspense fallback={null}>
           <Footer />
         </Suspense>
-        <WhatsAppButton />
-      </div>
+      )}
+      {!isStandalone && <WhatsAppButton />}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppLayout />
     </Router>
   );
 }
