@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const GlaasCTA = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "555198031599";
+    const phoneNumber = "5554996854825";
     const message = encodeURIComponent("Olá! Gostaria de conversar sobre o modelo GLAaS para minha agência.");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
