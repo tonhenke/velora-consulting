@@ -13,7 +13,7 @@ const GlaasProblem = () => {
           >
             <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-brand-light mb-12 leading-tight">
               Planejamento é estratégico e <span className="text-brand-neon">sênior</span>, <br className="hidden md:block" />
-              mas a entrega e a execução é <span className="text-brand-light/50">Júnior?</span>
+              mas a entrega e a execução são <span className="text-brand-light/50">júnior?</span>
             </h2>
             
             <div className="space-y-6 text-lg md:text-xl text-brand-light/70 font-light leading-relaxed">
