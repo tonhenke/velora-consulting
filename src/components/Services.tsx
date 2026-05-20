@@ -6,7 +6,8 @@ const servicesData = [
     {
         title: 'Imersão de Growth',
         description: 'Diagnóstico profundo de marketing, vendas e produto. Mapeamento de funil, dados, ICP, gargalos e oportunidades. Entregável com roadmap priorizado de crescimento.',
-        icon: Search
+        icon: Search,
+        link: '/imersao-de-growth'
     },
     {
         title: 'Educação em Growth',
