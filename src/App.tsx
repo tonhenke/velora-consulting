@@ -23,6 +23,7 @@ const SuccessPage = lazy(() => import('./components/SuccessPage'));
 const Diagnostic = lazy(() => import('./components/Diagnostic/Diagnostic'));
 const WorkshopPage = lazy(() => import('./components/Workshop/WorkshopPage'));
 const GlaasPage = lazy(() => import('./components/Glaas/GlaasPage'));
+const GlaasEmpresasPage = lazy(() => import('./components/GlaasEmpresas/GlaasEmpresasPage'));
 
 // Standalone pages that render without Header/Footer/WhatsApp
 const STANDALONE_PAGES = ['/workshop'];
@@ -90,6 +91,7 @@ function AppLayout() {
             <Route path="/diagnostico/*" element={<Diagnostic />} />
             <Route path="/workshop" element={<WorkshopPage />} />
             <Route path="/glaas-agencias" element={<GlaasPage />} />
+            <Route path="/glaas-empresas" element={<GlaasEmpresasPage />} />
           </Routes>
         </Suspense>
       </main>
