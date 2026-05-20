@@ -21,7 +21,8 @@ const servicesData = [
     {
         title: 'GLaaS - Growth Leader as a Service',
         description: 'Liderança de Growth para acompanhamento dos times de marketing interno, atuando de forma integrada com a área conduzindo e guiando o processo de experimentação.',
-        icon: UserCheck
+        icon: UserCheck,
+        link: '/glaas-empresas'
     },
     {
         title: 'Growth & Data Strategy',

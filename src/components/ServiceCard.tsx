@@ -1,23 +1,19 @@
 import { motion } from 'framer-motion';
 import type { LucideIcon } from 'lucide-react';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface ServiceCardProps {
     title: string;
     description: string;
     icon: LucideIcon;
     index: number;
+    link?: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Icon, index }) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group flex flex-col justify-between bg-brand-dark border border-brand-light/10 p-8 md:p-10 rounded-2xl hover:border-brand-neon/50 transition-all duration-300 h-full"
-        >
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Icon, index, link }) => {
+    const CardContent = (
+        <>
             <div>
                 <div className="mb-6 flex justify-between items-start">
                     <div className="p-3 bg-brand-neon/10 rounded-lg text-brand-neon group-hover:bg-brand-neon group-hover:text-brand-dark transition-colors">
@@ -32,10 +28,45 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Ico
                 </p>
             </div>
 
-            <a href="#contact" className="inline-flex items-center text-sm font-semibold text-brand-light group-hover:text-brand-neon transition-colors">
-                Saiba mais
-                <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
+            {link ? (
+                <span className="inline-flex items-center text-sm font-semibold text-brand-light group-hover:text-brand-neon transition-colors">
+                    Saiba mais
+                    <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </span>
+            ) : (
+                <a href="#contact" className="inline-flex items-center text-sm font-semibold text-brand-light group-hover:text-brand-neon transition-colors">
+                    Saiba mais
+                    <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+            )}
+        </>
+    );
+
+    if (link) {
+        return (
+            <Link to={link} className="block h-full">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className="group flex flex-col justify-between bg-brand-dark border border-brand-light/10 p-8 md:p-10 rounded-2xl hover:border-brand-neon/50 transition-all duration-300 h-full cursor-pointer"
+                >
+                    {CardContent}
+                </motion.div>
+            </Link>
+        );
+    }
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            className="group flex flex-col justify-between bg-brand-dark border border-brand-light/10 p-8 md:p-10 rounded-2xl hover:border-brand-neon/50 transition-all duration-300 h-full"
+        >
+            {CardContent}
         </motion.div>
     );
 };
