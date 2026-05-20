@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, X } from 'lucide-react';
+import { CheckCircle2, X } from 'lucide-react';
 
 const comparisonData = [
   {
@@ -40,12 +40,6 @@ const comparisonData = [
 ];
 
 const GlaasEmpresasComparison = () => {
-  const scrollToCTA = () => {
-    const ctaSection = document.getElementById('glaas-empresas-cta');
-    if (ctaSection) {
-      ctaSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="py-24 bg-brand-dark/50 border-t border-brand-light/5 relative overflow-hidden">
@@ -85,14 +79,10 @@ const GlaasEmpresasComparison = () => {
                   <tr key={index} className="hover:bg-brand-light/[0.02] transition-colors">
                     <td className="p-6 text-brand-light font-medium">{row.feature}</td>
                     <td className="p-6 text-brand-light/60">
-                      {row.clt === false ? (
-                        <X className="w-5 h-5 text-red-500/70" />
-                      ) : (
-                        <div className="flex items-center gap-2">
-                          {row.cltIcon && <CheckCircle2 className="w-5 h-5 text-green-500" />}
-                          {row.clt}
-                        </div>
-                      )}
+                      <div className="flex items-center gap-2">
+                        {row.cltIcon && <CheckCircle2 className="w-5 h-5 text-green-500" />}
+                        {row.clt}
+                      </div>
                     </td>
                     <td className="p-6 text-brand-light/60">
                       {row.agencia === false ? (
