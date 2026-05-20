@@ -83,9 +83,6 @@ export const ImersaoHero = () => {
             <p className="font-medium text-brand-light">
               Entenda onde estão os gargalos, oportunidades e prioridades do seu negócio antes de acelerar investimento, mídia ou operação.
             </p>
-            <p>
-              A Imersão da Velora combina diagnóstico estratégico, análise de funil, tecnologia, comportamento de mercado e visão de Growth para transformar incertezas em direcionamento prático.
-            </p>
             <p className="text-brand-neon/90 font-medium">
               Mais clareza. Mais foco. Mais previsibilidade para crescer.
             </p>
