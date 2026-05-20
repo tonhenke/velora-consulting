@@ -19,10 +19,10 @@ const GlaasEmpresasProblem = () => {
             
             <div className="space-y-6 text-lg md:text-xl text-brand-light/70 font-light leading-relaxed">
               <p>
-                Contratar analistas, subir canais, começar a produzir conteúdo — tudo isso a sua empresa consegue fazer. O problema aparece quando ninguém no time tem visão de growth para amarrar tudo isso numa estratégia que realmente mova o negócio.
+                Contratar analistas, subir canais, começar a produzir conteúdo, tudo isso a sua empresa consegue fazer. O problema aparece quando ninguém no time tem visão de growth para amarrar tudo isso numa estratégia que realmente mova o negócio.
               </p>
               <p>
-                Sem essa liderança, o time executa sem direção. Cada canal vira uma ilha. Os números sobem e descem sem que ninguém entenda exatamente o porquê — e sem saber o que fazer diferente.
+                Sem essa liderança, o time executa sem direção. Cada canal vira uma ilha. Os números sobem e descem sem que ninguém entenda exatamente o porquê e sem saber o que fazer diferente.
               </p>
               <p className="text-brand-light font-medium pt-4 border-t border-brand-light/10">
                 Contratar um Head de Growth sênior resolveria. Mas é caro, leva tempo, e errar nessa contratação sai ainda mais caro.

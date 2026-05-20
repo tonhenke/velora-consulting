@@ -24,7 +24,7 @@ const GlaasEmpresasAbout = () => {
           >
             <span className="text-brand-neon font-medium tracking-wider text-sm uppercase mb-4 block">O que é o GLAaS</span>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-brand-light mb-8">
-              A liderança de growth que sua empresa <span className="text-brand-neon">precisa</span> — sem precisar contratar
+              A liderança de growth que sua empresa <span className="text-brand-neon">precisa</span> sem precisar contratar
             </h2>
             
             <div className="space-y-6 text-xl text-brand-light/80 font-light leading-relaxed text-left mb-12">
