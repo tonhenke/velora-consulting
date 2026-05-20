@@ -3,39 +3,39 @@ import { ArrowRight, CheckCircle2, X } from 'lucide-react';
 
 const comparisonData = [
   {
-    feature: "Senioridade garantida",
-    freelancer: "Variável",
-    subcontratada: "Variável",
-    glaas: "Sempre",
-    glaasIcon: true
-  },
-  {
-    feature: "Integração com o time da empresa",
-    freelancer: false,
-    subcontratada: "Parcial",
-    glaas: "Total",
-    glaasIcon: true
-  },
-  {
-    feature: "Comprometimento com o cliente",
-    freelancer: false,
-    subcontratada: "Por entrega",
-    glaas: "Contínuo",
-    glaasIcon: true
+    feature: "Custo e risco de contratação",
+    clt: "Alto",
+    cltIcon: false,
+    agencia: "Nenhum",
+    glaas: "Nenhum",
   },
   {
     feature: "Visão de negócio",
-    freelancer: false,
-    subcontratada: "Raramente",
-    glaas: "Central",
-    glaasIcon: true
+    clt: "Sim",
+    cltIcon: true,
+    agencia: "Raramente",
+    glaas: "Sim",
   },
   {
-    feature: "Escalável",
-    freelancer: false,
-    subcontratada: false,
+    feature: "Integração com o time interno",
+    clt: "Total",
+    cltIcon: true,
+    agencia: false,
+    glaas: "Total",
+  },
+  {
+    feature: "Velocidade para começar",
+    clt: "Lenta",
+    cltIcon: false,
+    agencia: "Rápida",
+    glaas: "Rápida",
+  },
+  {
+    feature: "Conhecimento que fica na empresa",
+    clt: "Sim",
+    cltIcon: true,
+    agencia: false,
     glaas: "Sim",
-    glaasIcon: true
   }
 ];
 
@@ -75,8 +75,8 @@ const GlaasEmpresasComparison = () => {
               <thead>
                 <tr className="border-b border-brand-light/10 bg-brand-light/5">
                   <th className="p-6 text-brand-light font-semibold w-2/5"></th>
-                  <th className="p-6 text-brand-light/70 font-semibold w-1/5">Freelancer</th>
-                  <th className="p-6 text-brand-light/70 font-semibold w-1/5">Subcontratada</th>
+                  <th className="p-6 text-brand-light/70 font-semibold w-1/5">Contratar um sênior CLT</th>
+                  <th className="p-6 text-brand-light/70 font-semibold w-1/5">Agência de marketing</th>
                   <th className="p-6 text-brand-neon font-bold w-1/5 text-lg bg-brand-neon/5">GLAaS</th>
                 </tr>
               </thead>
@@ -85,17 +85,20 @@ const GlaasEmpresasComparison = () => {
                   <tr key={index} className="hover:bg-brand-light/[0.02] transition-colors">
                     <td className="p-6 text-brand-light font-medium">{row.feature}</td>
                     <td className="p-6 text-brand-light/60">
-                      {row.freelancer === false ? (
+                      {row.clt === false ? (
                         <X className="w-5 h-5 text-red-500/70" />
                       ) : (
-                        row.freelancer
+                        <div className="flex items-center gap-2">
+                          {row.cltIcon && <CheckCircle2 className="w-5 h-5 text-green-500" />}
+                          {row.clt}
+                        </div>
                       )}
                     </td>
                     <td className="p-6 text-brand-light/60">
-                      {row.subcontratada === false ? (
+                      {row.agencia === false ? (
                         <X className="w-5 h-5 text-red-500/70" />
                       ) : (
-                        row.subcontratada
+                        row.agencia
                       )}
                     </td>
                     <td className="p-6 font-semibold text-brand-light bg-brand-neon/[0.02] flex items-center gap-2">
