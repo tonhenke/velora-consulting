@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // TODO: Atualizar com a data real do workshop
-const TARGET_DATE = new Date('2026-07-15T09:00:00-03:00');
+const TARGET_DATE = new Date('2026-06-20T08:30:00-03:00');
 
 interface TimeLeft {
   days: number;
