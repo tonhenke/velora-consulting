@@ -69,7 +69,7 @@ const WorkshopOffer = () => (
 
           {/* CTA */}
           <a
-            href="#"
+            href="https://pay.cakto.com.br/u45zbn7_902922"
             className="group flex items-center justify-center gap-3 w-full bg-brand-neon text-brand-dark px-8 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:brightness-110 hover:scale-[1.02] shadow-[0_0_30px_rgba(198,240,0,0.25)] hover:shadow-[0_0_50px_rgba(198,240,0,0.4)]"
           >
             Garantir minha vaga
