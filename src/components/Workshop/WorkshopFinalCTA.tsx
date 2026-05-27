@@ -35,7 +35,7 @@ const WorkshopFinalCTA = () => (
         </a>
 
         <p className="text-xs text-brand-light/30 mt-6">
-          De R$ 997 por 5x R$ 139,40 · Garantia de 7 dias
+          De R$ 997 por 5x R$ 158,61 · Garantia de 7 dias
         </p>
       </motion.div>
     </div>

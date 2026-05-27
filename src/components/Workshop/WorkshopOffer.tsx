@@ -34,8 +34,8 @@ const WorkshopOffer = () => (
             <p className="text-brand-light/40 line-through text-lg mb-1">De R$ 997</p>
             <div className="flex items-baseline justify-center gap-1">
               <span className="text-brand-light/60 text-lg">5x</span>
-              <span className="text-5xl md:text-6xl font-black text-brand-light">R$ 139</span>
-              <span className="text-2xl font-bold text-brand-light/80">,40</span>
+              <span className="text-5xl md:text-6xl font-black text-brand-light">R$ 158</span>
+              <span className="text-2xl font-bold text-brand-light/80">,61</span>
             </div>
             <p className="text-brand-light/40 text-sm mt-2">ou R$ 697 à vista</p>
           </div>
