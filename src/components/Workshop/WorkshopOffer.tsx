@@ -39,7 +39,7 @@ const WorkshopOffer = () => (
 
             <div className="mb-6 pt-4 text-center">
               <h3 className="text-2xl font-black text-brand-light uppercase tracking-wider mb-2">
-                Workshop Presencial
+                Imersão Growth Engine
               </h3>
               <p className="text-brand-light/40 text-sm min-h-[40px] leading-relaxed">
                 Imersão intensiva de 8 horas com Everton Henke. Sai com um plano pronto.
@@ -60,7 +60,7 @@ const WorkshopOffer = () => (
             {/* Info */}
             <div className="space-y-4 mb-8 flex-grow">
               {[
-                { icon: Clock, text: 'Data: a definir — 9h às 18h' },
+                { icon: Clock, text: 'Data: 20/06/2026 — 08h30 às 17h30' },
                 { icon: Users, text: 'Apenas 12 vagas para manter a qualidade' },
                 { icon: CreditCard, text: 'Cartão, Pix ou boleto' },
                 { icon: Shield, text: 'Garantia de 7 dias — risco zero' },
