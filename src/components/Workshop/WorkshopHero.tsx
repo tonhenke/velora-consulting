@@ -53,7 +53,7 @@ const WorkshopHero = () => (
           </a>
           <div className="flex items-center gap-3 text-brand-light/50">
             <TrendingUp size={20} className="text-brand-neon" />
-            <span className="text-sm font-medium">+218 negócios impactados</span>
+            <span className="text-sm font-medium">Centenas de negócios impactados</span>
           </div>
         </div>
       </motion.div>

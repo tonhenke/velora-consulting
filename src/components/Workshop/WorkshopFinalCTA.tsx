@@ -18,7 +18,7 @@ const WorkshopFinalCTA = () => (
         </h2>
 
         <p className="text-lg text-brand-light/60 mb-4 leading-relaxed">
-          8 horas de imersão. 1 plano de crescimento. Método comprovado em +218 negócios.
+          8 horas de imersão. 1 plano de crescimento. Método comprovado em centenas de negócios ao redor do mundo.
         </p>
 
         <div className="flex items-center justify-center gap-2 text-brand-light/40 text-sm mb-10">
