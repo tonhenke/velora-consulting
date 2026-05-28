@@ -24,7 +24,7 @@ const WorkshopHero = () => (
           className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 rounded-full border border-brand-neon/30 bg-brand-neon/10 backdrop-blur-sm"
         >
           <span className="w-2 h-2 rounded-full bg-brand-neon animate-pulse" />
-          <span className="text-sm font-bold text-brand-neon uppercase tracking-widest">Workshop Presencial</span>
+          <span className="text-sm font-bold text-brand-neon uppercase tracking-widest">Imersão Growth Engine</span>
         </motion.div>
 
         {/* Title */}
