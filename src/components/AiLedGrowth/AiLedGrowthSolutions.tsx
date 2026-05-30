@@ -5,7 +5,7 @@ import {
   Target, Search, BarChart2, Paintbrush, 
   Activity, Eye, Layers, UserCheck, 
   UserMinus, Mail, Milestone, TrendingUp,
-  ArrowRight, Cpu, RefreshCw, Sparkles, Database
+  ArrowRight, Cpu, RefreshCw, Sparkles, Database, ChevronDown
 } from 'lucide-react';
 
 // Data types
@@ -208,6 +208,93 @@ const pillars: Record<string, PillarData> = {
   }
 };
 
+const SolutionCard = ({ product }: { product: Product }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const IconComponent = product.icon;
+
+  return (
+    <div 
+      onClick={() => setIsOpen(!isOpen)}
+      className={`bg-brand-light/5 border rounded-2xl p-6 md:p-8 transition-all duration-300 group cursor-pointer flex flex-col justify-between select-none
+        ${isOpen ? 'border-brand-neon/40 shadow-[0_0_30px_rgba(198,240,0,0.05)] bg-brand-light/[0.08]' : 'border-brand-light/10 hover:border-brand-neon/20 hover:shadow-[0_0_20px_rgba(198,240,0,0.02)]'}`}
+    >
+      <div>
+        {/* Product Header */}
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className={`p-3 rounded-xl transition-all duration-300
+              ${isOpen ? 'bg-brand-neon text-black' : 'bg-brand-neon/10 text-brand-neon group-hover:bg-brand-neon/20'}`}
+            >
+              <IconComponent size={24} />
+            </div>
+            <div>
+              <h4 className="text-lg md:text-xl font-bold text-brand-light group-hover:text-brand-neon transition-colors">
+                {product.title}
+              </h4>
+              <span className="text-xs text-brand-neon/80 font-medium tracking-wide uppercase block mt-0.5">
+                {product.subtitle}
+              </span>
+            </div>
+          </div>
+
+          {/* Chevron indicator */}
+          <div className={`p-2 rounded-lg border transition-all duration-300
+            ${isOpen ? 'bg-brand-neon/10 border-brand-neon/30 text-brand-neon' : 'bg-brand-light/5 border-brand-light/10 text-brand-light/60 group-hover:text-brand-neon group-hover:border-brand-neon/30'}`}
+          >
+            <ChevronDown 
+              className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+            />
+          </div>
+        </div>
+
+        {/* Expandable content */}
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              {/* Divider */}
+              <div className="h-px bg-brand-light/10 my-6" />
+
+              {/* Product What it is */}
+              <div className="mb-6">
+                <span className="text-xs uppercase tracking-widest text-brand-light/40 font-bold block mb-2">O que é:</span>
+                <p className="text-brand-light/75 text-sm md:text-base leading-relaxed">{product.desc}</p>
+              </div>
+
+              {/* Product How */}
+              <div className="mb-6">
+                <span className="text-xs uppercase tracking-widest text-brand-light/40 font-bold block mb-3">Como aplicamos:</span>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {product.how.map((item, itemIdx) => (
+                    <li key={itemIdx} className="flex items-start text-xs md:text-sm text-brand-light/85">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-neon mt-1.5 mr-2 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Stat indicator if exists */}
+              {product.stat && (
+                <div className="mt-6 border-t border-brand-light/5 bg-brand-neon/5 border-l-2 border-l-brand-neon p-4 rounded-r-lg">
+                  <p className="text-xs md:text-sm font-semibold text-brand-light/95 italic leading-relaxed">
+                    "{product.stat}"
+                  </p>
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
 const AiLedGrowthSolutions = () => {
   const [activeTab, setActiveTab] = useState<string>("CAC");
   const data = pillars[activeTab];
@@ -285,56 +372,9 @@ const AiLedGrowthSolutions = () => {
 
             {/* Products Grid */}
             <div className="grid md:grid-cols-2 gap-8">
-              {data.products.map((product, idx) => {
-                const IconComponent = product.icon;
-                return (
-                  <div 
-                    key={idx}
-                    className="bg-brand-light/5 border border-brand-light/10 hover:border-brand-neon/30 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group hover:shadow-[0_0_30px_rgba(198,240,0,0.03)]"
-                  >
-                    <div>
-                      {/* Product Header */}
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="p-3 bg-brand-neon/10 rounded-xl text-brand-neon group-hover:bg-brand-neon group-hover:text-black transition-all duration-300">
-                          <IconComponent size={24} />
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-bold text-brand-light">{product.title}</h4>
-                          <span className="text-xs text-brand-neon/80 font-medium tracking-wide uppercase">{product.subtitle}</span>
-                        </div>
-                      </div>
-
-                      {/* Product What it is */}
-                      <div className="mb-6">
-                        <span className="text-xs uppercase tracking-widest text-brand-light/40 font-bold block mb-2">O que é:</span>
-                        <p className="text-brand-light/70 text-sm md:text-base leading-relaxed">{product.desc}</p>
-                      </div>
-
-                      {/* Product How */}
-                      <div className="mb-8">
-                        <span className="text-xs uppercase tracking-widest text-brand-light/40 font-bold block mb-3">Como aplicamos:</span>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {product.how.map((item, itemIdx) => (
-                            <li key={itemIdx} className="flex items-start text-xs md:text-sm text-brand-light/85">
-                              <span className="w-1.5 h-1.5 rounded-full bg-brand-neon mt-1.5 mr-2 flex-shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Stat indicator if exists */}
-                    {product.stat && (
-                      <div className="mt-4 pt-4 border-t border-brand-light/5 bg-brand-neon/5 border-l-2 border-l-brand-neon p-4 rounded-r-lg">
-                        <p className="text-xs md:text-sm font-semibold text-brand-light/95 italic leading-relaxed">
-                          "{product.stat}"
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+              {data.products.map((product, idx) => (
+                <SolutionCard key={idx} product={product} />
+              ))}
             </div>
 
             {/* Details Panel (Stack, Integrations, Model, Results) */}
