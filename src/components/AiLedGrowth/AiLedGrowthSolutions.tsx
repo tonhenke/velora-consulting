@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
@@ -299,6 +299,29 @@ const AiLedGrowthSolutions = () => {
   const [activeTab, setActiveTab] = useState<string>("CAC");
   const data = pillars[activeTab];
 
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const handleScroll = () => {
+    if (tabsRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current;
+      setCanScrollLeft(scrollLeft > 5);
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 5);
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener('resize', handleScroll);
+    return () => window.removeEventListener('resize', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(handleScroll, 100);
+    return () => clearTimeout(timer);
+  }, [activeTab]);
+
   return (
     <section className="py-24 bg-brand-dark/95 relative overflow-hidden">
       {/* Background decoration */}
@@ -336,21 +359,48 @@ const AiLedGrowthSolutions = () => {
         </div>
 
         {/* Tab Selector */}
-        <div className="flex overflow-x-auto hide-scrollbar border-b border-brand-light/10 mb-12">
-          <div className="flex space-x-2 md:space-x-4 min-w-max pb-px">
-            {Object.keys(pillars).map((key) => (
-              <button
-                key={key}
-                onClick={() => setActiveTab(key)}
-                className={`px-6 py-4 text-sm md:text-base font-bold uppercase tracking-wider transition-all duration-300 rounded-t-xl
-                  ${activeTab === key 
-                    ? 'bg-brand-light text-brand-black shadow-[0_-4px_15px_rgba(255,255,255,0.05)]' 
-                    : 'text-brand-light/50 hover:text-brand-light hover:bg-brand-light/5'
-                  }`}
-              >
-                {key === "CAC" ? "Redução do CAC" : key === "CRO" ? "Otimização de Conversão (CRO)" : "Retenção & Rentabilidade"}
-              </button>
-            ))}
+        <div className="relative mb-12">
+          {/* Mobile swipe helper */}
+          <div className="flex justify-between items-center mb-3 lg:hidden px-1">
+            <span className="text-[10px] uppercase tracking-widest text-brand-neon font-black">
+              Selecione o Pilar
+            </span>
+            <span className="text-[10px] uppercase tracking-widest text-brand-light/40 font-bold flex items-center gap-1 animate-pulse">
+              Arraste para o lado ➔
+            </span>
+          </div>
+
+          {/* Left Gradient Fade Mask */}
+          {canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-brand-dark to-transparent pointer-events-none z-10 lg:hidden" />
+          )}
+
+          {/* Right Gradient Fade Mask */}
+          {canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-brand-dark to-transparent pointer-events-none z-10 lg:hidden" />
+          )}
+
+          {/* Scrollable Container */}
+          <div 
+            ref={tabsRef}
+            onScroll={handleScroll}
+            className="flex overflow-x-auto hide-scrollbar border-b border-brand-light/10 pb-px scroll-smooth"
+          >
+            <div className="flex space-x-2 md:space-x-4 min-w-max">
+              {Object.keys(pillars).map((key) => (
+                <button
+                  key={key}
+                  onClick={() => setActiveTab(key)}
+                  className={`px-6 py-4 text-sm md:text-base font-bold uppercase tracking-wider transition-all duration-300 rounded-t-xl
+                    ${activeTab === key 
+                      ? 'bg-brand-light text-brand-black shadow-[0_-4px_15px_rgba(255,255,255,0.05)]' 
+                      : 'text-brand-light/50 hover:text-brand-light hover:bg-brand-light/5'
+                    }`}
+                >
+                  {key === "CAC" ? "Redução do CAC" : key === "CRO" ? "Otimização de Conversão (CRO)" : "Retenção & Rentabilidade"}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
