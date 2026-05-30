@@ -11,7 +11,7 @@ const PhilosophySection = lazy(() => import('./components/PhilosophySection'));
 const ProblemSection = lazy(() => import('./components/ProblemSection'));
 const LeadCaptureSection = lazy(() => import('./components/LeadCaptureSection'));
 const TeamStructure = lazy(() => import('./components/TeamStructure'));
-const AiPlaybooksSection = lazy(() => import('./components/AiPlaybooksSection'));
+
 const Methodology = lazy(() => import('./components/Methodology'));
 const Services = lazy(() => import('./components/Services'));
 const DiagnosticCTA = lazy(() => import('./components/DiagnosticCTA'));
@@ -25,6 +25,7 @@ const WorkshopPage = lazy(() => import('./components/Workshop/WorkshopPage'));
 const GlaasPage = lazy(() => import('./components/Glaas/GlaasPage'));
 const GlaasEmpresasPage = lazy(() => import('./components/GlaasEmpresas/GlaasEmpresasPage'));
 const ImersaoGrowthPage = lazy(() => import('./components/ImersaoGrowth/ImersaoGrowthPage'));
+const AiLedGrowthPage = lazy(() => import('./components/AiLedGrowth/AiLedGrowthPage'));
 
 // Standalone pages that render without Header/Footer/WhatsApp
 const STANDALONE_PAGES = ['/workshop'];
@@ -48,34 +49,6 @@ const HomePage = () => (
   </>
 );
 
-const IALedGrowthPage = () => (
-  <>
-    <Hero 
-      title={
-        <>
-          Consultoria<br />
-          IA-Led Growth<br />
-          Destrave. <span className="text-brand-neon">Cresça.</span>
-        </>
-      }
-    />
-    <Suspense fallback={<div className="min-h-screen bg-black" />}>
-      <LogoMarquee />
-      <PhilosophySection />
-      <ProblemSection />
-      <LeadCaptureSection />
-      <TeamStructure />
-      <AiPlaybooksSection />
-      <Methodology />
-      <Services />
-      <DiagnosticCTA />
-      <CaseStudies />
-      <WhoWeAre />
-      <Contact />
-    </Suspense>
-  </>
-);
-
 function AppLayout() {
   const location = useLocation();
   const isStandalone = STANDALONE_PAGES.includes(location.pathname);
@@ -87,7 +60,8 @@ function AppLayout() {
         <Suspense fallback={<div className="h-64 bg-black" />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/ia-led-growth" element={<IALedGrowthPage />} />
+            <Route path="/ia-led-growth" element={<AiLedGrowthPage />} />
+            <Route path="/ai-led-growth" element={<AiLedGrowthPage />} />
             <Route path="/contato-sucesso" element={<SuccessPage />} />
             <Route path="/diagnostico/*" element={<Diagnostic />} />
             <Route path="/workshop" element={<WorkshopPage />} />
