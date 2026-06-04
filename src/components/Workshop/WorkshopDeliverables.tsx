@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
-import { FileText, Monitor, Rocket, Gift } from 'lucide-react';
+import { FileText, Monitor, Rocket } from 'lucide-react';
 
 const deliverables = [
   { icon: FileText, title: 'Apresentação e materiais de apoio', desc: 'Slides completos e material de referência para consultar sempre que precisar.' },
   { icon: Monitor, title: 'Trabalho em ambiente digital', desc: 'Atividades práticas desenvolvidas em ferramentas digitais durante o workshop.' },
   { icon: Rocket, title: 'Plano de execução para seu negócio', desc: 'Saia com um plano de growth pronto para implementar na semana seguinte.' },
-  { icon: Gift, title: 'Certificado de conclusão', desc: 'Certificado de participação no Workshop Growth Engine by Velora.' },
 ];
 
 const WorkshopDeliverables = () => (
@@ -27,7 +26,7 @@ const WorkshopDeliverables = () => (
         </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {deliverables.map((d, i) => (
           <motion.div
             key={d.title}

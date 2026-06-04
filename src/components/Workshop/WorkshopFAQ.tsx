@@ -8,10 +8,6 @@ const faqs = [
     a: 'Não. O workshop foi desenhado para ser acessível a qualquer profissional que queira crescer seu negócio. Partimos dos fundamentos e avançamos até a aplicação prática.',
   },
   {
-    q: 'A gravação fica disponível?',
-    a: 'Sim. Todos os participantes recebem acesso à gravação e aos materiais de apoio após o evento, para revisitar quando quiserem.',
-  },
-  {
     q: 'É para empresa pequena ou grande?',
     a: 'Para ambas. O método de Growth funciona para startups, PMEs e grandes empresas — o que muda é a escala de aplicação, não o framework.',
   },
@@ -21,15 +17,11 @@ const faqs = [
   },
   {
     q: 'Onde será o workshop?',
-    a: 'O workshop é presencial. O endereço exato será informado aos inscritos por e-mail com antecedência.',
-  },
-  {
-    q: 'Posso cancelar minha inscrição?',
-    a: 'Sim. Oferecemos garantia total de 7 dias. Se não ficar satisfeito, devolvemos 100% do valor sem burocracia.',
+    a: '14 de Julho, 231 - Sala 02 - Centro, Ijuí - RS, 98700-000',
   },
   {
     q: 'O que preciso levar?',
-    a: 'Apenas um notebook ou laptop com acesso à internet. Todo o material de apoio será disponibilizado digitalmente durante o workshop.',
+    a: 'Importante levar notebook(laptop) ou tablet, além de caneta e papel para anotações e possível uso em dinâmicas.',
   },
 ];
 
