@@ -51,7 +51,8 @@ const HomePage = () => (
 
 function AppLayout() {
   const location = useLocation();
-  const isStandalone = STANDALONE_PAGES.includes(location.pathname);
+  const isDotsDomain = window.location.hostname.includes('dotsdc.com.br');
+  const isStandalone = STANDALONE_PAGES.includes(location.pathname) || (isDotsDomain && location.pathname === '/');
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -59,7 +60,7 @@ function AppLayout() {
       <main>
         <Suspense fallback={<div className="h-64 bg-black" />}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={isDotsDomain ? <WorkshopPage /> : <HomePage />} />
             <Route path="/ia-led-growth" element={<AiLedGrowthPage />} />
             <Route path="/ai-led-growth" element={<AiLedGrowthPage />} />
             <Route path="/contato-sucesso" element={<SuccessPage />} />
