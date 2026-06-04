@@ -4,14 +4,16 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
+  <script>(function (w, d, s, l) {
+      var isDots = w.location.hostname.includes('dotsdc.com.br');
+      var i = isDots ? 'GTM-T4Z5KQX' : 'GTM-MP836X72';
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
       }); var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MP836X72');</script>
+    })(window, document, 'script', 'dataLayer');</script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,8 +27,22 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MP836X72" height="0" width="0"
-      style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+  <script>
+    (function(w, d) {
+      var isDots = w.location.hostname.includes('dotsdc.com.br');
+      var i = isDots ? 'GTM-T4Z5KQX' : 'GTM-MP836X72';
+      var iframe = d.createElement('iframe');
+      iframe.src = 'https://www.googletagmanager.com/ns.html?id=' + i;
+      iframe.height = '0';
+      iframe.width = '0';
+      iframe.style.display = 'none';
+      iframe.style.visibility = 'hidden';
+      iframe.title = 'Google Tag Manager';
+      var noscript = d.createElement('noscript');
+      noscript.appendChild(iframe);
+      d.body.insertBefore(noscript, d.body.firstChild);
+    })(window, document);
+  </script>
   <!-- End Google Tag Manager (noscript) -->
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
