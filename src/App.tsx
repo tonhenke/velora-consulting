@@ -8,7 +8,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 // Lazy load below-the-fold components to improve performance
 const LogoMarquee = lazy(() => import('./components/LogoMarquee'));
 const AiHomeSection = lazy(() => import('./components/AiHomeSection'));
-const PhilosophySection = lazy(() => import('./components/PhilosophySection'));
+
 const ProblemSection = lazy(() => import('./components/ProblemSection'));
 const LeadCaptureSection = lazy(() => import('./components/LeadCaptureSection'));
 const TeamStructure = lazy(() => import('./components/TeamStructure'));
@@ -37,7 +37,7 @@ const HomePage = () => (
     <Suspense fallback={<div className="min-h-screen bg-black" />}>
       <LogoMarquee />
       <AiHomeSection />
-      <PhilosophySection />
+
       <ProblemSection />
       <LeadCaptureSection />
       <TeamStructure />
