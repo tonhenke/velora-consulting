@@ -39,8 +39,8 @@ const HomePage = () => (
       <LogoMarquee />
       <PhilosophySection />
       <ProblemSection />
-      <LeadCaptureSection />
       <TeamStructure />
+      <LeadCaptureSection />
       <Methodology />
       <AiHomeSection />
       <Services />
