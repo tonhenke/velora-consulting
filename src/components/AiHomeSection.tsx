@@ -122,19 +122,13 @@ const AiHomeSection = () => {
             </p>
           </div>
 
-          <div className="relative z-10 flex flex-col sm:flex-row gap-3 w-full md:w-auto flex-shrink-0">
+          <div className="relative z-10 flex-shrink-0">
             <Link
               to="/ia-led-growth"
-              className="w-full sm:w-auto px-8 py-4 border border-brand-neon/50 text-brand-neon font-bold text-sm rounded-lg hover:bg-brand-neon/10 transition-all duration-300 text-center whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-neon text-black font-bold text-sm rounded-lg hover:bg-brand-neon/90 transition-all duration-300 group shadow-[0_0_30px_rgba(198,240,0,0.15)] hover:shadow-[0_0_40px_rgba(198,240,0,0.3)] hover:-translate-y-0.5 whitespace-nowrap"
             >
               Explorar soluções de IA
-            </Link>
-            <Link
-              to="/diagnostico"
-              className="w-full sm:w-auto px-8 py-4 bg-brand-neon text-black font-bold text-sm rounded-lg hover:bg-brand-neon/90 transition-all duration-300 flex items-center justify-center group shadow-[0_0_30px_rgba(198,240,0,0.15)] hover:shadow-[0_0_40px_rgba(198,240,0,0.3)] hover:-translate-y-0.5 whitespace-nowrap"
-            >
-              Quero crescer com IA
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </motion.div>
