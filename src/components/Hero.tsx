@@ -27,7 +27,7 @@ const Hero = ({ title }: HeroProps) => {
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-brand-light mb-8 leading-[0.9]">
                         {title || (
                             <>
-                                Crescimento com <span className="text-brand-neon">ROI positivo</span> em até 90 dias — ou menos
+                                Crescimento com <span className="text-brand-neon">ROI positivo</span> em até 90 dias, ou menos
                             </>
                         )}
                     </h1>
