@@ -82,7 +82,7 @@ const WorkshopCurriculum = () => {
                     <span className="text-3xl font-black text-brand-neon/30">{mod.num}</span>
                     <div>
                       <h3 className="text-lg md:text-xl font-bold text-brand-light">
-                        Módulo {mod.num} — {mod.title}
+                        Módulo {mod.num} - {mod.title}
                       </h3>
                       <p className="text-sm text-brand-neon/80 mt-1 font-medium">{mod.result}</p>
                     </div>

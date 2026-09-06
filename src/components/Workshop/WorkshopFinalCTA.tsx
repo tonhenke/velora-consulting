@@ -23,14 +23,14 @@ const WorkshopFinalCTA = () => (
 
         <div className="flex items-center justify-center gap-2 text-brand-light/40 text-sm mb-10">
           <Users size={16} className="text-brand-neon" />
-          <span>Apenas 12 vagas — turmas reduzidas para máxima qualidade</span>
+          <span>Apenas 12 vagas - turmas reduzidas para máxima qualidade</span>
         </div>
 
         <a
           href="#oferta"
           className="group inline-flex items-center gap-3 bg-brand-neon text-brand-dark px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:brightness-110 hover:scale-105 shadow-[0_0_40px_rgba(198,240,0,0.3)] hover:shadow-[0_0_60px_rgba(198,240,0,0.5)]"
         >
-          Últimas vagas — Garantir minha participação
+          Últimas vagas - Garantir minha participação
           <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
         </a>
 

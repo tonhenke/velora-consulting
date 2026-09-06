@@ -11,7 +11,7 @@ const columns = [
             'Foco excessivo em tarefas e campanhas isoladas.',
             'Times juniores operando playbooks padronizados.',
             'Alta rotatividade, pouca continuidade estratégica.',
-            'Olhar fragmentado: mídia, outbound ou social — raramente o sistema completo.',
+            'Olhar fragmentado: mídia, outbound ou social - raramente o sistema completo.',
             'Ênfase em geração de leads, não em geração de receita.',
         ],
         style: {

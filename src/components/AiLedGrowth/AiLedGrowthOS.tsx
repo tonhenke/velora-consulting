@@ -20,7 +20,7 @@ const modules = [
   {
     num: "03",
     title: "Copiloto de apoio à decisão operacional",
-    desc: "Consolida dados de múltiplas fontes (ERP, planilhas, CRM) e responde perguntas operacionais em linguagem natural — estoque, performance, gargalos.",
+    desc: "Consolida dados de múltiplas fontes (ERP, planilhas, CRM) e responde perguntas operacionais em linguagem natural - estoque, performance, gargalos.",
     stack: ["Google Sheets", "Airtable", "ERP via API", "Webhooks", "RAG / LLM"],
     icon: Compass
   },

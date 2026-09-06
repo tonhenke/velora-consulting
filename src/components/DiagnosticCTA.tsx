@@ -11,7 +11,7 @@ const DiagnosticCTA = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-                    {/* Left — Text Content */}
+                    {/* Left - Text Content */}
                     <div>
                         {/* Badge */}
                         <motion.div
@@ -46,7 +46,7 @@ const DiagnosticCTA = () => {
                             className="text-xl text-brand-light/60 max-w-lg mb-10"
                         >
                             Responda algumas perguntas sobre sua operação e receba uma análise
-                            personalizada do seu maior gargalo de growth — seja Aquisição,
+                            personalizada do seu maior gargalo de growth - seja Aquisição,
                             Ativação, Retenção, Receita ou Indicação. Sem enrolação, sem custo.
                         </motion.p>
 
@@ -91,7 +91,7 @@ const DiagnosticCTA = () => {
                         </motion.div>
                     </div>
 
-                    {/* Right — Dashboard Image */}
+                    {/* Right - Dashboard Image */}
                     <motion.div
                         initial={{ opacity: 0, x: 40 }}
                         whileInView={{ opacity: 1, x: 0 }}

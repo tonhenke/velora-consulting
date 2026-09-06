@@ -60,10 +60,10 @@ const WorkshopOffer = () => (
             {/* Info */}
             <div className="space-y-4 mb-8 flex-grow">
               {[
-                { icon: Clock, text: 'Data: 20/06/2026 — 08h30 às 17h30' },
+                { icon: Clock, text: 'Data: 20/06/2026 - 08h30 às 17h30' },
                 { icon: Users, text: 'Apenas 12 vagas para manter a qualidade' },
                 { icon: CreditCard, text: 'Cartão, Pix ou boleto' },
-                { icon: Shield, text: 'Garantia de 7 dias — risco zero' },
+                { icon: Shield, text: 'Garantia de 7 dias - risco zero' },
               ].map((item) => (
                 <div key={item.text} className="flex items-start gap-3 text-brand-light/70 text-sm">
                   <item.icon size={18} className="text-brand-neon flex-shrink-0 mt-0.5" />

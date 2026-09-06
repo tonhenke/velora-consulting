@@ -65,7 +65,7 @@ const AiHomeSection = () => {
             className="text-brand-light/60 text-lg md:text-xl leading-relaxed font-light max-w-2xl mx-auto"
           >
             Não implementamos IA por modismo. Aplicamos onde existe problema real,
-            dado disponível e resultado mensurável — em aquisição, conversão e retenção.
+            dado disponível e resultado mensurável - em aquisição, conversão e retenção.
           </motion.p>
         </div>
 
@@ -117,7 +117,7 @@ const AiHomeSection = () => {
               Veja todas as soluções de IA da Velora
             </h3>
             <p className="text-brand-light/55 text-sm md:text-base max-w-lg">
-              Da redução de custo de aquisição à previsão de churn — conheça como
+              Da redução de custo de aquisição à previsão de churn - conheça como
               estruturamos IA com estratégia, dados e resultado mensurável.
             </p>
           </div>

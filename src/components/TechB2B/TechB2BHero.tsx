@@ -27,7 +27,7 @@ const TechB2BHero = () => {
                         <span className="text-brand-neon">provavelmente não é pipeline.</span>
                     </h1>
                     <p className="max-w-xl text-xl text-brand-light/60 mb-10 leading-relaxed font-light">
-                        O novo desafio das empresas B2B de tecnologia é transformar demanda em receita eficiente — e receita em crescimento recorrente.
+                        O novo desafio das empresas B2B de tecnologia é transformar demanda em receita eficiente - e receita em crescimento recorrente.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-start gap-6 w-full">

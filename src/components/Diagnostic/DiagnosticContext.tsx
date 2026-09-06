@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 
 export type CompanyStage = 
   | 'Validando produto e mercado'
-  | 'Crescendo — já tenho clientes e quero escalar'
-  | 'Escalando — operação rodando, buscando eficiência'
+  | 'Crescendo - já tenho clientes e quero escalar'
+  | 'Escalando - operação rodando, buscando eficiência'
   | 'Empresa estabelecida buscando reaceleração';
 
 export type DiagnosticState = {

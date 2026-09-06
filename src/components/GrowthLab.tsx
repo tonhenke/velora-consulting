@@ -105,7 +105,7 @@ const GrowthLab = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-xl text-brand-dark/60 max-w-2xl"
                     >
-                        Gerencie experimentos de growth com um fluxo visual completo — do problema à análise de resultados. Tudo em um só lugar.
+                        Gerencie experimentos de growth com um fluxo visual completo - do problema à análise de resultados. Tudo em um só lugar.
                     </motion.p>
                 </div>
 

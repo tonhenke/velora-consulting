@@ -52,7 +52,7 @@ const WorkshopInstructor = () => (
           <div className="relative overflow-hidden rounded-2xl border border-brand-dark/10 shadow-md">
             <img
               src="/everton-henke-presenting.png"
-              alt="Everton Henke — Instrutor do Workshop Growth Engine"
+              alt="Everton Henke - Instrutor do Workshop Growth Engine"
               className="w-full aspect-[4/5] object-cover object-top"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6">
@@ -80,7 +80,7 @@ const WorkshopInstructor = () => (
             sistemas de crescimento escaláveis e orientados por dados.
           </p>
           <p className="text-base text-brand-dark/60 leading-relaxed italic mb-8">
-            Fora do escritório, é um apaixonado por boxe — esporte que equilibra sua rotina e 
+            Fora do escritório, é um apaixonado por boxe - esporte que equilibra sua rotina e 
             alimenta a disciplina que leva para o trabalho.
           </p>
 

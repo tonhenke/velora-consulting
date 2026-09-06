@@ -102,7 +102,7 @@ export const ImersaoHero = () => {
   );
 };
 
-// 2. Seção — O que é a Imersão em Growth?
+// 2. Seção - O que é a Imersão em Growth?
 export const ImersaoAbout = () => {
   const problems = [
     "Gargalos de crescimento",
@@ -159,7 +159,7 @@ export const ImersaoAbout = () => {
   );
 };
 
-// 3. Seção — Para quem é
+// 3. Seção - Para quem é
 export const ImersaoTarget = () => {
   const items = [
     "Estão investindo em marketing, mas sentem baixa previsibilidade de resultado",
@@ -211,7 +211,7 @@ export const ImersaoTarget = () => {
   );
 };
 
-// 4. Seção — O que analisamos
+// 4. Seção - O que analisamos
 export const ImersaoWhatWeAnalyze = () => {
   const analysisData = [
     {
@@ -307,7 +307,7 @@ export const ImersaoWhatWeAnalyze = () => {
   );
 };
 
-// 5. Seção — Nossa metodologia
+// 5. Seção - Nossa metodologia
 export const ImersaoMethodology = () => {
   const steps = [
     {
@@ -381,7 +381,7 @@ export const ImersaoMethodology = () => {
   );
 };
 
-// 6. Seção — Growth Discovery Canvas
+// 6. Seção - Growth Discovery Canvas
 export const GrowthDiscoveryCanvas = () => {
   const canvasElements = [
     { title: "Cenário atual do negócio", icon: Briefcase },
@@ -442,7 +442,7 @@ export const GrowthDiscoveryCanvas = () => {
   );
 };
 
-// 7. Seção — Priorização de oportunidades
+// 7. Seção - Priorização de oportunidades
 export const ImersaoPrioritization = () => {
   const priorities = [
     { title: "Quick wins", desc: "Ações rápidas e de alto impacto que geram resultados imediatos com menor esforço." },
@@ -498,7 +498,7 @@ export const ImersaoPrioritization = () => {
   );
 };
 
-// 8. Seção — O que você recebe
+// 8. Seção - O que você recebe
 export const ImersaoDeliverables = () => {
   const deliverables = [
     "Diagnóstico completo do ecossistema digital",
@@ -546,7 +546,7 @@ export const ImersaoDeliverables = () => {
   );
 };
 
-// 9. Seção — Diferenciais da Velora
+// 9. Seção - Diferenciais da Velora
 export const ImersaoDifferentials = () => {
   const pillars = [
     "Estratégia", "Dados", "Tecnologia", "Produto", 
@@ -559,7 +559,7 @@ export const ImersaoDifferentials = () => {
         <div className="max-w-4xl mx-auto text-center">
           <SectionHeading 
             tag="Diferenciais" 
-            title="Diferenciais da Velora — Growth além da mídia"
+            title="Diferenciais da Velora - Growth além da mídia"
             subtitle="Na Velora, acreditamos que crescimento não acontece apenas com tráfego pago ou campanhas isoladas. Nossa abordagem conecta múltiplos pilares essenciais."
             center={true}
           />
@@ -595,7 +595,7 @@ export const ImersaoDifferentials = () => {
   );
 };
 
-// 10. Seção — Resultados esperados
+// 10. Seção - Resultados esperados
 export const ImersaoResults = () => {
   const results = [
     "Priorizar melhor investimentos",
@@ -613,7 +613,7 @@ export const ImersaoResults = () => {
         <div className="max-w-4xl mx-auto">
           <SectionHeading 
             tag="Resultados" 
-            title="Resultados esperados — O que muda após a Imersão"
+            title="Resultados esperados - O que muda após a Imersão"
             subtitle="Ao final do projeto de diagnóstico estratégico, sua empresa ganha a tração que precisa para escalar de forma consciente e focada:"
           />
 

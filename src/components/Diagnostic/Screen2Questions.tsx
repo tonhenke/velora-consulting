@@ -90,7 +90,7 @@ const Screen2Questions = () => {
     >
       <div className="text-center max-w-3xl mx-auto mb-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-          Responda com base na realidade atual do seu negócio — <span className="text-brand-neon">não no que você gostaria que fosse.</span>
+          Responda com base na realidade atual do seu negócio - <span className="text-brand-neon">não no que você gostaria que fosse.</span>
         </h2>
       </div>
 

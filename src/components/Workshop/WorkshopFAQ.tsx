@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'É para empresa pequena ou grande?',
-    a: 'Para ambas. O método de Growth funciona para startups, PMEs e grandes empresas — o que muda é a escala de aplicação, não o framework.',
+    a: 'Para ambas. O método de Growth funciona para startups, PMEs e grandes empresas - o que muda é a escala de aplicação, não o framework.',
   },
   {
     q: 'Como funciona o suporte depois?',
