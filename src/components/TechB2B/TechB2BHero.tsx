@@ -15,10 +15,6 @@ const TechB2BHero = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="max-w-4xl"
                 >
-                    <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-neon/30 bg-brand-neon/10 text-brand-neon text-sm font-bold tracking-widest uppercase">
-                        <span className="w-2 h-2 rounded-full bg-brand-neon animate-pulse" />
-                        Tech B2B Enterprise
-                    </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-brand-light mb-8 leading-[0.9]">
                         Da demanda <br />
