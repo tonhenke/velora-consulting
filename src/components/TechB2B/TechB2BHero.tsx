@@ -27,15 +27,15 @@ const TechB2BHero = () => {
                         <span className="text-brand-neon">à receita.</span>
                     </h1>
                     <p className="max-w-xl text-xl text-brand-light/60 mb-10 leading-relaxed font-light">
-                        Crescimento Tech B2B não é um problema de mídia. É um problema de economia. Em contas complexas, quanto maior o ticket, menor a capacidade de um único canal explicar o crescimento.
+                        Para Software e SaaS B2B, ERP/vertical software, plataformas, fintech/data e tech services com produto validado, base ativa e venda consultiva para contas médias e grandes.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-start gap-6 w-full">
                         <a
-                            href="#scorecard"
+                            href="#contact"
                             className="group flex items-center justify-center w-full sm:w-auto gap-2 sm:gap-3 bg-brand-light text-brand-dark px-4 sm:px-8 py-4 sm:py-5 rounded-lg font-bold text-[15px] sm:text-lg whitespace-nowrap hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
                         >
-                            Preencher Scorecard Tech B2B
+                            Conversar com a Velora
                             <ArrowRight className="group-hover:translate-x-1 transition-transform min-w-[18px]" size={18} />
                         </a>
                     </div>
