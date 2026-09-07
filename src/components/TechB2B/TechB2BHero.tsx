@@ -6,7 +6,6 @@ const TechB2BHero = () => {
         <section className="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden bg-brand-dark selection:bg-brand-neon text-brand-dark selection:text-brand-light">
             {/* Abstract Background Elements */}
             <div className="absolute top-0 right-0 w-3/4 h-full opacity-20 pointer-events-none">
-                <div className="absolute bottom-[20%] right-[20%] w-72 h-72 bg-brand-light text-brand-dark rounded-full blur-[120px]" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">

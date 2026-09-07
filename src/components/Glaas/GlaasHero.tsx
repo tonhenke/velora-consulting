@@ -13,7 +13,6 @@ const GlaasHero = () => {
     <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-dark/50 rounded-full blur-[100px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay" />
       </div>

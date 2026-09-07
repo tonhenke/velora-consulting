@@ -3,7 +3,6 @@ import { Bot, Zap, TrendingUp } from 'lucide-react';
 
 const WorkshopAI = () => (
   <section className="py-24 md:py-32 bg-gradient-to-b from-[#0a0a0a] to-brand-dark relative overflow-hidden">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[150px] pointer-events-none" />
 
     <div className="container mx-auto px-6 relative z-10">
       <div className="max-w-4xl mx-auto text-center">

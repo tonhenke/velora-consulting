@@ -168,7 +168,6 @@ const AiLedGrowthStudio = () => {
 
         {/* Stat Highlights Card */}
         <div className="max-w-4xl mx-auto bg-brand-neon text-black p-8 rounded-3xl relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-black/5 rounded-full blur-xl pointer-events-none" />
           <div className="grid md:grid-cols-2 gap-8 items-center text-center md:text-left">
             <div>
               <span className="text-[10px] tracking-widest uppercase font-black bg-black text-brand-neon px-3 py-1 rounded-full inline-block mb-3">

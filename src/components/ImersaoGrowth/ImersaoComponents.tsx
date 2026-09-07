@@ -45,7 +45,6 @@ export const ImersaoHero = () => {
     <section className="relative min-h-[95vh] flex items-center justify-center pt-32 pb-24 overflow-hidden">
       {/* Background Lights */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-brand-dark/40 rounded-full blur-[110px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none" />
       </div>
@@ -644,7 +643,6 @@ export const ImersaoFinalCTA = () => {
   return (
     <section className="py-24 md:py-32 bg-brand-neon relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-15 mix-blend-overlay pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-black/10 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
