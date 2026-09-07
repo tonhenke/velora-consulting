@@ -5,12 +5,13 @@ import TechB2BExhibitsSection from './TechB2BExhibitsSection';
 import TechB2BFrameworkSection from './TechB2BFrameworkSection';
 import TechB2BScorecardQuiz from './TechB2BScorecardQuiz';
 import TechB2BProcessSection from './TechB2BProcessSection';
+import LeadCaptureSection from '../LeadCaptureSection';
 import TechB2BDeliverablesSection from './TechB2BDeliverablesSection';
+import CaseStudies from '../CaseStudies';
 import Methodology from '../Methodology';
 import WhoWeAre from '../WhoWeAre';
 import TechB2BFAQSection from './TechB2BFAQSection';
 import TechB2BFinalCTA from './TechB2BFinalCTA';
-import Contact from '../Contact';
 
 const TechB2BPage = () => (
     <>
@@ -21,12 +22,13 @@ const TechB2BPage = () => (
             <TechB2BFrameworkSection />
             <TechB2BScorecardQuiz />
             <TechB2BProcessSection />
+            <LeadCaptureSection />
             <TechB2BDeliverablesSection />
+            <CaseStudies />
             <Methodology />
             <WhoWeAre />
             <TechB2BFAQSection />
             <TechB2BFinalCTA />
-            <Contact />
         </Suspense>
     </>
 );
