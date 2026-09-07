@@ -51,20 +51,24 @@ const Footer = () => {
                     <nav className="flex flex-col" aria-label="Serviços">
                         <h3 className="font-bold text-[15px] mb-4 text-brand-light">O que fazemos</h3>
                         <ul className="flex flex-col gap-3 text-[15px]">
-                            <li><Link to="/tech-b2b" className="text-gray-400 hover:text-brand-neon transition-colors">Tech B2B Enterprise</Link></li>
-                            <li><Link to="/glaas-empresas" className="text-gray-400 hover:text-brand-neon transition-colors">GLaaS para Empresas</Link></li>
-                            <li><Link to="/glaas-agencias" className="text-gray-400 hover:text-brand-neon transition-colors">GLaaS para Agências</Link></li>
-                            <li><Link to="/ia-led-growth" className="text-gray-400 hover:text-brand-neon transition-colors">AI-Led Growth</Link></li>
-                            <li><Link to="/imersao-de-growth" className="text-gray-400 hover:text-brand-neon transition-colors">Imersão de Growth</Link></li>
+                            <li><Link to="/diagnostico" className="text-gray-400 hover:text-brand-neon transition-colors">Diagnóstico de aquisição</Link></li>
+                            <li><span className="text-gray-400">Estruturação de Marketing</span></li>
+                            <li><span className="text-gray-400">Mídia paga B2B e B2C</span></li>
+                            <li><span className="text-gray-400">CRM e operação de receita</span></li>
+                            <li><span className="text-gray-400">Otimização da conversão</span></li>
+                            <li><span className="text-gray-400">Inteligência de dados</span></li>
                         </ul>
                     </nav>
 
                     <nav className="flex flex-col" aria-label="Método e conteúdo">
                         <h3 className="font-bold text-[15px] mb-4 text-brand-light">Como fazemos</h3>
                         <ul className="flex flex-col gap-3 text-[15px]">
-                            <li><a href="/#methodology" className="text-gray-400 hover:text-brand-neon transition-colors">Método RHOI</a></li>
-                            <li><a href="/#cases" className="text-gray-400 hover:text-brand-neon transition-colors">Cases</a></li>
-                            <li><Link to="/workshop" className="text-gray-400 hover:text-brand-neon transition-colors">Workshops</Link></li>
+                            <li><span className="text-gray-400">Account Based Marketing</span></li>
+                            <li><span className="text-gray-400">RevOps</span></li>
+                            <li><span className="text-gray-400">Projetos de Growth</span></li>
+                            <li><Link to="/glaas-empresas" className="text-gray-400 hover:text-brand-neon transition-colors">GLAaS - Growth Leader As a Service</Link></li>
+                            <li><span className="text-gray-400">Growth & Data Strategy</span></li>
+                            <li><a href="/#methodology" className="text-gray-400 hover:text-brand-neon transition-colors">RHOI Metod</a></li>
                         </ul>
                     </nav>
 
