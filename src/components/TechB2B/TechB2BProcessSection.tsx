@@ -31,8 +31,8 @@ const TechB2BProcessSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6">
-              Como funciona o <span className="text-brand-neon">processo.</span>
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tighter mb-6">
+              Como ajudamos empresas B2B <span className="text-brand-neon">nesse contexto.</span>
             </h2>
             <p className="text-xl text-brand-light/60 max-w-2xl mx-auto">
               Da investigação do problema à estruturação sistêmica do crescimento.
@@ -50,13 +50,6 @@ const TechB2BProcessSection = () => {
               transition={{ delay: idx * 0.15 }}
               className="relative group"
             >
-              {/* Connector line for desktop */}
-              {idx < phases.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-1/2 w-full h-[1px] bg-brand-light/10 z-0">
-                  <div className="w-0 h-full bg-brand-neon transition-all duration-1000 group-hover:w-full" />
-                </div>
-              )}
-
               <div className="bg-brand-dark/50 border border-brand-light/10 p-8 rounded-2xl relative z-10 h-full hover:border-brand-neon/50 transition-colors duration-300">
                 <span className="text-6xl font-black text-brand-light/5 mb-6 block">
                   {phase.num}
