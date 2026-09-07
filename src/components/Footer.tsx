@@ -86,14 +86,12 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-baseline gap-4 pt-7 border-t border-gray-800 text-[13px]">
                     <div className="font-mono text-[#5c5c56] leading-relaxed">
                         <strong className="font-normal text-gray-400">Velora Growth &amp; Beyond Ltda.</strong><br />
-                        © {new Date().getFullYear()} Todos os direitos reservados
+                        CNPJ 59.588.823/0001-22 &nbsp;|&nbsp; © {new Date().getFullYear()} Todos os direitos reservados
                     </div>
-                    {/* Placeholder para links legais futuros
                     <div className="flex flex-wrap gap-6">
                         <Link to="/politica-de-privacidade" className="text-gray-400 hover:text-brand-neon transition-colors">Política de privacidade</Link>
                         <Link to="/termos-de-uso" className="text-gray-400 hover:text-brand-neon transition-colors">Termos de uso</Link>
                     </div>
-                    */}
                 </div>
 
             </div>
