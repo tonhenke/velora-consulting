@@ -20,9 +20,9 @@ const Footer = () => {
                         <p className="text-xl md:text-[22px] font-medium leading-tight max-w-[26ch]">
                             Quer saber onde seu funil está perdendo receita?
                         </p>
-                        <Link to="/diagnostico" className="inline-block bg-brand-neon text-black font-bold px-6 py-3 rounded-sm hover:bg-[#d9ff3d] transition-colors duration-200">
+                        <a href="#contact" className="inline-block bg-brand-neon text-black font-bold px-6 py-3 rounded-sm hover:bg-[#d9ff3d] transition-colors duration-200">
                             Agendar diagnóstico
-                        </Link>
+                        </a>
                     </div>
                 </div>
 
