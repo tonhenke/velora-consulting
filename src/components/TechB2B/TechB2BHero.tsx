@@ -19,23 +19,23 @@ const TechB2BHero = () => {
                 >
                     <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-neon/30 bg-brand-neon/10 text-brand-neon text-sm font-bold tracking-widest uppercase">
                         <span className="w-2 h-2 rounded-full bg-brand-neon animate-pulse" />
-                        Tech B2B · Diagnóstico de Sistema
+                        Tech B2B Enterprise
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-brand-light mb-8 leading-[0.9]">
-                        Seu problema <br />
-                        <span className="text-brand-neon">provavelmente não é pipeline.</span>
+                        Da demanda <br />
+                        <span className="text-brand-neon">à receita.</span>
                     </h1>
                     <p className="max-w-xl text-xl text-brand-light/60 mb-10 leading-relaxed font-light">
-                        O novo desafio das empresas B2B de tecnologia é transformar demanda em receita eficiente - e receita em crescimento recorrente.
+                        Crescimento Tech B2B não é um problema de mídia. É um problema de economia. Em contas complexas, quanto maior o ticket, menor a capacidade de um único canal explicar o crescimento.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-start gap-6 w-full">
                         <a
-                            href="#contact"
+                            href="#scorecard"
                             className="group flex items-center justify-center w-full sm:w-auto gap-2 sm:gap-3 bg-brand-light text-brand-dark px-4 sm:px-8 py-4 sm:py-5 rounded-lg font-bold text-[15px] sm:text-lg whitespace-nowrap hover:bg-gray-200 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
                         >
-                            Solicitar diagnóstico B2B
+                            Preencher Scorecard Tech B2B
                             <ArrowRight className="group-hover:translate-x-1 transition-transform min-w-[18px]" size={18} />
                         </a>
                     </div>

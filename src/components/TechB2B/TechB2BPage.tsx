@@ -8,7 +8,7 @@ import LeadCaptureSection from '../LeadCaptureSection';
 import TechB2BMethodology from './TechB2BMethodology';
 import TechB2BAiSection from './TechB2BAiSection';
 import Services from '../Services';
-import DiagnosticCTA from '../DiagnosticCTA';
+import TechB2BDiagnosticCTA from './TechB2BDiagnosticCTA';
 import CaseStudies from '../CaseStudies';
 import WhoWeAre from '../WhoWeAre';
 import Contact from '../Contact';
@@ -25,7 +25,7 @@ const TechB2BPage = () => (
             <TechB2BMethodology />
             <TechB2BAiSection />
             <Services />
-            <DiagnosticCTA />
+            <TechB2BDiagnosticCTA />
             <CaseStudies />
             <WhoWeAre />
             <Contact />

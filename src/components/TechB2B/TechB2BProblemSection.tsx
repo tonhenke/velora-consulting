@@ -4,15 +4,15 @@ import { X, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const columns = [
     {
-        label: 'Visão Fragmentada',
-        subtitle: 'Foco em métricas isoladas',
+        label: 'A Ilusão da Aquisição',
+        subtitle: 'CPL é métrica de mídia',
         icon: 'x',
         items: [
-            'Marketing e Vendas divergem sobre o que é um lead qualificado.',
-            'O pipeline cobre ineficiências que o volume esconde.',
-            'Cada área entrega o seu indicador, mas a empresa perde eficiência.',
-            'O vazamento acontece na passagem de bastão entre os times.',
-            'Alta dependência de aquisição, baixa retenção e expansão.',
+            'O orçamento (70%) se concentra onde a medição econômica é mais fraca.',
+            'O funil cobre ineficiências que o volume esconde.',
+            'Acreditam em "canal caro ou barato" sem avaliar win rate e ciclo.',
+            'Quanto mais complexa a venda, menos o custo por lead explica a qualidade.',
+            'Não existe canal caro ou barato sem contexto econômico.',
         ],
         style: {
             wrapper: 'bg-brand-dark border border-brand-light/5',
@@ -23,15 +23,15 @@ const columns = [
         },
     },
     {
-        label: 'Operação de Volume',
-        subtitle: 'Crescimento custoso',
+        label: 'O Problema nas Setas',
+        subtitle: 'A jornada fragmentada',
         icon: 'x',
         items: [
-            'Acreditar que crescer significa apenas contratar mais vendedores.',
-            'CAC de novos logos aumenta, enquanto expansão é negligenciada.',
-            'Inserir novas ferramentas sem consertar processos quebrados.',
-            'Desperdício de capital gerando oportunidades que não convertem.',
-            'Dificuldade de relacionar investimento à receita realizada.',
+            'O cliente compra como um grupo (5-16 pessoas), a empresa vende em silos.',
+            'Marketing otimiza lead, Vendas otimiza contrato, ninguém otimiza crescimento.',
+            'Cada área enxerga uma versão diferente da mesma conta.',
+            'A perda de valor mora nas passagens de bastão entre os times.',
+            'Operação de volume: colocar mais SDRs sem melhorar as passagens.',
         ],
         style: {
             wrapper: 'bg-brand-dark border border-brand-light/5',
@@ -42,15 +42,15 @@ const columns = [
         },
     },
     {
-        label: 'Growth System',
-        subtitle: 'O modelo Velora',
+        label: 'O Ponto Cego',
+        subtitle: 'Expansão subestimada',
         icon: 'check',
         items: [
-            'Crescimento coordenado: Demanda, Conversão, Valor e Expansão.',
-            'Visão única que conecta aquisição a retenção e margem.',
-            'Combinação economicamente mais eficiente dos motores de crescimento.',
-            'Diagnóstico das setas (fricções entre áreas) e não apenas das caixas.',
-            'Estratégia desenhada para eficiência, implementada por seniores.',
+            'Closed-won é o meio da jornada, não o final.',
+            'Expandir custa metade de adquirir uma nova logo (CAC Ratio 0,80 vs 1,63).',
+            'No entanto, a receita mais barata recebe apenas 10% do orçamento.',
+            'A decisão de ABM e priorização de contas é uma decisão de capital.',
+            'Growth System: conectar aquisição a ticket, retenção e expansão.',
         ],
         style: {
             wrapper: 'bg-gray-900/50 border border-blue-900/30 relative overflow-hidden',
@@ -88,7 +88,7 @@ const TechB2BProblemSection = () => {
                             <span className="text-brand-neon">Passa a ser um problema de sistema.</span>
                         </h2>
                         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-                            O objetivo não é escolher entre aquisição e expansão. É construir a combinação economicamente mais eficiente.
+                            O crescimento continua existindo, mas ficou seletivo. Quando o mercado desacelera, as ineficiências começam a aparecer.
                         </p>
                     </motion.div>
                 </div>
@@ -129,7 +129,7 @@ const TechB2BProblemSection = () => {
 
                             <div className="mb-8">
                                 <h3 className={`text-2xl font-bold mb-2 flex items-center gap-3 ${col.style.title}`}>
-                                    {col.label === 'Growth System' && (
+                                    {col.label === 'O Ponto Cego' && (
                                         <span className="w-1.5 h-6 bg-brand-neon rounded-full" />
                                     )}
                                     {col.label}

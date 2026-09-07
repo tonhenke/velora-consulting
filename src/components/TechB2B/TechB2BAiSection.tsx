@@ -5,23 +5,23 @@ import { ArrowRight, Box, BarChart2, GitMerge, Settings } from 'lucide-react';
 const capabilities = [
   {
     icon: Box,
-    label: 'Ferramentas Isoladas',
-    desc: 'Sem uma estratégia unificada, novas ferramentas apenas aceleram processos fragmentados.',
+    label: 'Mais Ferramentas, Mais Confusão',
+    desc: 'Adotar tecnologia ficou fácil. Ferramenta organizada sem modelo de dados só automatiza confusão.',
   },
   {
     icon: GitMerge,
-    label: 'Operação Desconectada',
-    desc: 'Pipeline não garante venda, venda não garante margem, entrega não garante expansão.',
+    label: 'Complexidade de Dois Lados',
+    desc: 'O cliente compra como um grupo (5-16 pessoas). A empresa precisa vender como um sistema integrado.',
   },
   {
     icon: BarChart2,
-    label: 'Métricas Divergentes',
-    desc: 'Marketing e Vendas precisam olhar para o mesmo painel de verdade para evitar atritos.',
+    label: 'Visão de RevOps',
+    desc: 'Marketing enxerga intenção, CRM registra oportunidade, Produto registra uso, CS registra relação.',
   },
   {
     icon: Settings,
-    label: 'Execução Sistêmica',
-    desc: 'IA deve ser aplicada para otimizar o sistema como um todo, não apenas silos funcionais.',
+    label: 'O Dado Vale a Decisão',
+    desc: 'A memória comercial precisa preservar conta, origem e receita para que todos leiam a mesma realidade.',
   },
 ];
 
@@ -41,7 +41,7 @@ const TechB2BAiSection = () => {
             viewport={{ once: true }}
             className="inline-block py-1.5 px-4 rounded-full bg-brand-neon/10 border border-brand-neon/20 text-brand-neon text-sm font-bold tracking-widest uppercase mb-6"
           >
-            Tecnologia & Operação
+            Tecnologia, Dados & Operação
           </motion.span>
 
           <motion.h2
@@ -51,9 +51,8 @@ const TechB2BAiSection = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-6xl font-extrabold tracking-tighter text-brand-light leading-[1.05] mb-6"
           >
-            Mais tecnologia{' '}
-            <span className="text-brand-neon">não elimina</span>{' '}
-            o problema.
+            O dado só vale quando{' '}
+            <span className="text-brand-neon">muda uma decisão.</span>
           </motion.h2>
 
           <motion.p
@@ -63,7 +62,7 @@ const TechB2BAiSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-brand-light/60 text-lg md:text-xl leading-relaxed font-light max-w-2xl mx-auto"
           >
-            A IA está avançando mais rápido do que a capacidade organizacional. Inserir uma nova ferramenta dentro de uma operação fragmentada pode apenas fazer uma operação fragmentada funcionar mais rápido.
+            A IA está avançando, mas cerca de 95% das empresas admitem que ainda sofrem com dados fragmentados. Inserir uma nova ferramenta numa operação desestruturada não resolve o problema do crescimento.
           </motion.p>
         </div>
 
@@ -112,10 +111,10 @@ const TechB2BAiSection = () => {
               Descubra como estruturar sua operação
             </p>
             <h3 className="text-2xl md:text-3xl font-bold text-brand-light tracking-tight mb-2">
-              Pipeline pode existir sem crescimento rentável
+              Todo dado relevante termina em uma decisão de alocação
             </h3>
             <p className="text-brand-light/55 text-sm md:text-base max-w-lg">
-              Em empresas intensivas em serviços, o sistema não termina no ARR. Precisamos de governança sobre a capacidade, alocação, utilização e margem.
+              De nada adianta um gráfico bonito se ele não disser onde colocar o próximo real. Alinhamos ABM, RevOps, BI e Growth na mesma direção.
             </p>
           </div>
 

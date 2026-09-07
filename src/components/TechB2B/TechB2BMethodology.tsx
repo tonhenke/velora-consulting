@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import { Database, Users, ListTodo, Rocket, LineChart, ShieldCheck } from 'lucide-react';
 
 const steps = [
-    { num: "01", title: "MAPEAR VAZAMENTOS", desc: "Encontrar onde a eficiência se perde nas passagens de bastão.", icon: Database },
-    { num: "02", title: "CONECTAR DADOS", desc: "Criar uma visão única de aquisição, retenção e margem.", icon: Users },
-    { num: "03", title: "PRIORIZAR ALAVANCAS", desc: "Escolher a combinação economicamente mais eficiente.", icon: ListTodo },
-    { num: "04", title: "EXPERIMENTAR", desc: "Executar hipóteses de alto impacto com a squad sênior.", icon: Rocket },
-    { num: "05", title: "GOVERNAR DECISÕES", desc: "Estabelecer rituais para sustentar a execução.", icon: ShieldCheck },
-    { num: "06", title: "CRESCIMENTO", desc: "Escalar receita rentável sem depender apenas de aquisição.", icon: LineChart }
+    { num: "01", title: "LINHA DE BASE", desc: "CAC ratio por origem, win rate, ticket e ciclo em uma única tabela.", icon: Database },
+    { num: "02", title: "MODELO DE CONTA", desc: "Fit, potencial, timing e acesso aplicados à base; níveis de intensidade.", icon: Users },
+    { num: "03", title: "PASSAGENS", desc: "Handoff, SLA e dado mínimo entre mídia, SDR, Vendas e CS.", icon: ListTodo },
+    { num: "04", title: "MOTOR DE EXPANSÃO", desc: "White space por conta, gatilhos de uso e play de upsell com owner.", icon: Rocket },
+    { num: "05", title: "ROTINA DE DECISÃO", desc: "Ritual quinzenal de realocação com evidência, não com opinião.", icon: ShieldCheck },
+    { num: "06", title: "SCORECARD B2B", desc: "Aplicação das 10 perguntas antes de decidir o próximo investimento.", icon: LineChart }
 ];
 
 const CircularWheel = () => {
@@ -153,14 +153,14 @@ const TechB2BMethodology = () => {
                         className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-2 rounded-full border border-brand-dark/20 bg-brand-light text-sm text-[#1E1E1E] font-bold shadow-sm"
                     >
                         <span className="w-2 h-2 rounded-full bg-brand-neon animate-pulse" />
-                        Onde Olhar Primeiro
+                        Sequência de Trabalho
                     </motion.div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight max-w-4xl mx-auto leading-tight text-brand-dark">
-                        O que faríamos nos{' '}
-                        <span className="text-[#5c5c5c] block mt-2">próximos 90 dias</span>
+                        Noventa dias, {' '}
+                        <span className="text-[#5c5c5c] block mt-2">cinco entregáveis</span>
                     </h2>
                     <p className="text-brand-dark text-lg md:text-xl font-medium max-w-2xl mx-auto">
-                        Antes de buscar uma nova alavanca, precisamos encontrar os vazamentos do sistema atual e capturar o crescimento que já existe.
+                        Em Tech B2B Enterprise a sequência importa: instrumentar antes de priorizar, priorizar antes de escalar. A conversa de investimento passa a ser quanto valor econômico permanece no final.
                     </p>
                 </div>
 

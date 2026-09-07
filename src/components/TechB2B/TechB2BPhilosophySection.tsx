@@ -15,17 +15,17 @@ const TechB2BPhilosophySection = () => {
                     className="max-w-5xl mx-auto text-center"
                 >
                     <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight tracking-tight text-brand-light mb-6">
-                        A empresa cresce. A complexidade cresce mais rápido. Por que empresas B2B começam a perder crescimento quando aquisição, vendas, onboarding e expansão passam a operar como máquinas diferentes?
+                        Na venda Tech B2B, a decisão já aconteceu quando o fornecedor entra na conversa. Cerca de <span className="text-brand-neon">95% do shortlist</span> é definido no Dia 1.
                     </p>
                     <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-tight tracking-tight text-brand-light mb-10">
-                        Não adianta melhorar aquisição isoladamente quando o marketing otimiza leads, vendas otimiza contratos, CS otimiza onboarding e <span className="text-brand-neon">ninguém otimiza o crescimento sistêmico.</span>
+                        O comprador pesquisa, consulta canais e forma preferência antes da primeira reunião. Medir a aquisição só a partir do formulário é avaliá-la no trecho em que <span className="text-brand-neon">você já perdeu ou já ganhou.</span>
                     </p>
                     <div className="mb-12">
                         <a
-                            href="#contact"
+                            href="#scorecard"
                             className="group inline-flex items-center gap-2 text-lg md:text-xl font-bold text-brand-neon hover:text-white transition-colors duration-300 border-b-2 border-brand-neon/30 hover:border-white pb-1"
                         >
-                            Descubra onde seu crescimento está vazando
+                            Veja as 10 perguntas antes do próximo real investido
                             <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
                         </a>
                     </div>
