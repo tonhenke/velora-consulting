@@ -63,10 +63,10 @@ const Footer = () => {
                     <nav className="flex flex-col" aria-label="Método e conteúdo">
                         <h3 className="font-bold text-[15px] mb-4 text-brand-light">Como fazemos</h3>
                         <ul className="flex flex-col gap-3 text-[15px]">
-                            <li><span className="text-gray-400">Account Based Marketing</span></li>
+                            <li><span className="text-gray-400">Account-based Marketing</span></li>
                             <li><span className="text-gray-400">RevOps</span></li>
                             <li><span className="text-gray-400">Projetos de Growth</span></li>
-                            <li><Link to="/glaas-empresas" className="text-gray-400 hover:text-brand-neon transition-colors">GLAaS - Growth Leader As a Service</Link></li>
+                            <li><Link to="/glaas-empresas" className="text-gray-400 hover:text-brand-neon transition-colors">Growth Leader As a Service</Link></li>
                             <li><span className="text-gray-400">Growth & Data Strategy</span></li>
                             <li><a href="/#methodology" className="text-gray-400 hover:text-brand-neon transition-colors">RHOI Metod</a></li>
                         </ul>
