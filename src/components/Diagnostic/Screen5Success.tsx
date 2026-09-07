@@ -44,7 +44,6 @@ const Screen5Success = () => {
       animate={{ opacity: 1, scale: 1 }}
       className="max-w-3xl mx-auto relative"
     >
-      <div className="absolute inset-0 bg-brand-neon/5 blur-[80px] rounded-full pointer-events-none" />
       
       <div className="relative z-10">
         {/* Success Header */}

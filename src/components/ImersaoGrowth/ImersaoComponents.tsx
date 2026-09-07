@@ -45,7 +45,6 @@ export const ImersaoHero = () => {
     <section className="relative min-h-[95vh] flex items-center justify-center pt-32 pb-24 overflow-hidden">
       {/* Background Lights */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-brand-neon/10 rounded-full blur-[130px]" />
         <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-brand-dark/40 rounded-full blur-[110px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none" />

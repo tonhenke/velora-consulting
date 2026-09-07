@@ -11,7 +11,6 @@ const Hero = ({ title }: HeroProps) => {
         <section className="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden bg-brand-dark selection:bg-brand-neon text-brand-dark selection:text-brand-light">
             {/* Abstract Background Elements */}
             <div className="absolute top-0 right-0 w-3/4 h-full opacity-20 pointer-events-none">
-                <div className="absolute top-[10%] right-[10%] w-96 h-96 bg-brand-neon text-brand-dark rounded-full blur-[150px]" />
                 <div className="absolute bottom-[20%] right-[20%] w-72 h-72 bg-brand-light text-brand-dark rounded-full blur-[120px]" />
             </div>
 

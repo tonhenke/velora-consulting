@@ -40,7 +40,6 @@ const LeadCaptureSection = () => {
                         transition={{ duration: 0.8 }}
                         className="relative"
                     >
-                        <div className="absolute inset-0 bg-brand-neon/5 blur-[100px] rounded-full" />
                         <div className="relative bg-white rounded-[2.5rem] p-4 shadow-2xl border border-white/10 overflow-hidden">
                             <iframe
                                 width="540"

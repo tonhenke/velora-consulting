@@ -5,8 +5,6 @@ const WorkshopHero = () => (
   <section className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden bg-brand-dark">
     {/* Background glows */}
     <div className="absolute top-0 right-0 w-3/4 h-full opacity-20 pointer-events-none">
-      <div className="absolute top-[10%] right-[10%] w-96 h-96 bg-brand-neon rounded-full blur-[150px]" />
-      <div className="absolute bottom-[20%] left-[10%] w-72 h-72 bg-brand-neon/50 rounded-full blur-[120px]" />
     </div>
 
     <div className="container mx-auto px-6 relative z-10">

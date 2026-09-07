@@ -22,7 +22,6 @@ const brands = [
 
 const WorkshopInstructor = () => (
   <section className="py-24 md:py-32 bg-brand-light text-brand-dark relative overflow-hidden">
-    <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-brand-neon/10 rounded-full blur-[150px] pointer-events-none" />
 
     <div className="container mx-auto px-6 relative z-10">
       <motion.div
@@ -48,7 +47,6 @@ const WorkshopInstructor = () => (
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="absolute inset-0 bg-brand-neon/20 rounded-3xl blur-3xl scale-90 -z-10" />
           <div className="relative overflow-hidden rounded-2xl border border-brand-dark/10 shadow-md">
             <img
               src="/everton-henke-presenting.png"

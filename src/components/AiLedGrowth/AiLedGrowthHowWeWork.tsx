@@ -26,7 +26,6 @@ const AiLedGrowthHowWeWork = () => {
       
       {/* SECTION 08: Como a Velora Trabalha */}
       <section className="py-24 bg-brand-black relative overflow-hidden border-t border-brand-light/5">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-neon/5 rounded-full blur-[110px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="mb-16 text-center max-w-2xl mx-auto">

@@ -191,7 +191,6 @@ const TechB2BScorecardQuiz = () => {
                 className="text-center"
               >
                 <div className="inline-block p-8 bg-brand-dark rounded-3xl shadow-2xl mb-8 relative overflow-hidden">
-                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-neon opacity-20 blur-3xl pointer-events-none" />
                    
                    <p className="text-brand-light/60 font-bold uppercase tracking-widest text-sm mb-4">Seu Score</p>
                    <div className="text-7xl font-black text-brand-neon mb-2">{totalScore}<span className="text-3xl text-brand-light/20">/30</span></div>

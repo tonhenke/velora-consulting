@@ -123,10 +123,6 @@ const ProblemSection = () => {
                             transition={{ delay: i * 0.1 }}
                             className={`rounded-3xl p-10 flex-col ${col.style.wrapper} ${i === activeIndex ? 'flex' : 'hidden'} lg:flex`}
                         >
-                            {col.glow && (
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-neon/10 rounded-full blur-[80px] pointer-events-none" />
-                            )}
-
                             <div className="mb-8">
                                 <h3 className={`text-2xl font-bold mb-2 flex items-center gap-3 ${col.style.title}`}>
                                     {col.label === 'Velora' && (

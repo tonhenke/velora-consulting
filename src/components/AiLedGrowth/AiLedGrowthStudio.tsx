@@ -40,7 +40,6 @@ const AiLedGrowthStudio = () => {
   return (
     <section className="py-24 bg-brand-dark/95 relative overflow-hidden border-t border-brand-light/5">
       {/* Background decoration */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-brand-neon/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         

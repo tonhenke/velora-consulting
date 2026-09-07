@@ -42,7 +42,6 @@ const WorkshopCurriculum = () => {
 
   return (
     <section className="py-24 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-brand-neon/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div

@@ -44,8 +44,6 @@ const SuccessPage = () => {
         <div className="min-h-screen bg-black text-white flex items-start justify-center px-6 py-24">
             {/* Background glows */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-neon/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-neon/3 rounded-full blur-[120px]" />
             </div>
 
             <motion.div

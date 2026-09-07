@@ -7,8 +7,6 @@ const AiLedGrowthHero = () => {
     <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-black">
       {/* Blurry ambient light background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-brand-neon/10 rounded-full blur-[100px] md:blur-[130px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-brand-neon/5 rounded-full blur-[90px] md:blur-[120px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
       </div>
 

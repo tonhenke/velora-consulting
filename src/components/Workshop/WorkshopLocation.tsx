@@ -3,7 +3,6 @@ import { MapPin, Building2, Coffee } from 'lucide-react';
 
 const WorkshopLocation = () => (
   <section className="py-24 md:py-32 bg-[#0a0a0a] relative overflow-hidden">
-    <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-brand-neon/5 rounded-full blur-[150px] pointer-events-none" />
 
     <div className="container mx-auto px-6 relative z-10">
       <motion.div
@@ -66,7 +65,6 @@ const WorkshopLocation = () => (
           viewport={{ once: true }}
           className="relative order-1 lg:order-2"
         >
-          <div className="absolute inset-0 bg-brand-neon/10 rounded-3xl blur-3xl scale-90 -z-10" />
           <div className="relative overflow-hidden rounded-2xl border border-brand-light/10 group">
             <img
               src="/workshop-location.jpg"

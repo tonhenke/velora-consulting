@@ -37,7 +37,6 @@ const AiLedGrowthOS = () => {
   return (
     <section className="py-24 bg-brand-black relative overflow-hidden border-t border-brand-light/5">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-brand-neon/5 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
@@ -62,7 +61,6 @@ const AiLedGrowthOS = () => {
 
             {/* Stat Callout Widget */}
             <div className="bg-brand-light/5 border border-brand-light/10 p-6 md:p-8 rounded-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-brand-neon/10 rounded-full blur-2xl pointer-events-none" />
               <span className="text-5xl md:text-6xl font-black text-brand-neon tracking-tight block mb-2">
                 40–70%
               </span>

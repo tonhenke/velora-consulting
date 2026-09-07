@@ -67,7 +67,6 @@ const Screen3Result = () => {
       animate={{ opacity: 1, scale: 1 }}
       className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-[2.5rem] p-6 md:p-14 overflow-hidden relative"
     >
-      <div className="absolute top-0 right-0 w-80 h-80 bg-brand-neon/10 blur-[100px] rounded-full" />
       
       <div className="relative z-10">
         <div className="text-center mb-10">

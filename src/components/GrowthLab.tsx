@@ -69,7 +69,6 @@ const GrowthLab = () => {
     return (
         <section id="growthlab" className="py-32 bg-brand-light relative overflow-hidden">
             {/* Background glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-neon/10 rounded-full blur-[150px] pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Header */}

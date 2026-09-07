@@ -325,7 +325,6 @@ const AiLedGrowthSolutions = () => {
   return (
     <section className="py-24 bg-brand-dark/95 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-brand-neon/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6">
         {/* Header */}

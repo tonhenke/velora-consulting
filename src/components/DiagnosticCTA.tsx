@@ -6,7 +6,6 @@ const DiagnosticCTA = () => {
     return (
         <section id="diagnostico-cta" className="py-32 bg-black relative overflow-hidden">
             {/* Background glow */}
-            <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-brand-neon/10 rounded-full blur-[150px] pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -100,7 +99,6 @@ const DiagnosticCTA = () => {
                         className="relative"
                     >
                         {/* Glow behind image */}
-                        <div className="absolute inset-0 bg-brand-neon/10 rounded-3xl blur-3xl scale-90 -z-10" />
 
                         <img
                             src={diagnosticDashboard}

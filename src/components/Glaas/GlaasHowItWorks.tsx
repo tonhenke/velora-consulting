@@ -22,7 +22,6 @@ const steps = [
 const GlaasHowItWorks = () => {
   return (
     <section className="py-24 bg-brand-dark/30 border-t border-brand-light/5 relative overflow-hidden">
-      <div className="absolute right-0 bottom-0 w-[600px] h-[600px] bg-brand-neon/5 rounded-full blur-[150px] pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
@@ -48,7 +47,6 @@ const GlaasHowItWorks = () => {
               className="flex flex-col md:flex-row gap-6 md:gap-10 items-start"
             >
               <div className="flex-shrink-0 w-20 h-20 bg-[#0a0a0a] border border-brand-light/10 rounded-2xl flex items-center justify-center relative">
-                <div className="absolute inset-0 bg-brand-neon/5 rounded-2xl blur-md" />
                 <div className="relative z-10">{step.icon}</div>
               </div>
               

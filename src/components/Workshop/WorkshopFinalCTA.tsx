@@ -3,7 +3,6 @@ import { ArrowRight, Users } from 'lucide-react';
 
 const WorkshopFinalCTA = () => (
   <section className="py-24 md:py-32 bg-black relative overflow-hidden">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-brand-neon/10 rounded-full blur-[200px] pointer-events-none" />
 
     <div className="container mx-auto px-6 relative z-10">
       <motion.div

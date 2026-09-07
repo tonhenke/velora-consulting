@@ -64,7 +64,6 @@ const AiLedGrowthFAQ = () => {
 
   return (
     <section className="py-24 bg-brand-dark/30 relative overflow-hidden border-t border-brand-light/5">
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-brand-neon/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">

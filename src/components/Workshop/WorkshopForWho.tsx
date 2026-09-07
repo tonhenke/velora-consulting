@@ -16,7 +16,6 @@ const notForWhom = [
 
 const WorkshopForWho = () => (
   <section className="py-24 md:py-32 bg-brand-dark relative overflow-hidden">
-    <div className="absolute top-0 right-0 w-96 h-96 bg-brand-neon/5 rounded-full blur-[150px] pointer-events-none" />
 
     <div className="container mx-auto px-6 relative z-10">
       <motion.div

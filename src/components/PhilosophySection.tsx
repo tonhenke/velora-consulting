@@ -4,7 +4,6 @@ const PhilosophySection = () => {
     return (
         <section className="py-32 bg-brand-dark relative overflow-hidden flex items-center justify-center">
             {/* Ambient Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-neon text-brand-dark/20 rounded-full blur-[120px] pointer-events-none opacity-50" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div

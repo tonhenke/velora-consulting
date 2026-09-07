@@ -39,7 +39,6 @@ const TechB2BFrameworkSection = () => {
     <section className="py-32 bg-brand-light text-brand-dark overflow-hidden relative">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-zinc-50 border-l border-brand-dark/5" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-brand-neon/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24">

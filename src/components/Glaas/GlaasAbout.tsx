@@ -11,7 +11,6 @@ const GlaasAbout = () => {
 
   return (
     <section className="py-24 bg-black relative overflow-hidden border-t border-brand-light/5">
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-brand-neon/5 rounded-full blur-[120px] -translate-y-1/2" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
