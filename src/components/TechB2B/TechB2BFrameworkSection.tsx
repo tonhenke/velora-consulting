@@ -76,21 +76,21 @@ const TechB2BFrameworkSection = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="bg-white border border-brand-dark/10 p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm hover:shadow-xl hover:border-brand-neon/50 transition-all duration-300 group"
                 >
-                  <div className="flex items-center gap-6 md:w-1/3">
-                    <div className="p-3 bg-zinc-50 rounded-xl text-brand-dark group-hover:bg-brand-neon group-hover:text-black transition-colors">
+                  <div className="flex items-center gap-4 md:w-[35%] shrink-0">
+                    <div className="p-3 shrink-0 bg-zinc-50 rounded-xl text-brand-dark group-hover:bg-brand-neon group-hover:text-black transition-colors">
                       <block.icon size={24} />
                     </div>
-                    <h3 className="font-bold text-lg md:text-xl tracking-tight whitespace-nowrap">
+                    <h3 className="font-bold text-lg md:text-xl tracking-tight">
                       {block.question}
                     </h3>
                   </div>
                   
-                  <div className="md:w-1/3 border-l-2 border-brand-dark/5 pl-4 md:pl-0 md:border-none">
+                  <div className="flex-1 border-l-2 border-brand-dark/5 pl-4 md:pl-6 md:border-l-2 md:border-brand-dark/5">
                     <p className="text-sm font-bold text-brand-dark/40 uppercase tracking-widest mb-1 text-[10px]">O que resolve</p>
                     <p className="font-medium text-brand-dark/80">{block.resolve}</p>
                   </div>
                   
-                  <div className="md:w-1/4 bg-zinc-50 rounded-lg p-3 border border-brand-dark/5 text-center">
+                  <div className="md:w-40 shrink-0 bg-zinc-50 rounded-lg p-3 border border-brand-dark/5 text-center">
                     <p className="text-sm font-bold text-brand-dark/40 uppercase tracking-widest mb-1 text-[10px]">Disciplina</p>
                     <p className="font-bold text-brand-dark">{block.discipline}</p>
                   </div>
