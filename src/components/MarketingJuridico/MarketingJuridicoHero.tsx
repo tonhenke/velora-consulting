@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
+import BrandGraphic from '../BrandGraphic';
+
 const MarketingJuridicoHero = () => {
     return (
         <section className="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden bg-brand-dark selection:bg-brand-neon text-brand-dark selection:text-brand-light">
             {/* Abstract Background Elements */}
-            <div className="absolute top-0 right-0 w-3/4 h-full opacity-20 pointer-events-none">
+            <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none flex items-center justify-center opacity-40">
+                <BrandGraphic className="text-brand-neon scale-150 transform translate-x-1/4" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
