@@ -21,9 +21,7 @@ const MarketingJuridicoHero = () => {
                         <span className="text-brand-neon">à receita.</span>
                     </h1>
                     <p className="max-w-xl text-xl text-brand-light/60 mb-10 leading-relaxed font-light">
-                        Relacionamento e indicação continuam no centro da aquisição jurídica. O desafio é enxergar como essas relações viram oportunidades e ampliar os caminhos que levam até a receita.
-                        <br/><br/>
-                        Para escritórios empresariais full service e boutiques com carteira corporativa, estrutura de Marketing ou Business Development e venda consultiva de serviços jurídicos de maior valor.
+                        Ajudamos escritórios de advocacia empresariais a potencializar o trabalho do marketing na aquisição de clientes e na ampliação de receita da carteira atual.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-start gap-6 w-full">
