@@ -29,6 +29,7 @@ const GlaasEmpresasPage = lazy(() => import('./components/GlaasEmpresas/GlaasEmp
 const ImersaoGrowthPage = lazy(() => import('./components/ImersaoGrowth/ImersaoGrowthPage'));
 const AiLedGrowthPage = lazy(() => import('./components/AiLedGrowth/AiLedGrowthPage'));
 const TechB2BPage = lazy(() => import('./components/TechB2B/TechB2BPage'));
+const MarketingJuridicoPage = lazy(() => import('./components/MarketingJuridico/MarketingJuridicoPage'));
 
 const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage'));
 const TermsOfUsePage = lazy(() => import('./components/TermsOfUsePage'));
@@ -77,6 +78,7 @@ function AppLayout() {
             <Route path="/glaas-empresas" element={<GlaasEmpresasPage />} />
             <Route path="/imersao-de-growth" element={<ImersaoGrowthPage />} />
             <Route path="/tech-b2b" element={<TechB2BPage />} />
+            <Route path="/marketing-juridico" element={<MarketingJuridicoPage />} />
             <Route path="/politica-de-privacidade" element={<PrivacyPolicyPage />} />
             <Route path="/termos-de-uso" element={<TermsOfUsePage />} />
           </Routes>
