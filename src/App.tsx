@@ -30,6 +30,7 @@ const ImersaoGrowthPage = lazy(() => import('./components/ImersaoGrowth/ImersaoG
 const AiLedGrowthPage = lazy(() => import('./components/AiLedGrowth/AiLedGrowthPage'));
 const TechB2BPage = lazy(() => import('./components/TechB2B/TechB2BPage'));
 const MarketingJuridicoPage = lazy(() => import('./components/MarketingJuridico/MarketingJuridicoPage'));
+const MarketingFinanceiroPage = lazy(() => import('./components/MarketingFinanceiro/MarketingFinanceiroPage'));
 
 const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage'));
 const TermsOfUsePage = lazy(() => import('./components/TermsOfUsePage'));
@@ -79,6 +80,7 @@ function AppLayout() {
             <Route path="/imersao-de-growth" element={<ImersaoGrowthPage />} />
             <Route path="/tech-b2b" element={<TechB2BPage />} />
             <Route path="/marketing-juridico" element={<MarketingJuridicoPage />} />
+            <Route path="/marketing-financeiro" element={<MarketingFinanceiroPage />} />
             <Route path="/politica-de-privacidade" element={<PrivacyPolicyPage />} />
             <Route path="/termos-de-uso" element={<TermsOfUsePage />} />
           </Routes>
