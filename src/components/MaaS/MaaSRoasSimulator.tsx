@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calculator, TrendingUp, BarChart3, ArrowRight } from 'lucide-react';
+import { TrendingUp, BarChart3, ArrowRight } from 'lucide-react';
 
 const ROAS_DATA = {
   all_industries: {
@@ -137,6 +137,108 @@ const MetricCard: React.FC<MetricCardProps> = ({ label, value, highlight }) => (
   </div>
 );
 
+
+const getMetrics = (selectedSector: SectorKey, investment: number, platform: 'google' | 'meta', scenario: 'conservative' | 'optimistic') => {
+  const data = ROAS_DATA[selectedSector][platform][scenario];
+  const investmentUSD = investment / USD_TO_BRL_RATE;
+  const clicks = investmentUSD / data.cpc;
+  const conversions = clicks * (data.cvr / 100);
+  const revenue = investment * data.roas;
+  const netReturn = revenue - investment;
+
+  return {
+    roas: data.roas.toFixed(2) + 'x',
+    revenue: formatCurrency(revenue),
+    clicks: '~' + formatNumber(clicks),
+    conversions: '~' + formatNumber(conversions),
+    netReturn: formatCurrency(netReturn)
+  };
+};
+
+const ResultColumn = ({ title, platform, selectedSector, investment }: { title: string, platform: 'google' | 'meta', selectedSector: SectorKey, investment: number }) => {
+  const cons = getMetrics(selectedSector, investment, platform, 'conservative');
+  const opt = getMetrics(selectedSector, investment, platform, 'optimistic');
+
+  return (
+    <motion.div 
+      className="bg-white/[0.01] border border-white/5 p-8 md:p-10 flex flex-col gap-10"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="flex items-center gap-4 border-b border-white/10 pb-6">
+        <BarChart3 className={`w-6 h-6 text-brand-light`} strokeWidth={1.5} />
+        <h3 className="text-3xl font-serif text-brand-light">{title}</h3>
+      </div>
+
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-8">
+        {/* Conservative Scenario */}
+        <div className="flex flex-col gap-6">
+          <h4 className="text-brand-light/60 font-mono text-[10px] uppercase tracking-widest flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-light/40"></span>
+            Cenário Conservador
+          </h4>
+          
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${selectedSector}-${investment}-${platform}-cons`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="space-y-6"
+            >
+              <div className="border-b border-white/5 pb-4">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-light/40 block mb-2">ROAS Projetado</span>
+                <span className="text-4xl font-serif text-brand-light/80">{cons.roas}</span>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <MetricCard label="Receita Bruta" value={cons.revenue} />
+                <MetricCard label="Retorno Líquido" value={cons.netReturn} />
+                <MetricCard label="Cliques Estimados" value={cons.clicks} />
+                <MetricCard label="Conversões" value={cons.conversions} />
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Optimistic Scenario */}
+        <div className="flex flex-col gap-6 xl:border-l xl:border-white/5 xl:pl-8">
+          <h4 className="text-brand-neon font-mono text-[10px] uppercase tracking-widest flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-neon shadow-[0_0_8px_rgba(198,240,0,0.6)]"></span>
+            Cenário Otimista
+          </h4>
+          
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${selectedSector}-${investment}-${platform}-opt`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="space-y-6"
+            >
+              <div className="border-b border-brand-neon/20 pb-4">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-neon block mb-2">ROAS Projetado</span>
+                <span className="text-4xl font-serif text-brand-neon">{opt.roas}</span>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <MetricCard label="Receita Bruta" value={opt.revenue} highlight />
+                <MetricCard label="Retorno Líquido" value={opt.netReturn} highlight />
+                <MetricCard label="Cliques Estimados" value={opt.clicks} />
+                <MetricCard label="Conversões" value={opt.conversions} />
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const MaaSRoasSimulator: React.FC = () => {
   const [selectedSector, setSelectedSector] = useState<SectorKey>('all_industries');
   const [investment, setInvestment] = useState<number>(10000);
@@ -146,107 +248,6 @@ const MaaSRoasSimulator: React.FC = () => {
     setInvestment(isNaN(value) ? 1000 : Math.max(1000, Math.min(100000, value)));
   };
 
-  const calculateMetrics = (platform: 'google' | 'meta', scenario: 'conservative' | 'optimistic') => {
-    const data = ROAS_DATA[selectedSector][platform][scenario];
-    const investmentUSD = investment / USD_TO_BRL_RATE;
-    const clicks = investmentUSD / data.cpc;
-    const conversions = clicks * (data.cvr / 100);
-    const revenue = investment * data.roas;
-    const netReturn = revenue - investment;
-
-    return {
-      roas: data.roas.toFixed(2) + 'x',
-      revenue: formatCurrency(revenue),
-      clicks: '~' + formatNumber(clicks),
-      conversions: '~' + formatNumber(conversions),
-      netReturn: formatCurrency(netReturn)
-    };
-  };
-
-  const ResultColumn = ({ title, platform }: { title: string, platform: 'google' | 'meta' }) => {
-    const cons = calculateMetrics(platform, 'conservative');
-    const opt = calculateMetrics(platform, 'optimistic');
-
-    return (
-      <motion.div 
-        className="bg-brand-dark/50 border border-brand-light/10 p-6 md:p-8 rounded-2xl flex flex-col gap-8"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="flex items-center gap-3 border-b border-brand-light/10 pb-4">
-          <BarChart3 className={`w-6 h-6 ${platform === 'google' ? 'text-green-400' : 'text-blue-400'}`} />
-          <h3 className="text-2xl font-bold text-brand-light">{title}</h3>
-        </div>
-
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-6">
-          {/* Conservative Scenario */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-yellow-400/80 text-xs uppercase tracking-widest font-bold flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-yellow-400/80"></span>
-              Cenário Conservador
-            </h4>
-            
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`${selectedSector}-${investment}-${platform}-cons`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-4"
-              >
-                <div className="bg-black/30 rounded-xl p-4 border border-white/5">
-                  <span className="text-sm text-brand-light/60 block mb-1">ROAS Projetado</span>
-                  <span className="text-3xl font-black text-yellow-400">{cons.roas}</span>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <MetricCard label="Receita Bruta" value={cons.revenue} />
-                  <MetricCard label="Retorno Líquido" value={cons.netReturn} />
-                  <MetricCard label="Cliques Estimados" value={cons.clicks} />
-                  <MetricCard label="Conversões (Vendas)" value={cons.conversions} />
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Optimistic Scenario */}
-          <div className="flex flex-col gap-6 xl:border-l xl:border-brand-light/10 xl:pl-6">
-            <h4 className="text-brand-neon text-xs uppercase tracking-widest font-bold flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-neon shadow-[0_0_8px_rgba(198,240,0,0.6)]"></span>
-              Cenário Otimista
-            </h4>
-            
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`${selectedSector}-${investment}-${platform}-opt`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-4"
-              >
-                <div className="bg-brand-neon/5 rounded-xl p-4 border border-brand-neon/20">
-                  <span className="text-sm text-brand-light/60 block mb-1">ROAS Projetado</span>
-                  <span className="text-3xl font-black text-brand-neon">{opt.roas}</span>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <MetricCard label="Receita Bruta" value={opt.revenue} />
-                  <MetricCard label="Retorno Líquido" value={opt.netReturn} />
-                  <MetricCard label="Cliques Estimados" value={opt.clicks} />
-                  <MetricCard label="Conversões (Vendas)" value={opt.conversions} />
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
-      </motion.div>
-    );
-  };
-
   return (
     <section id="roas-simulator" className="bg-black text-brand-light py-32 border-t border-brand-light/10 overflow-hidden relative">
       {/* Background glow */}
@@ -254,17 +255,14 @@ const MaaSRoasSimulator: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center justify-center p-3 bg-gray-900 rounded-2xl mb-6">
-            <Calculator className="w-8 h-8 text-brand-neon" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            Simule o retorno <span className="text-brand-neon">do seu investimento</span>
+          <h2 className="text-5xl md:text-6xl font-serif tracking-tight mb-6">
+            Simule o retorno <br className="md:hidden" /><span className="italic text-brand-neon">do seu investimento</span>
           </h2>
           <p className="text-xl text-brand-light/60 font-light">
             Selecione o setor e o valor de investimento mensal em mídia para ver as projeções de retorno.
@@ -273,7 +271,7 @@ const MaaSRoasSimulator: React.FC = () => {
 
         {/* Controls */}
         <motion.div 
-          className="bg-gray-900/50 border border-gray-800 p-8 rounded-2xl mb-12"
+          className="bg-white/[0.02] border border-white/10 p-8 md:p-10 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -282,18 +280,18 @@ const MaaSRoasSimulator: React.FC = () => {
           <div className="flex flex-col gap-10">
             {/* Sector Selection */}
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-brand-light/60 mb-4">
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-brand-light/60 mb-6">
                 1. Selecione seu Setor
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 md:gap-3">
                 {(Object.entries(ROAS_DATA) as [SectorKey, typeof ROAS_DATA[SectorKey]][]).map(([key, data]) => (
                   <button
                     key={key}
                     onClick={() => setSelectedSector(key)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    className={`px-4 py-2 text-sm transition-all duration-300 font-mono tracking-tight ${
                       selectedSector === key
-                        ? 'bg-brand-neon text-brand-dark shadow-[0_0_15px_rgba(198,240,0,0.3)]'
-                        : 'bg-gray-800 text-brand-light/60 hover:text-brand-light hover:bg-gray-700'
+                        ? 'bg-brand-neon text-black border border-brand-neon'
+                        : 'bg-transparent text-brand-light/60 border border-white/10 hover:border-white/30 hover:text-brand-light'
                     }`}
                   >
                     {data.name}
@@ -304,12 +302,12 @@ const MaaSRoasSimulator: React.FC = () => {
 
             {/* Investment Input */}
             <div>
-              <div className="flex justify-between items-end mb-4">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-brand-light/60">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 gap-4">
+                <h3 className="font-mono text-[10px] uppercase tracking-widest text-brand-light/60">
                   2. Investimento Mensal (Verba de Mídia)
                 </h3>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-light/60 font-medium">R$</span>
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 text-brand-light/40 font-mono text-xl">R$</span>
                   <input
                     type="number"
                     value={investment}
@@ -317,7 +315,7 @@ const MaaSRoasSimulator: React.FC = () => {
                     min={1000}
                     max={100000}
                     step={500}
-                    className="w-32 bg-black border border-gray-700 rounded-lg py-2 pl-10 pr-3 text-brand-light font-bold focus:outline-none focus:border-brand-neon transition-colors"
+                    className="w-40 bg-transparent border-b border-white/20 py-2 pl-10 pr-0 text-brand-light font-serif text-3xl focus:outline-none focus:border-brand-neon transition-colors"
                   />
                 </div>
               </div>
@@ -330,9 +328,9 @@ const MaaSRoasSimulator: React.FC = () => {
                   step={500}
                   value={investment}
                   onChange={handleInvestmentChange}
-                  className="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-neon"
+                  className="w-full h-[2px] bg-white/10 appearance-none cursor-pointer accent-brand-neon"
                 />
-                <div className="flex justify-between text-xs text-brand-light/40 mt-2 font-medium">
+                <div className="flex justify-between font-mono text-[10px] tracking-widest uppercase text-brand-light/40 mt-4">
                   <span>R$ 1.000</span>
                   <span>R$ 50.000</span>
                   <span>R$ 100.000</span>
@@ -344,8 +342,8 @@ const MaaSRoasSimulator: React.FC = () => {
 
         {/* Results Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <ResultColumn title="Google Ads" platform="google" />
-          <ResultColumn title="Meta Ads" platform="meta" />
+          <ResultColumn title="Google Ads" platform="google" selectedSector={selectedSector} investment={investment} />
+          <ResultColumn title="Meta Ads" platform="meta" selectedSector={selectedSector} investment={investment} />
         </div>
 
         {/* Disclaimer */}

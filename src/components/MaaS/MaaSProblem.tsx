@@ -21,30 +21,30 @@ const MaaSProblem = () => {
   ];
 
   return (
-    <section className="bg-brand-dark text-brand-light py-24 md:py-32">
+    <section className="bg-black text-brand-light py-32 border-t border-white/5">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-24">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-6"
+            className="text-5xl md:text-7xl font-serif tracking-tight mb-6"
           >
-            O que trava o crescimento
+            O que trava <br className="md:hidden" /><span className="italic text-brand-neon">o crescimento</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl text-brand-light/60 font-light"
+            className="text-xl text-brand-light/50 font-light"
           >
             Se a sua operação de marketing está presa em algum desses cenários, você está deixando receita na mesa.
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {problems.map((item, index) => (
             <motion.div
               key={index}
@@ -52,13 +52,15 @@ const MaaSProblem = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-brand-gray border border-gray-800 p-8 rounded-2xl hover:border-brand-neon/30 transition-colors"
+              className="bg-white/[0.02] border border-white/10 p-10 rounded-none hover:border-brand-neon/30 hover:bg-white/[0.04] transition-all duration-300 relative group"
             >
-              <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-brand-neon mb-6">
-                <item.icon className="w-6 h-6" />
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              
+              <div className="text-brand-neon mb-8">
+                <item.icon className="w-8 h-8" strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-              <p className="text-brand-light/60 font-light leading-relaxed">
+              <h3 className="text-2xl font-serif tracking-tight mb-4">{item.title}</h3>
+              <p className="text-brand-light/50 font-light leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>

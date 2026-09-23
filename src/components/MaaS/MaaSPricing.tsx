@@ -93,48 +93,48 @@ const PlanCard = ({ plan, index }: { plan: Plan; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`relative bg-white p-8 rounded-2xl flex flex-col shadow-sm hover:shadow-xl transition-shadow duration-300 ${
-        plan.recommended ? 'border-2 border-brand-neon' : 'border border-brand-dark/5'
+      className={`relative bg-white/[0.02] p-8 md:p-10 flex flex-col transition-all duration-300 ${
+        plan.recommended ? 'border border-brand-neon shadow-[0_0_30px_rgba(198,240,0,0.05)]' : 'border border-white/10 hover:border-white/30'
       }`}
     >
-      <div className="mb-6 flex flex-col gap-2">
+      <div className="mb-6 flex flex-col gap-3">
         <div className="flex justify-between items-center">
-          <span className="text-xs uppercase tracking-widest text-brand-dark/40 font-bold">
+          <span className="font-mono text-xs uppercase tracking-widest text-brand-light/40">
             {plan.tier}
           </span>
           {plan.recommended && (
-            <div className="flex items-center gap-1 text-brand-neon bg-brand-dark px-2 py-1 rounded-md">
+            <div className="flex items-center gap-1.5 text-brand-neon border border-brand-neon/30 bg-brand-neon/5 px-2.5 py-1 rounded-full">
               <Star className="w-3 h-3 fill-current" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">Recomendado</span>
+              <span className="font-mono text-[10px] uppercase tracking-widest mt-0.5">Recomendado</span>
             </div>
           )}
         </div>
-        <h3 className="text-3xl font-black">{plan.name}</h3>
+        <h3 className="text-3xl font-serif tracking-tight">{plan.name}</h3>
       </div>
 
-      <div className="mb-6">
+      <div className="mb-8 border-b border-white/10 pb-8">
         {plan.originalPrice && (
-          <div className="text-sm text-brand-dark/40 line-through mb-1">
+          <div className="text-sm font-mono text-brand-light/40 line-through mb-1">
             De {plan.originalPrice}
           </div>
         )}
         <div className="flex items-baseline gap-1">
-          {plan.originalPrice && <span className="text-sm font-medium mr-1">por</span>}
-          <span className="text-4xl font-bold tracking-tight">{plan.price}</span>
-          <span className="text-sm text-brand-dark/60 font-medium">/mês</span>
+          {plan.originalPrice && <span className="text-sm font-light mr-1 text-brand-light/60">por</span>}
+          <span className="text-4xl md:text-5xl font-serif tracking-tight">{plan.price}</span>
+          <span className="text-sm font-mono text-brand-light/40">/mês</span>
         </div>
       </div>
 
-      <p className="text-sm text-brand-dark/60 mb-8 min-h-[60px]">
+      <p className="text-sm text-brand-light/60 mb-10 min-h-[60px] font-light leading-relaxed">
         {plan.description}
       </p>
 
       <div className="flex flex-col gap-4 flex-grow mb-8">
         {plan.specialties.map((spec, i) => (
-          <div key={i} className="flex flex-col border-b border-brand-dark/10 border-dashed pb-2 last:border-0">
+          <div key={i} className="flex flex-col border-b border-white/5 border-dashed pb-3 last:border-0">
             <div className="flex justify-between items-center">
-              <span className="font-medium text-sm text-brand-dark">{spec.name}</span>
-              <span className="text-brand-neon font-bold text-sm bg-brand-dark px-2 py-0.5 rounded">{spec.volume}</span>
+              <span className="font-light text-sm text-brand-light/80">{spec.name}</span>
+              <span className="font-mono text-brand-neon text-xs tracking-tight bg-brand-neon/10 px-2 py-1 rounded">{spec.volume}</span>
             </div>
             
             <AnimatePresence>
@@ -146,7 +146,7 @@ const PlanCard = ({ plan, index }: { plan: Plan; index: number }) => {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <p className="text-xs text-brand-dark/60 mt-2">
+                  <p className="text-xs text-brand-light/50 mt-3 font-light leading-relaxed">
                     {spec.full}
                   </p>
                 </motion.div>
@@ -162,15 +162,15 @@ const PlanCard = ({ plan, index }: { plan: Plan; index: number }) => {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="overflow-hidden flex flex-col gap-4 mt-2"
+              className="overflow-hidden flex flex-col gap-6 mt-4 pt-4 border-t border-white/10"
             >
-              <div className="pl-3 border-l-2 border-brand-neon">
-                <h4 className="text-xs font-bold text-brand-dark mb-1">DIFERENCIAL DO TIER</h4>
-                <p className="text-sm text-brand-dark/70">{plan.diferencial}</p>
+              <div className="pl-4 border-l border-brand-neon/50">
+                <h4 className="font-mono text-[10px] uppercase tracking-widest text-brand-neon mb-2">Diferencial do Tier</h4>
+                <p className="text-sm text-brand-light/60 font-light leading-relaxed">{plan.diferencial}</p>
               </div>
-              <div className="pl-3 border-l-2 border-brand-neon">
-                <h4 className="text-xs font-bold text-brand-dark mb-1">REFERÊNCIA DE RESULTADO</h4>
-                <p className="text-sm text-brand-dark/70">{plan.referencia}</p>
+              <div className="pl-4 border-l border-brand-neon/50">
+                <h4 className="font-mono text-[10px] uppercase tracking-widest text-brand-neon mb-2">Referência de Resultado</h4>
+                <p className="text-sm text-brand-light/60 font-light leading-relaxed">{plan.referencia}</p>
               </div>
             </motion.div>
           )}
@@ -179,7 +179,7 @@ const PlanCard = ({ plan, index }: { plan: Plan; index: number }) => {
 
       <button
         onClick={() => setExpanded(!expanded)}
-        className="flex items-center justify-center gap-2 text-sm font-medium text-brand-dark/60 hover:text-brand-dark transition-colors mb-6 mx-auto"
+        className="flex items-center justify-center gap-2 text-sm font-mono tracking-wide text-brand-light/40 hover:text-brand-light transition-colors mb-8 mx-auto"
       >
         {expanded ? (
           <>
@@ -196,15 +196,15 @@ const PlanCard = ({ plan, index }: { plan: Plan; index: number }) => {
         <button
           onClick={handleContract}
           data-price-id={plan.priceId}
-          className={`w-full py-4 rounded-lg font-bold transition-all flex items-center justify-center mb-3 ${
+          className={`w-full py-4 font-mono text-sm uppercase tracking-widest transition-all flex items-center justify-center mb-4 ${
             plan.recommended
-              ? 'bg-brand-neon text-brand-dark hover:brightness-110'
-              : 'bg-brand-dark text-brand-light hover:bg-brand-dark/90'
+              ? 'bg-brand-neon text-black hover:bg-white'
+              : 'bg-white/10 text-brand-light hover:bg-white/20'
           }`}
         >
           Contratar
         </button>
-        <div className="flex items-center justify-center gap-1 text-xs text-brand-dark/40">
+        <div className="flex items-center justify-center gap-2 text-xs font-mono text-brand-light/30">
           <ShieldCheck className="w-3.5 h-3.5" />
           <span>30 dias de garantia</span>
         </div>
@@ -215,24 +215,26 @@ const PlanCard = ({ plan, index }: { plan: Plan; index: number }) => {
 
 const MaaSPricing = () => {
   return (
-    <section id="pricing" className="bg-zinc-50 text-brand-dark py-32 border-t border-brand-dark/5">
-      <div className="container mx-auto px-6">
+    <section id="pricing" className="bg-black text-brand-light py-32 border-t border-white/5 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-neon/5 rounded-full blur-[120px] pointer-events-none" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Escolha o plano ideal <span className="text-[#5c5c5c]">para o seu negócio</span>
+          <h2 className="text-5xl md:text-6xl font-serif tracking-tight mb-6">
+            Escolha o plano ideal <br className="md:hidden" /><span className="italic text-brand-light/40">para o seu negócio</span>
           </h2>
-          <p className="text-brand-dark/60 font-medium">
-            *Não contempla o valor de investimento em mídia paga.
+          <p className="font-mono text-xs text-brand-light/40 tracking-widest uppercase">
+            *Não contempla investimento em mídia paga
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
           {plans.map((plan, index) => (
             <PlanCard key={plan.tier} plan={plan} index={index} />
           ))}

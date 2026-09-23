@@ -41,17 +41,17 @@ const MaaSFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 bg-white border-t border-brand-dark/5 text-brand-dark">
+    <section className="py-32 bg-black border-t border-white/5 text-brand-light">
       <div className="container mx-auto px-6 max-w-4xl">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold tracking-tighter mb-4"
+            className="text-5xl md:text-6xl font-serif tracking-tight mb-4"
           >
             Perguntas <br className="hidden md:block" />
-            <span className="text-[#5c5c5c]">frequentes</span>
+            <span className="italic text-brand-light/40">frequentes</span>
           </motion.h2>
         </div>
 
@@ -66,18 +66,19 @@ const MaaSFAQ = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-brand-neon bg-zinc-50' : 'border-brand-dark/10 hover:border-brand-dark/20'}`}
+                className={`border-b transition-all duration-300 ${isOpen ? 'border-brand-neon/50 bg-white/[0.02]' : 'border-white/10 hover:border-white/30'}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full px-6 py-6 flex items-center justify-between text-left focus:outline-none"
+                  className="w-full px-6 py-8 flex items-center justify-between text-left focus:outline-none"
                 >
-                  <span className={`font-bold text-lg md:text-xl pr-8 ${isOpen ? 'text-brand-dark' : 'text-brand-dark/80'}`}>
+                  <span className={`font-serif text-xl md:text-2xl tracking-tight pr-8 ${isOpen ? 'text-brand-light' : 'text-brand-light/70'}`}>
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-neon' : 'text-brand-dark/40'}`}
+                    className={`flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-neon' : 'text-brand-light/20'}`}
                     size={24}
+                    strokeWidth={1.5}
                   />
                 </button>
 
@@ -89,8 +90,8 @@ const MaaSFAQ = () => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-6 pb-6 text-brand-dark/70 leading-relaxed">
-                        <div className="w-8 h-1 bg-brand-neon mb-4 rounded-full" />
+                      <div className="px-6 pb-8 text-brand-light/60 font-light leading-relaxed">
+                        <div className="font-mono text-[10px] text-brand-neon tracking-widest uppercase mb-4">Resposta</div>
                         {faq.answer}
                       </div>
                     </motion.div>
