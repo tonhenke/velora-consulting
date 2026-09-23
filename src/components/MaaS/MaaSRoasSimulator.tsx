@@ -237,7 +237,7 @@ const MaaSRoasSimulator: React.FC = () => {
 
               {/* Investment Row */}
               <div className="grid grid-cols-5 border-b border-white/5">
-                {projections.map((p, i) => (
+                {projections.map((_, i) => (
                   <div key={i} className="p-4 text-center border-r border-white/5 last:border-0 text-brand-light/80">
                     {formatCurrency(investment)}
                   </div>
@@ -260,7 +260,7 @@ const MaaSRoasSimulator: React.FC = () => {
 
               {/* Revenue Header Row */}
               <div className="grid grid-cols-5 border-b border-white/5 bg-white/[0.01]">
-                {projections.map((p, i) => (
+                {projections.map((_, i) => (
                   <div key={i} className="p-3 text-center border-r border-white/5 last:border-0 text-brand-light/60 text-sm">
                     Receita
                   </div>
