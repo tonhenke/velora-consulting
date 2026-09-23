@@ -20,12 +20,11 @@ const MaaSHero = () => {
             </div>
 
             <h1 className="text-7xl md:text-8xl lg:text-[110px] font-serif leading-[0.85] tracking-tight mb-8">
-              Marketing <span className="italic text-brand-light/70">on.</span><br />
-              Resultados <span className="italic text-brand-neon">on.</span>
+              Marketing <br className="md:hidden" /><span className="italic text-brand-neon">As a Service.</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-brand-light/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-              Sua equipe de marketing completa, sênior e orientada por dados — por uma fração do custo de um time interno. Sem contrato de fidelidade.
+              Sua equipe de marketing completa, sênior e orientada por dados, por uma fração do custo de um time interno.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
