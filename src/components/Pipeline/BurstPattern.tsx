@@ -1,5 +1,3 @@
-import React from 'react';
-
 const BurstPattern = ({ className = '' }: { className?: string }) => {
   const cols = 12;
   const rows = 9;
