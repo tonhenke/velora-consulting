@@ -2,62 +2,72 @@ import { motion } from 'framer-motion';
 import { Check, Minus } from 'lucide-react';
 
 const plans = [
-  { name: 'Start', price: 'R$3.790,00' },
-  { name: 'Growth', price: 'R$5.970,00', isPopular: true },
-  { name: 'Revenue', price: 'R$7.990,00' }
-];
-
-const features = [
   {
-    name: 'ICP',
-    values: ['check', 'check', 'check']
+    name: 'Start',
+    price: 'R$3.790,00',
+    description: 'Para iniciar a máquina de vendas',
+    isPopular: false,
+    features: [
+      { name: 'ICP', value: 'check' },
+      { name: 'Outbound', value: 'check' },
+      { name: 'Copy', value: 'check' },
+      { name: 'Landing page', value: 'minus' },
+      { name: 'CRM', value: 'Não' },
+      { name: 'Conteúdo/case', value: 'Não' },
+      { name: 'BI', value: 'Básico' },
+      { name: 'Consultoria', value: 'Mensal' },
+    ]
   },
   {
-    name: 'Outbound',
-    values: ['check', 'check', 'check']
+    name: 'Growth',
+    price: 'R$5.970,00',
+    description: 'Maior aceleração e acompanhamento',
+    isPopular: true,
+    features: [
+      { name: 'ICP', value: 'check' },
+      { name: 'Outbound', value: 'check' },
+      { name: 'Copy', value: 'check' },
+      { name: 'Landing page', value: 'check' },
+      { name: 'CRM', value: 'Supervisão' },
+      { name: 'Conteúdo/case', value: '1/mês' },
+      { name: 'BI', value: 'check' },
+      { name: 'Consultoria', value: 'Quinzenal' },
+    ]
   },
   {
-    name: 'Copy',
-    values: ['check', 'check', 'check']
-  },
-  {
-    name: 'Landing page',
-    values: ['minus', 'check', 'check']
-  },
-  {
-    name: 'CRM',
-    values: ['minus', 'supervisão', 'gestão']
-  },
-  {
-    name: 'Conteúdo/case',
-    values: ['minus', '1/mês', '2/mês']
-  },
-  {
-    name: 'BI',
-    values: ['básico', 'check', 'check']
-  },
-  {
-    name: 'Consultoria',
-    values: ['mensal', 'quinzenal', 'semanal']
+    name: 'Revenue',
+    price: 'R$7.990,00',
+    description: 'Domínio total da operação e expansão',
+    isPopular: false,
+    features: [
+      { name: 'ICP', value: 'check' },
+      { name: 'Outbound', value: 'check' },
+      { name: 'Copy', value: 'check' },
+      { name: 'Landing page', value: 'check' },
+      { name: 'CRM', value: 'Gestão' },
+      { name: 'Conteúdo/case', value: '2/mês' },
+      { name: 'BI', value: 'check' },
+      { name: 'Consultoria', value: 'Semanal' },
+    ]
   }
 ];
 
-const renderValue = (value: string) => {
-  if (value === 'check') return <Check className="mx-auto text-brand-neon" size={20} />;
-  if (value === 'minus') return <Minus className="mx-auto text-brand-dark/30" size={20} />;
-  return <span className="text-sm font-medium text-brand-dark">{value}</span>;
+const renderFeatureValue = (value: string) => {
+  if (value === 'check') return <Check className="text-brand-neon shrink-0" size={20} />;
+  if (value === 'minus' || value === 'Não') return <Minus className="text-white/20 shrink-0" size={20} />;
+  return <span className="text-sm font-medium text-white">{value}</span>;
 };
 
 const PipelinePricing = () => {
   return (
-    <section id="planos" className="py-32 bg-zinc-50 border-t border-brand-dark/5 text-brand-dark">
-      <div className="container mx-auto px-6 max-w-5xl">
+    <section id="planos" className="py-32 bg-brand-dark text-brand-light border-t border-white/5">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold tracking-tighter mb-6"
+            className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 text-white"
           >
             Planos e <span className="text-brand-neon">Investimento.</span>
           </motion.h2>
@@ -66,59 +76,72 @@ const PipelinePricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-brand-dark/70 max-w-2xl mx-auto"
+            className="text-xl text-brand-light/70 max-w-2xl mx-auto"
           >
             Escolha o nível de intensidade ideal para o momento da sua empresa.
           </motion.p>
         </div>
 
-        <div className="bg-white rounded-3xl border border-brand-dark/10 shadow-xl overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr>
-                  <th className="p-6 md:p-8 bg-zinc-50/50 border-b border-brand-dark/5 w-1/4"></th>
-                  {plans.map((plan, idx) => (
-                    <th key={idx} className={`p-6 md:p-8 text-center border-b border-brand-dark/5 w-1/4 ${plan.isPopular ? 'bg-brand-neon/5 relative' : 'bg-zinc-50/50'}`}>
-                      {plan.isPopular && (
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                          <span className="bg-brand-neon text-brand-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Recomendado
-                          </span>
-                        </div>
-                      )}
-                      <div className="text-xl font-bold mb-2">{plan.name}</div>
-                      <div className="text-2xl md:text-3xl font-bold tracking-tight text-brand-neon">{plan.price}</div>
-                      <div className="text-xs text-brand-dark/50 mt-1 uppercase tracking-wider">/mês</div>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {features.map((feature, fIdx) => (
-                  <tr key={fIdx} className="hover:bg-zinc-50/50 transition-colors">
-                    <td className="p-6 md:p-8 border-b border-brand-dark/5 font-medium text-brand-dark/80">
-                      {feature.name}
-                    </td>
-                    {feature.values.map((val, vIdx) => (
-                      <td key={vIdx} className={`p-6 md:p-8 text-center border-b border-brand-dark/5 ${plans[vIdx].isPopular ? 'bg-brand-neon/5' : ''}`}>
-                        {renderValue(val)}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          
-          <div className="p-8 bg-zinc-50 border-t border-brand-dark/5 flex justify-center">
-            <a
-              href="#contato"
-              className="bg-brand-dark text-brand-light px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-dark/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+        <div className="grid md:grid-cols-3 gap-8">
+          {plans.map((plan, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className={`relative flex flex-col rounded-3xl p-8 bg-[#151515] ${
+                plan.isPopular 
+                  ? 'border-2 border-brand-neon shadow-[0_0_40px_rgba(198,240,0,0.1)] transform md:-translate-y-4' 
+                  : 'border border-white/10'
+              }`}
             >
-              Quero saber mais
-            </a>
-          </div>
+              {plan.isPopular && (
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <span className="bg-brand-neon text-brand-dark text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                    Recomendado
+                  </span>
+                </div>
+              )}
+              
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                <p className="text-brand-light/60 text-sm mb-6 h-10">{plan.description}</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold text-brand-neon tracking-tight">{plan.price}</span>
+                  <span className="text-brand-light/50 text-sm uppercase font-medium">/mês</span>
+                </div>
+              </div>
+
+              <div className="flex-grow">
+                <ul className="space-y-4">
+                  {plan.features.map((feature, fIdx) => (
+                    <li key={fIdx} className="flex items-center gap-3">
+                      <div className="w-6 flex justify-center">
+                        {renderFeatureValue(feature.value)}
+                      </div>
+                      <span className={`text-sm ${feature.value === 'minus' || feature.value === 'Não' ? 'text-white/40 line-through' : 'text-brand-light'}`}>
+                        {feature.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-10">
+                <a
+                  href="#contato"
+                  className={`flex items-center justify-center w-full py-4 rounded-xl font-bold text-[15px] transition-all duration-300 ${
+                    plan.isPopular
+                      ? 'bg-brand-neon text-brand-dark hover:bg-brand-neon/90 shadow-[0_0_20px_rgba(198,240,0,0.3)]'
+                      : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
+                  }`}
+                >
+                  Selecionar Plano
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

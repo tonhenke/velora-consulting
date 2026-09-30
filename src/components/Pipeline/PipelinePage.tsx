@@ -14,9 +14,9 @@ const PipelinePage = () => (
         <Suspense fallback={<div className="min-h-screen bg-black" />}>
             <LogoMarquee />
             <PipelineServices />
-            <PipelinePricing />
             <Methodology />
             <CaseStudies />
+            <PipelinePricing />
             <WhoWeAre />
             <div id="contato">
                 <Contact />
