@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Gift, Users, Send, Database, Zap, LineChart } from 'lucide-react';
+import { Target, Gift, Users, Send, Database, Zap, LineChart, PieChart } from 'lucide-react';
 
 const services = [
   {
@@ -36,13 +36,18 @@ const services = [
     icon: LineChart,
     title: 'Inteligência Comercial',
     desc: 'Análise de dados e métricas em tempo real para tomada de decisões embasadas e ajustes rápidos de rota.'
+  },
+  {
+    icon: PieChart,
+    title: 'Business Intelligence',
+    desc: 'Dashboards customizados e visualização avançada de dados para acompanhar o funil de ponta a ponta com clareza.'
   }
 ];
 
 const PipelineServices = () => {
   return (
     <section className="py-32 bg-[#121212] text-brand-light border-y border-white/5">
-      <div className="container mx-auto px-6 max-w-6xl">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -63,7 +68,7 @@ const PipelineServices = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((item, idx) => (
             <motion.div
               key={idx}
