@@ -52,11 +52,7 @@ const plans = [
   }
 ];
 
-const renderFeatureValue = (value: string) => {
-  if (value === 'check') return <Check className="text-brand-neon shrink-0" size={20} />;
-  if (value === 'minus' || value === 'Não') return <Minus className="text-white/20 shrink-0" size={20} />;
-  return <span className="text-sm font-medium text-white">{value}</span>;
-};
+const isPositive = (value: string) => value !== 'minus' && value !== 'Não';
 
 const PipelinePricing = () => {
   return (
@@ -117,11 +113,20 @@ const PipelinePricing = () => {
                 <ul className="space-y-4">
                   {plan.features.map((feature, fIdx) => (
                     <li key={fIdx} className="flex items-center gap-3">
-                      <div className="w-6 flex justify-center">
-                        {renderFeatureValue(feature.value)}
+                      <div className="w-6 flex justify-center shrink-0">
+                        {isPositive(feature.value) ? (
+                          <Check className="text-brand-neon" size={20} />
+                        ) : (
+                          <Minus className="text-white/20" size={20} />
+                        )}
                       </div>
-                      <span className={`text-sm ${feature.value === 'minus' || feature.value === 'Não' ? 'text-white/40 line-through' : 'text-brand-light'}`}>
+                      <span className={`text-sm flex flex-wrap items-center gap-2 ${!isPositive(feature.value) ? 'text-white/40 line-through' : 'text-brand-light'}`}>
                         {feature.name}
+                        {isPositive(feature.value) && feature.value !== 'check' && (
+                          <span className="text-brand-neon bg-brand-neon/10 px-2 py-0.5 rounded text-xs font-bold border border-brand-neon/20">
+                            {feature.value}
+                          </span>
+                        )}
                       </span>
                     </li>
                   ))}
