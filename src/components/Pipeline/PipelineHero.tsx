@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion';
-import BurstPattern from './BurstPattern';
+import BrandGraphic from '../BrandGraphic';
 
 const PipelineHero = () => {
     return (
         <section className="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden bg-brand-dark selection:bg-brand-neon text-brand-dark selection:text-brand-light">
-            {/* Elementos Gráficos da Identidade Visual da Velora */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[20%] -right-[10%] md:right-[5%] opacity-40 text-brand-neon">
-                    <BurstPattern className="w-[600px] h-auto" />
-                </div>
+            {/* Abstract Background Elements */}
+            <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none flex items-center justify-center opacity-40">
+                <BrandGraphic className="text-brand-neon scale-150 transform translate-x-1/4" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
