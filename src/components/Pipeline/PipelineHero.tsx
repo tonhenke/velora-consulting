@@ -3,7 +3,15 @@ import { motion } from 'framer-motion';
 const PipelineHero = () => {
     return (
         <section className="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden bg-brand-dark selection:bg-brand-neon text-brand-dark selection:text-brand-light">
-            <div className="absolute top-0 right-0 w-3/4 h-full opacity-20 pointer-events-none"></div>
+            {/* Elementos Gráficos da Identidade Visual da Velora */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                {/* Glow Neon Principal */}
+                <div className="absolute -top-[30%] -right-[10%] w-[800px] h-[800px] bg-brand-neon rounded-full blur-[180px] opacity-[0.12]"></div>
+                {/* Glow Secundário */}
+                <div className="absolute top-[40%] -left-[10%] w-[500px] h-[500px] bg-white rounded-full blur-[150px] opacity-[0.03]"></div>
+                {/* Malha Grid Tech (sutil) */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30"></div>
+            </div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
