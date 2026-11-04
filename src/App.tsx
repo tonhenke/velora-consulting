@@ -39,7 +39,7 @@ const TermsOfUsePage = lazy(() => import('./components/TermsOfUsePage'));
 const HomeV10 = lazy(() => import('./components/HomeV10/HomeV10'));
 
 // Standalone pages that render without Header/Footer/WhatsApp
-const STANDALONE_PAGES = ['/workshop', '/'];
+const STANDALONE_PAGES = ['/workshop', '/', '/tech-b2b'];
 
 const HomePage = () => (
   <>
@@ -81,7 +81,8 @@ function AppLayout() {
           <Route path="/glaas-agencias" element={<GlaasPage />} />
           <Route path="/glaas-empresas" element={<GlaasEmpresasPage />} />
           <Route path="/imersao-de-growth" element={<ImersaoGrowthPage />} />
-          <Route path="/tech-b2b" element={<TechB2BPage />} />
+          <Route path="/tech-b2b" element={<HomeV10 />} />
+          <Route path="/tech-b2b-antigo" element={<TechB2BPage />} />
           <Route path="/marketing-juridico" element={<MarketingJuridicoPage />} />
           <Route path="/marketing-financeiro" element={<MarketingFinanceiroPage />} />
           <Route path="/marketing-as-a-service" element={<MaaSPage />} />
