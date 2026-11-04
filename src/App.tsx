@@ -36,9 +36,10 @@ const PipelinePage = lazy(() => import('./components/Pipeline/PipelinePage'));
 
 const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage'));
 const TermsOfUsePage = lazy(() => import('./components/TermsOfUsePage'));
+const HomeV10 = lazy(() => import('./components/HomeV10/HomeV10'));
 
 // Standalone pages that render without Header/Footer/WhatsApp
-const STANDALONE_PAGES = ['/workshop'];
+const STANDALONE_PAGES = ['/workshop', '/'];
 
 const HomePage = () => (
   <>
@@ -68,28 +69,27 @@ function AppLayout() {
   return (
     <div className="min-h-screen bg-black text-white">
       {!isStandalone && <Header />}
-      <main>
-        <Suspense fallback={<div className="h-64 bg-black" />}>
-          <Routes>
-            <Route path="/" element={isDotsDomain ? <WorkshopPage /> : <HomePage />} />
-            <Route path="/ia-led-growth" element={<AiLedGrowthPage />} />
-            <Route path="/ai-led-growth" element={<AiLedGrowthPage />} />
-            <Route path="/contato-sucesso" element={<SuccessPage />} />
-            <Route path="/diagnostico/*" element={<Diagnostic />} />
-            <Route path="/workshop" element={<WorkshopPage />} />
-            <Route path="/glaas-agencias" element={<GlaasPage />} />
-            <Route path="/glaas-empresas" element={<GlaasEmpresasPage />} />
-            <Route path="/imersao-de-growth" element={<ImersaoGrowthPage />} />
-            <Route path="/tech-b2b" element={<TechB2BPage />} />
-            <Route path="/marketing-juridico" element={<MarketingJuridicoPage />} />
-            <Route path="/marketing-financeiro" element={<MarketingFinanceiroPage />} />
-            <Route path="/marketing-as-a-service" element={<MaaSPage />} />
-            <Route path="/pipeline" element={<PipelinePage />} />
-            <Route path="/politica-de-privacidade" element={<PrivacyPolicyPage />} />
-            <Route path="/termos-de-uso" element={<TermsOfUsePage />} />
-          </Routes>
-        </Suspense>
-      </main>
+      <Suspense fallback={<div className="h-64 bg-black" />}>
+        <Routes>
+          <Route path="/" element={isDotsDomain ? <WorkshopPage /> : <HomeV10 />} />
+          <Route path="/home-antiga" element={<HomePage />} />
+          <Route path="/ia-led-growth" element={<AiLedGrowthPage />} />
+          <Route path="/ai-led-growth" element={<AiLedGrowthPage />} />
+          <Route path="/contato-sucesso" element={<SuccessPage />} />
+          <Route path="/diagnostico/*" element={<Diagnostic />} />
+          <Route path="/workshop" element={<WorkshopPage />} />
+          <Route path="/glaas-agencias" element={<GlaasPage />} />
+          <Route path="/glaas-empresas" element={<GlaasEmpresasPage />} />
+          <Route path="/imersao-de-growth" element={<ImersaoGrowthPage />} />
+          <Route path="/tech-b2b" element={<TechB2BPage />} />
+          <Route path="/marketing-juridico" element={<MarketingJuridicoPage />} />
+          <Route path="/marketing-financeiro" element={<MarketingFinanceiroPage />} />
+          <Route path="/marketing-as-a-service" element={<MaaSPage />} />
+          <Route path="/pipeline" element={<PipelinePage />} />
+          <Route path="/politica-de-privacidade" element={<PrivacyPolicyPage />} />
+          <Route path="/termos-de-uso" element={<TermsOfUsePage />} />
+        </Routes>
+      </Suspense>
       {!isStandalone && (
         <Suspense fallback={null}>
           <Footer />
