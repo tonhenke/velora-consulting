@@ -232,7 +232,7 @@ const HomeV10: React.FC = () => {
           fieldHandlers.push([c, evento, onFieldEvent]);
         });
 
-        var onSubmit = function (e: Event) {
+        var onSubmit = async function (e: Event) {
           e.preventDefault();
           var invalidos = campos.filter(function (c) { return !marcarCampo(c); });
           if (invalidos.length) {
@@ -241,37 +241,93 @@ const HomeV10: React.FC = () => {
             return;
           }
 
-          var endpoint = form.getAttribute('data-endpoint');
           if (botao) botao.disabled = true;
           form.setAttribute('aria-busy', 'true');
           mostrar('');
 
-          var envio: Promise<any>;
-          if (endpoint) {
-            envio = fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-              .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); });
-          } else {
-            console.warn('[Velora] Formulário "' + form.id + '" sem destino configurado. Envio simulado.');
-            envio = Promise.resolve();
-          }
+          try {
+            var rawFormData = new FormData(form);
+            var nome = String(rawFormData.get('nome') || '').trim();
+            var email = String(rawFormData.get('email') || '').trim();
+            var empresa = String(rawFormData.get('empresa') || '').trim();
+            var cargo = String(rawFormData.get('cargo') || '').trim();
+            var faixaFaturamento = String(rawFormData.get('faixa_faturamento') || '').trim();
+            var principalDesafio = String(rawFormData.get('principal_desafio') || '').trim();
+            var whatsapp = String(rawFormData.get('whatsapp') || '').replace(/\D/g, '');
 
-          envio.then(function () {
-            registrar('velora_form_envio_valido', form);
+            if (whatsapp.startsWith('55') && (whatsapp.length === 12 || whatsapp.length === 13)) {
+              whatsapp = whatsapp.slice(2);
+            }
+
+            var faturamentoMap: Record<string, string> = {
+              'Até R$ 5 milhões': '4',
+              'R$ 5 milhões a R$ 20 milhões': '5',
+              'R$ 20 milhões a R$ 50 milhões': '6',
+              'R$ 50 milhões a R$ 100 milhões': '6',
+              'Acima de R$ 100 milhões': '6',
+            };
+            var brevoFaturamento = faturamentoMap[faixaFaturamento] || '5';
+
+            var BREVO_ENDPOINT =
+              'https://88bfd1c8.sibforms.com/serve/MUIFAKXPzr3Oinuo78iic8A0FuDYg7wfqEnrD4KLy-RSNw9IanHflp1CVqmgmsv-CG1ECv2S6hbaC-T-kK9Y2Cr_nl0ZAimJ72D7RpfEQBb9uC9_htCq-zxb2Nd057wx458HPDvv9Wsj0Tn0NQ1wUP5hQKIVV3vScSeugAvsE2_EYfrRzxjqtiN3mWZtOxKGU5yt4PoOVi-9OjLVcg==?isAjax=1';
+
+            var brevoPayload = new FormData();
+            brevoPayload.append('NOME', nome);
+            brevoPayload.append('EMAIL', email);
+            brevoPayload.append('EMPRESA', cargo ? `${empresa} (${cargo})` : empresa);
+            brevoPayload.append('SMS', whatsapp);
+            brevoPayload.append('SMS__COUNTRY_CODE', '+55');
+            brevoPayload.append('FATURAMENTO', brevoFaturamento);
+            brevoPayload.append('SEGMENTO', '8');
+            brevoPayload.append('SITE', '');
+            brevoPayload.append('email_address_check', '');
+            brevoPayload.append('locale', 'pt');
+
+            var resp = await fetch(BREVO_ENDPOINT, {
+              method: 'POST',
+              body: brevoPayload,
+              headers: { Accept: 'application/json' },
+            });
+
+            var resData = await resp.json().catch(() => ({}));
+            if (!resp.ok || resData.success === false) {
+              var errMsg = resData.errors ? Object.values(resData.errors)[0] : resData.message;
+              throw new Error(typeof errMsg === 'string' ? errMsg : 'Não foi possível validar o envio.');
+            }
+
+            // GTM DataLayer
+            (window as any).dataLayer = (window as any).dataLayer || [];
+            (window as any).dataLayer.push({
+              event: 'velora_form_envio_valido',
+              form_id: form.id,
+              lead_nome: nome,
+              lead_email: email,
+              lead_empresa: empresa,
+              lead_cargo: cargo,
+              lead_whatsapp: whatsapp,
+              lead_faturamento: faixaFaturamento,
+              lead_desafio: principalDesafio,
+            });
+
             form.classList.add('is-enviado');
             mostrar(form.dataset.msgSucesso || '');
             status?.focus();
+
             var agenda = form.getAttribute('data-agenda');
             if (agenda) {
               var targetAgenda = agenda;
-              registrar('velora_agenda_aberta', form);
-              window.setTimeout(function () { window.location.assign(targetAgenda); }, 1200);
+              (window as any).dataLayer.push({ event: 'velora_agenda_aberta', form_id: form.id });
+              window.setTimeout(function () {
+                window.location.assign(targetAgenda);
+              }, 1200);
             }
-          }).catch(function () {
-            mostrar(form.dataset.msgErro || '');
+          } catch (err: any) {
+            console.error('[Brevo Submit Error]', err);
+            mostrar(err?.message || form.dataset.msgErro || 'Não foi possível enviar agora. Confira os campos e tente novamente.');
             if (botao) botao.disabled = false;
-          }).then(function () {
+          } finally {
             form.removeAttribute('aria-busy');
-          });
+          }
         };
 
         form.addEventListener('submit', onSubmit);
@@ -772,8 +828,8 @@ const HomeV10: React.FC = () => {
     </select>
   </div>
       <div className="campo">
-    <label className="campo__rotulo" htmlFor="form-conversa-whatsapp">WhatsApp profissional (opcional)</label>
-    <input className="campo__entrada" id="form-conversa-whatsapp" name="whatsapp" type="tel" autoComplete="tel" />
+    <label className="campo__rotulo" htmlFor="form-conversa-whatsapp">WhatsApp profissional</label>
+    <input className="campo__entrada" id="form-conversa-whatsapp" name="whatsapp" type="tel" required autoComplete="tel" placeholder="(00) 00000-0000" />
   </div>
     </div>
     <div className="form__acoes">
