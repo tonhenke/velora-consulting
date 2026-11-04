@@ -846,10 +846,10 @@ p, li, dd { text-wrap: pretty; }
 .rodape__email { color: var(--fg) !important; }
 .rodape__email { overflow-wrap: anywhere; }
 .rodape__coluna:first-child { grid-column: 1 / -1; }
-.rodape__redes { display: flex; gap: 10px; margin-top: 28px; }
-.rodape__redes a { display: inline-grid; place-items: center; width: 44px; height: 44px; color: var(--fg-2); border: 1px solid var(--linha); border-radius: 2px; transition: color var(--t-rapida) var(--curva), border-color var(--t-rapida) var(--curva), transform var(--t-rapida) var(--curva); }
+.rodape__redes { display: flex; gap: 10px; margin-top: 28px; position: relative; z-index: 5; }
+.rodape__redes a { display: inline-grid; place-items: center; width: 44px; height: 44px; color: var(--fg-2); border: 1px solid var(--linha); border-radius: 2px; cursor: pointer; transition: color var(--t-rapida) var(--curva), border-color var(--t-rapida) var(--curva), transform var(--t-rapida) var(--curva); }
 .rodape__redes a:hover { color: var(--ink); background: var(--acid); border-color: var(--acid); transform: translateY(-2px); }
-.rodape__redes svg { width: 18px; height: 18px; }
+.rodape__redes svg { width: 18px; height: 18px; pointer-events: none; }
 .rodape__base { display: grid; gap: 20px; padding-top: 28px; border-top: 1px solid var(--linha); }
 .rodape__razao { font-family: var(--f-mono); font-weight: 500; font-size: 13px; letter-spacing: .04em; color: var(--fg); }
 .rodape__cnpj { margin-top: 4px; font-family: var(--f-mono); font-size: 12px; letter-spacing: .04em; color: var(--fg-3); }

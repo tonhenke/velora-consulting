@@ -120,7 +120,7 @@ const HomeV10: React.FC = () => {
           io.unobserve(en.target);
           en.target.dispatchEvent(new CustomEvent('velora:visivel'));
         });
-      }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0.05, rootMargin: '50px 0px 50px 0px' });
       alvos.forEach(function (el) { io.observe(el); });
 
       cleanupFns.push(() => {
@@ -869,8 +869,8 @@ const HomeV10: React.FC = () => {
         </address>
         {/* Links oficiais LinkedIn e Instagram da Velora */}
         <ul className="rodape__redes">
-          <li><a href="https://www.linkedin.com/company/growth-with-velora" target="_blank" rel="noopener noreferrer" data-rede="linkedin" aria-label="Velora no LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3.5a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.44 13.4c0-3.1-1.66-4.54-3.87-4.54-1.78 0-2.58.98-3.02 1.67V8.5h-3.38c.04.96 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.69.13-.93.27-.69.89-1.4 1.94-1.4 1.37 0 1.92 1.05 1.92 2.58V20h3.38v-6.6Z" fill="currentColor"/></svg></a></li>
-          <li><a href="https://www.instagram.com/growth.with.velora/" target="_blank" rel="noopener noreferrer" data-rede="instagram" aria-label="Velora no Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" strokeWidth="1.6"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" strokeWidth="1.6"/><circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/company/growth-with-velora" target="_blank" rel="noopener noreferrer" data-rede="linkedin" aria-label="Velora no LinkedIn" title="Velora no LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3.5a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.44 13.4c0-3.1-1.66-4.54-3.87-4.54-1.78 0-2.58.98-3.02 1.67V8.5h-3.38c.04.96 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.69.13-.93.27-.69.89-1.4 1.94-1.4 1.37 0 1.92 1.05 1.92 2.58V20h3.38v-6.6Z" fill="currentColor"/></svg></a></li>
+          <li><a href="https://www.instagram.com/growth.with.velora/" target="_blank" rel="noopener noreferrer" data-rede="instagram" aria-label="Velora no Instagram" title="Velora no Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" strokeWidth="1.6"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" strokeWidth="1.6"/><circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/></svg></a></li>
         </ul>
       </div>
       <nav className="rodape__coluna revelar" style={{ '--i': '1' } as React.CSSProperties} aria-labelledby="rodape-fazemos">
