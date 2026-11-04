@@ -464,7 +464,7 @@ const HomeV10: React.FC = () => {
       <h2 className="titulo-2 titulo-2--grande cabeca">Sua empresa sabe entregar valor. O desafio é repetir o caminho até o próximo contrato.</h2>
     </div>
     <div className="sangra">
-      <figure className="sangra__foto sangra__foto--esq onde-trava__foto revela-foto foto revelar"><img className="" src="/v10/images/clientes/tke.webp" alt="Três pessoas debruçadas sobre uma mesa de concreto analisam juntas plantas e documentos impressos." width="2304" height="1536" loading="lazy" decoding="async" /></figure>
+      <figure className="sangra__foto sangra__foto--esq onde-trava__foto revela-foto foto revelar"><img className="" src="/v10/images/onde-trava.webp" alt="Três pessoas debruçadas sobre uma mesa de concreto analisam juntas plantas e documentos impressos." width="2304" height="1536" loading="lazy" decoding="async" /></figure>
       <div className="sangra__texto sangra__texto--dir">
         <p className="lead revelar">Os sintomas mudam. A causa costuma ser a mesma: mercado, marketing e vendas decidindo cada um por si.</p>
         <ul className="dores">
@@ -610,7 +610,7 @@ const HomeV10: React.FC = () => {
         <h2 className="titulo-2 titulo-2--grande">Um método para decidir, executar e aprender.</h2>
         <p className="lead como__abertura revelar">O RHOI organiza o trabalho em ciclos curtos, com decisões construídas junto à liderança e às equipes.</p>
       </div>
-      <figure className="sangra__foto sangra__foto--dir como__foto revela-foto foto revelar"><img className="" src="/v10/images/icp/servicos-profissionais.webp" alt="Em uma sala de concreto, uma consultora de pé conduz a conversa com a equipe sentada ao longo de uma mesa com papéis e garrafas de água." width="1400" height="1738" loading="lazy" decoding="async" /></figure>
+      <figure className="sangra__foto sangra__foto--dir como__foto revela-foto foto revelar"><img className="" src="/v10/images/como-trabalhamos.webp" alt="Em uma sala de concreto, uma consultora de pé conduz a conversa com a equipe sentada ao longo de uma mesa com papéis e garrafas de água." width="1400" height="1738" loading="lazy" decoding="async" /></figure>
     </div>
     <div className="wrap">
       <div className="rhoi desenhar">
@@ -640,7 +640,7 @@ const HomeV10: React.FC = () => {
     <h2 className="titulo-2 titulo-2--grande cabeca">Para empresas que já provaram valor e querem tornar a aquisição mais consistente.</h2>
     <div className="cards-icp">
       <article className="card-icp card-icp--destaque revelar">
-    <figure className="card-icp__foto foto revela-foto"><img className="" src="/v10/images/clientes/tke.webp" alt="Homem com um notebook nas mãos conversa com colegas em um escritório de empresa de tecnologia." width="1856" height="1237" loading="lazy" decoding="async" /></figure>
+    <figure className="card-icp__foto foto revela-foto"><img className="" src="/v10/images/para-quem.webp" alt="Homem com um notebook nas mãos conversa com colegas em um escritório de empresa de tecnologia." width="1856" height="1237" loading="lazy" decoding="async" /></figure>
     <div className="card-icp__corpo">
       <p className="card-icp__selo">Nosso foco</p>
       <h3 className="card-icp__segmento">Tecnologia B2B</h3>
@@ -732,7 +732,7 @@ const HomeV10: React.FC = () => {
   </div>
 </section><section className="secao tema-claro conversa" id="conversa">
     <div className="sangra sangra--conversa">
-      <figure className="sangra__foto sangra__foto--esq conversa__foto revela-foto foto"><img className="" src="/v10/images/clientes/tke.webp" alt="Dois executivos conversam e sorriem dentro de um elevador de vidro, com o átrio de um edifício corporativo ao fundo." width="1200" height="1490" loading="lazy" decoding="async" /></figure>
+      <figure className="sangra__foto sangra__foto--esq conversa__foto revela-foto foto"><img className="" src="/v10/images/conversa/elevador.webp" alt="Dois executivos conversam e sorriem dentro de um elevador de vidro, com o átrio de um edifício corporativo ao fundo." width="1200" height="1490" loading="lazy" decoding="async" /></figure>
       <div className="sangra__texto sangra__texto--dir conversa__coluna">
         <p className="rotulo-secao"><span>Conversa inicial</span></p>
         <h2 className="titulo-2 titulo-2--grande">Onde sua aquisição está travando?</h2>
